@@ -27,4 +27,4 @@
 初心者〜中級者のスト5プレイヤー
 
 ## 画面遷移図
-https://xd.adobe.com/view/abe4bd44-5413-4055-8840-698b0f0e21ae-feb7/
+https://xd.adobe.com/view/e6c66d24-61f6-4b0f-8a89-6c71103dd3e3-b395/
