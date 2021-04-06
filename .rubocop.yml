@@ -9,6 +9,7 @@ require:
 AllCops:
   TargetRubyVersion: 2.6.6
   TargetRailsVersion: 6.0.3.5
+  NewCops: enable
   Exclude:
     - 'vendor/**/*'
     - 'bin/*'
@@ -37,6 +38,3 @@ Style/AndOr:
 # Missing top-level class documentation commentを除外
 Documentation:
   Enabled: false
-
-AllCops:
-  NewCops: enable
