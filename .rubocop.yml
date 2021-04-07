@@ -1,0 +1,40 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+# 全体に適応する項目。
+# Excludeに設定したファイルはチェックの対象外になる。
+AllCops:
+  TargetRubyVersion: 2.6.6
+  TargetRailsVersion: 6.0.3.5
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'bin/*'
+    - 'db/schema.rb'
+    - 'tmp/**/*'
+    - 'node_modules/**/*'
+    - 'lib/tasks/auto_annotate_models.rake'
+
+# Rails用に最適化
+Rails:
+  Enabled: true
+
+Rails/FilePath:
+  Exclude:
+    - 'lib/tasks/dev.rake'
+    - 'spec/rails_helper.rb'
+
+# 日本語を許可
+Style/AsciiComments:
+  Enabled: false
+
+# 'and return'を許可
+Style/AndOr:
+  Enabled: false
+
+# Missing top-level class documentation commentを除外
+Documentation:
+  Enabled: false
