@@ -5,12 +5,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
-gem 'slim-rails'
 gem 'html2slim'
-# gem 'bootstrap'
-# gem 'font-awesome-sass'
-# gem 'jquery-rails'
 gem 'pry-rails'
+gem 'slim-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '= 6.0.3.5'
@@ -41,8 +38,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
-  gem "rspec-rails"
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -53,11 +50,11 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
-  gem 'better_errors'
-  gem 'binding_of_caller'
 end
 
 group :test do
