@@ -1,0 +1,23 @@
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1 悪質プレイヤー登録
+      = form_with model: @fighter, local: true do |f|
+        .form-group
+          = f.text_field :name, class: 'form-control'
+        .form-group
+          = f.collection_select :league_id, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
+        .form-group
+          = f.collection_select :character_id, Character.all, :id, :name, { prompt: 'キャラクター' }, { class: 'form-control' }
+        /.form-group
+        /  = f.collection_check_boxes :name, Category.all, :id, :name
+        = f.submit '登録', class: 'btn btn-primary'
+      br
+      br
+      br
+      br
+      br
+      .text-center
+        h2
+          = link_to 'トップ', root_path
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_023233) do
+ActiveRecord::Schema.define(version: 2021_04_08_093749) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -26,6 +26,33 @@ ActiveRecord::Schema.define(version: 2021_04_08_023233) do
     t.index ["name"], name: "index_characters_on_name", unique: true
   end
 
+  create_table "fighter_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "fighter_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_fighter_categories_on_category_id"
+    t.index ["fighter_id"], name: "index_fighter_categories_on_fighter_id"
+  end
+
+  create_table "fighter_characters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "fighter_id", null: false
+    t.bigint "character_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_fighter_characters_on_character_id"
+    t.index ["fighter_id"], name: "index_fighter_characters_on_fighter_id"
+  end
+
+  create_table "fighters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "league_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["league_id"], name: "index_fighters_on_league_id"
+    t.index ["name"], name: "index_fighters_on_name", unique: true
+  end
+
   create_table "leagues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -33,4 +60,9 @@ ActiveRecord::Schema.define(version: 2021_04_08_023233) do
     t.index ["name"], name: "index_leagues_on_name", unique: true
   end
 
+  add_foreign_key "fighter_categories", "categories"
+  add_foreign_key "fighter_categories", "fighters"
+  add_foreign_key "fighter_characters", "characters"
+  add_foreign_key "fighter_characters", "fighters"
+  add_foreign_key "fighters", "leagues"
 end
