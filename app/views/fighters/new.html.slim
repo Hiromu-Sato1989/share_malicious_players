@@ -8,7 +8,7 @@
         .form-group
           = f.collection_select :league_id, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
         .form-group
-          = f.collection_select :character_id, Character.all, :id, :name, { prompt: 'キャラクター' }, { class: 'form-control' }
+          = f.collection_select :character_ids, Character.all, :id, :name, { prompt: 'キャラクター' }, { class: 'form-control' }
         /.form-group
         /  = f.collection_check_boxes :name, Category.all, :id, :name
         = f.submit '登録', class: 'btn btn-primary'

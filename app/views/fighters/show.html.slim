@@ -1,2 +1,17 @@
-h1 Fighters#show
-p Find me in app/views/fighters/show.html.slim
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      .text-center
+        h1 詳細情報
+
+      table.table.table-hover
+        tbody
+          tr
+            th= "Fighter's ID"
+            td= @fighter.name
+          tr
+            th= 'League'
+            td= @fighter.league.name
+          tr
+            th= 'Character'
+            td= @fighter.characters.name

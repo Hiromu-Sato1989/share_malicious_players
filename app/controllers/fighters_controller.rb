@@ -18,11 +18,13 @@ class FightersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @fighter = Fighter.find(params[:id])
+  end
 
   private
 
   def fighter_params
-    params.require(:fighter).permit(:name, :league_id, { character_ids: [] })
+    params.require(:fighter).permit(:name, :league_id, character_ids: [])
   end
 end
