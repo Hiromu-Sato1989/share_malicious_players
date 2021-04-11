@@ -14,4 +14,5 @@
             td= @fighter.league.name
           tr
             th= 'Character'
-            td= @fighter.characters.name
+            - @fighter.characters.each do |character|
+              td= character.name

@@ -14,6 +14,7 @@ class FightersController < ApplicationController
     if @fighter.save
       redirect_to root_path, success: '悪質プレイヤーを登録しました'
     else
+      flash.now[:danger] = '登録できませんでした'
       render :new
     end
   end
