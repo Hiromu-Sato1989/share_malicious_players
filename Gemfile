@@ -8,6 +8,8 @@ ruby '2.6.6'
 gem 'html2slim'
 gem 'pry-rails'
 gem 'slim-rails'
+gem 'ransack'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '= 6.0.3.5'
@@ -38,6 +40,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
+  gem 'bullet'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
 end
