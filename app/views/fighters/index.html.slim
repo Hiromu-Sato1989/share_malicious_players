@@ -1,62 +1,15 @@
 .container
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-      .border-bottom
-        h1 データベース
-        .nav.justify-content-end
-          = link_to 'トップ', root_path, class: 'nav-link'
-        .mb-3
-        table.table.table-hover
-          thead.thead-default
-            tr
-              th= "Fighter's ID"
-              th= 'League'
-              th= 'Character'
-          tbody
-            = render @fighters
-
-
-
-
-
-
-
-
-
-
-
-
-        = link_to 'A', '#'
-        = link_to 'B', '#'
-        = link_to 'C', '#'
-        = link_to 'D', '#'
-        = link_to 'E', '#'
-        = link_to 'F', '#'
-        br
-        = link_to 'G', '#'
-        = link_to 'H', '#'
-        = link_to 'I', '#'
-        = link_to 'J', '#'
-        = link_to 'K', '#'
-        = link_to 'L', '#'
-        br
-        = link_to 'M', '#'
-        = link_to 'N', '#'
-        = link_to 'O', '#'
-        = link_to 'P', '#'
-        = link_to 'Q', '#'
-        = link_to 'R', '#'
-        br
-        = link_to 'S', '#'
-        = link_to 'T', '#'
-        = link_to 'U', '#'
-        = link_to 'V', '#'
-        = link_to 'W', '#'
-        = link_to 'X', '#'
-        br
-        = link_to 'Y', '#'
-        = link_to 'Z', '#'
-        = link_to '記号', '#'
-        = link_to '数字', '#'
-        = link_to 'ALL', '#'
-      
+      h1 データベース
+      .nav.justify-content-end
+        = link_to 'トップ', root_path, class: 'nav-link'
+      .mb-3
+      table.table.table-hover
+        thead.thead-default
+          tr
+            th= "Fighter's ID"
+            th= 'League'
+            th= 'Character'
+        tbody
+          = render @fighters

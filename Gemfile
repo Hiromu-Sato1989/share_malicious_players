@@ -7,9 +7,8 @@ ruby '2.6.6'
 
 gem 'html2slim'
 gem 'pry-rails'
-gem 'slim-rails'
 gem 'ransack'
-
+gem 'slim-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '= 6.0.3.5'

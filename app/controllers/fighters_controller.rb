@@ -2,7 +2,8 @@
 
 class FightersController < ApplicationController
   def index
-    @fighters = Fighter.all
+    @q = Fighter.ransack(params[:q])
+    @fighters = @q.result(distinct: true)
   end
 
   def new

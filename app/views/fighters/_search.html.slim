@@ -1,0 +1,52 @@
+.modal-dialog role="document"
+  .modal-content  style="z-index: 1500"
+    .modal-header
+      h5.modal-title データベース
+      button.close aria-label="Close" data-dismiss="modal" type="button" 
+        span aria-hidden="true" ×
+    .modal-body
+      .border-bottom
+        /= link_to '#', { controller: 'fighters', action: 'index', q: { name_start: '' }}
+        = link_to 'A', '#'
+        = link_to 'B', '#'
+        = link_to 'C', '#'
+        = link_to 'D', '#'
+        = link_to 'E', '#'
+        = link_to 'F', '#'
+        br
+        = link_to 'G', '#'
+        = link_to 'H', '#'
+        = link_to 'I', '#'
+        = link_to 'J', '#'
+        = link_to 'K', '#'
+        = link_to 'L', '#'
+        br
+        = link_to 'M', '#'
+        = link_to 'N', '#'
+        = link_to 'O', '#'
+        = link_to 'P', '#'
+        = link_to 'Q', '#'
+        = link_to 'R', '#'
+        br
+        = link_to 'S', '#'
+        = link_to 'T', '#'
+        = link_to 'U', '#'
+        = link_to 'V', '#'
+        = link_to 'W', '#'
+        = link_to 'X', '#'
+        br
+        = link_to 'Y', '#'
+        = link_to 'Z', '#'
+        = link_to '記号', '#'
+        = link_to '数字', '#'
+        = link_to 'ALL', '#'
+    = search_form_for q do |f|
+      .form-group.field
+        = f.search_field :name_cont, class: 'form-control', placeholder: "Fighter's ID"
+        br
+        = f.collection_select :league_id_eq, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
+        br
+        = f.collection_check_boxes :characters_id_in, Character.all, :id, :name
+
+        .modal-footer.actions
+          = f.submit '検索', class: 'btn btn-primary'
