@@ -27,6 +27,6 @@ class FightersController < ApplicationController
   private
 
   def fighter_params
-    params.require(:fighter).permit(:name, :league_id, character_ids: [])
+    params.require(:fighter).permit(:name, :league_id, character_ids: [], category_ids: [])
   end
 end
