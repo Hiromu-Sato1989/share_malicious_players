@@ -2,7 +2,11 @@
 
 FactoryBot.define do
   factory :fighter do
-    name { 'MyString' }
-    league { nil }
+    sequence(:name) { |n| "name_#{n}" }
+    association :league
+
+    trait :daigo do
+      name {'umehara'}
+    end
   end
 end

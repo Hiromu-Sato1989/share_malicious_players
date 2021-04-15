@@ -2,6 +2,10 @@
 
 FactoryBot.define do
   factory :character do
-    sequence(:name) { |n| "name_#{n}" }
+    sequence(:name) { |n| "character_#{n}" }
+
+    trait :ryu do
+      name {'リュウ'}
+    end
   end
 end
