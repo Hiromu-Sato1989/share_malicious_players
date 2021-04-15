@@ -5,7 +5,7 @@ FactoryBot.define do
     sequence(:name) { |n| "character_#{n}" }
 
     trait :ryu do
-      name {'リュウ'}
+      name { 'リュウ' }
     end
   end
 end

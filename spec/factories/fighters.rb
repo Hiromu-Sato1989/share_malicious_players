@@ -6,7 +6,7 @@ FactoryBot.define do
     association :league
 
     trait :daigo do
-      name {'umehara'}
+      name { 'umehara' }
     end
   end
 end
