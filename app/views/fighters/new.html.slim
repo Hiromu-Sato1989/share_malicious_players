@@ -4,10 +4,8 @@
       h1 悪質プレイヤー登録
       = form_with model: @fighter, local: true do |f|
         .form-group
-          = f.label :name
-          = f.text_field :name, class: 'form-control'
+          = f.text_field :name, class: 'form-control', placeholder: "Fighter's ID"
         .form-group
-          = f.label :league_id
           = f.collection_select :league_id, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
         .form-group
           = f.collection_check_boxes :character_ids, Character.all, :id, :name
