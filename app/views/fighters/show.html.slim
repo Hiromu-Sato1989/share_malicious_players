@@ -16,3 +16,14 @@
             th= 'Character'
             - @fighter.characters.each do |character|
               td= character.name
+          tr
+            th= 'Malicious'
+            - @fighter.categories.each do |category|
+              td= category.name
+              td= button_to 'いいね', fighter_votes_path(@fighter)
+              td= @fighter.votes.count
+          /どう表示するか悩み中なので暫定
+          /tr
+            th= 'やった？'
+            td= button_to 'いいね', fighter_votes_path(@fighter)
+            td= @fighter.votes.count
