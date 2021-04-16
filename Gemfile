@@ -7,6 +7,7 @@ ruby '2.6.6'
 
 gem 'html2slim'
 gem 'pry-rails'
+gem 'ransack'
 gem 'slim-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,6 +39,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
+  gem 'bullet'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
 end
@@ -52,8 +54,8 @@ group :development do
 
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
+  gem 'rubocop', '= 1.12.1', require: false
+  gem 'rubocop-rails', '= 2.9.1', require: false
   gem 'rubocop-rspec'
 end
 

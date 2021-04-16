@@ -38,3 +38,16 @@ Style/AndOr:
 # Missing top-level class documentation commentを除外
 Documentation:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/ContextWording:
+  Enabled: false

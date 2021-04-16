@@ -1,0 +1,52 @@
+.modal-dialog role="document"
+  .modal-content  style="z-index: 1500"
+    .modal-header
+      h5.modal-title データベース
+      button.close aria-label="Close" data-dismiss="modal" type="button" 
+        span aria-hidden="true" ×
+    .modal-body
+      .border-bottom
+        /= link_to '#', { controller: 'fighters', action: 'index', q: { name_start: '' }}
+        = link_to 'A', { controller: 'fighters', action: 'index', q: { name_start: 'a' }}, class: 'start-link'
+        = link_to 'B', { controller: 'fighters', action: 'index', q: { name_start: 'b' }}, class: 'start-link'
+        = link_to 'C', { controller: 'fighters', action: 'index', q: { name_start: 'c' }}, class: 'start-link'
+        = link_to 'D', { controller: 'fighters', action: 'index', q: { name_start: 'd' }}, class: 'start-link'
+        = link_to 'E', { controller: 'fighters', action: 'index', q: { name_start: 'e' }}, class: 'start-link'
+        = link_to 'F', { controller: 'fighters', action: 'index', q: { name_start: 'f' }}, class: 'start-link'
+        br
+        = link_to 'G', { controller: 'fighters', action: 'index', q: { name_start: 'g' }}, class: 'start-link'
+        = link_to 'H', { controller: 'fighters', action: 'index', q: { name_start: 'h' }}, class: 'start-link'
+        = link_to 'I', { controller: 'fighters', action: 'index', q: { name_start: 'i' }}, class: 'start-link'
+        = link_to 'J', { controller: 'fighters', action: 'index', q: { name_start: 'j' }}, class: 'start-link'
+        = link_to 'K', { controller: 'fighters', action: 'index', q: { name_start: 'k' }}, class: 'start-link'
+        = link_to 'L', { controller: 'fighters', action: 'index', q: { name_start: 'l' }}, class: 'start-link'
+        br
+        = link_to 'M', { controller: 'fighters', action: 'index', q: { name_start: 'm' }}, class: 'start-link'
+        = link_to 'N', { controller: 'fighters', action: 'index', q: { name_start: 'n' }}, class: 'start-link'
+        = link_to 'O', { controller: 'fighters', action: 'index', q: { name_start: 'o' }}, class: 'start-link'
+        = link_to 'P', { controller: 'fighters', action: 'index', q: { name_start: 'p' }}, class: 'start-link'
+        = link_to 'Q', { controller: 'fighters', action: 'index', q: { name_start: 'q' }}, class: 'start-link'
+        = link_to 'R', { controller: 'fighters', action: 'index', q: { name_start: 'r' }}, class: 'start-link'
+        br
+        = link_to 'S', { controller: 'fighters', action: 'index', q: { name_start: 's' }}, class: 'start-link'
+        = link_to 'T', { controller: 'fighters', action: 'index', q: { name_start: 't' }}, class: 'start-link'
+        = link_to 'U', { controller: 'fighters', action: 'index', q: { name_start: 'u' }}, class: 'start-link'
+        = link_to 'V', { controller: 'fighters', action: 'index', q: { name_start: 'v' }}, class: 'start-link'
+        = link_to 'W', { controller: 'fighters', action: 'index', q: { name_start: 'w' }}, class: 'start-link'
+        = link_to 'X', { controller: 'fighters', action: 'index', q: { name_start: 'x' }}, class: 'start-link'
+        br
+        = link_to 'Y', { controller: 'fighters', action: 'index', q: { name_start: 'y' }}, class: 'start-link'
+        = link_to 'Z', { controller: 'fighters', action: 'index', q: { name_start: 'z' }}, class: 'start-link'
+        = link_to '記号', '#', class: 'start-link'
+        = link_to '数字', '#', class: 'start-link'
+        = link_to 'ALL', '#', class: 'start-link'
+    = search_form_for q do |f|
+      .form-group.field
+        = f.search_field :name_cont, class: 'form-control', placeholder: "Fighter's ID"
+        br
+        = f.collection_select :league_id_eq, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
+        br
+        = f.collection_check_boxes :characters_id_in, Character.all, :id, :name
+
+        .modal-footer.actions
+          = f.submit '検索', class: 'btn btn-primary'
