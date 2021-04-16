@@ -6,6 +6,7 @@ class Fighter < ApplicationRecord
   has_many :characters, through: :fighter_characters
   has_many :fighter_categories, dependent: :destroy
   has_many :categories, through: :fighter_categories
+  has_many :votes, dependent: :destroy
 
   validates :name, presence: true
   validates :name, uniqueness: { case_sensitive: true }

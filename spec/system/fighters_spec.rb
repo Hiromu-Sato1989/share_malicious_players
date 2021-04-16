@@ -70,25 +70,29 @@ RSpec.describe 'Fighters', type: :system do
       visit root_path
       click_link '検索'
     end
+
     context '頭文字検索' do
       it '検索でヒットする' do
         click_link 'U'
         expect(page).to have_content('umehara')
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
+
       it '検索でヒットしない' do
         click_link 'A'
         expect(page).not_to have_content('umehara')
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
     end
+
     context "Fighter's ID検索を使う" do
-      it "検索でヒットする" do
+      it '検索でヒットする' do
         fill_in "Fighter's ID", with: 'ume'
         click_button '検索'
         expect(page).to have_content('umehara')
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
+
       it '検索でヒットしない' do
         fill_in "Fighter's ID", with: 'name_1'
         click_button '検索'
@@ -96,13 +100,15 @@ RSpec.describe 'Fighters', type: :system do
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
     end
-    context "リーグ検索を使う" do
+
+    context 'リーグ検索を使う' do
       it '検索でヒットする' do
         select 'ブロンズ', from: 'q_league_id_eq'
         click_button '検索'
         expect(page).to have_content('umehara')
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
+
       it '検索でヒットしない' do
         select 'シルバー', from: 'q_league_id_eq'
         click_button '検索'
@@ -110,6 +116,7 @@ RSpec.describe 'Fighters', type: :system do
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
     end
+
     context 'キャラクター検索を使う' do
       it '検索でヒットする' do
         check 'character_31'
@@ -117,6 +124,7 @@ RSpec.describe 'Fighters', type: :system do
         expect(page).to have_content('umehara')
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
+
       it '検索でヒットしない' do
         check 'character_35'
         click_button '検索'

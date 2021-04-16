@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_093749) do
+ActiveRecord::Schema.define(version: 2021_04_16_055711) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -60,9 +60,18 @@ ActiveRecord::Schema.define(version: 2021_04_08_093749) do
     t.index ["name"], name: "index_leagues_on_name", unique: true
   end
 
+  create_table "votes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "fighter_id", null: false
+    t.string "ip"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fighter_id"], name: "index_votes_on_fighter_id"
+  end
+
   add_foreign_key "fighter_categories", "categories"
   add_foreign_key "fighter_categories", "fighters"
   add_foreign_key "fighter_characters", "characters"
   add_foreign_key "fighter_characters", "fighters"
   add_foreign_key "fighters", "leagues"
+  add_foreign_key "votes", "fighters"
 end
