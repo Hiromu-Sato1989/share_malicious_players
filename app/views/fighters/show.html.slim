@@ -26,4 +26,4 @@
           /tr
             th= 'やった？'
             td= button_to 'いいね', fighter_votes_path(@fighter)
-            td= @fighter.votes.count
+            td= @fighter.votes_count /counter_cultureで設定したカラム

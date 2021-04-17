@@ -51,3 +51,6 @@ Metrics/BlockLength:
 
 RSpec/ContextWording:
   Enabled: false
+
+Metrics/AbcSize:
+  Max: 25
