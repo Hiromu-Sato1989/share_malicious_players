@@ -9,7 +9,10 @@ class Fighter < ApplicationRecord
   has_many :votes, dependent: :destroy
 
   validates :name, presence: true
-  validates :name, uniqueness: { case_sensitive: true }
+  validates :name, uniqueness: { case_sensitive: false }
+  validates :name, length: { in: 6..16 }
+  validates :name, format: { with: /\A[a-zA-Z0-9_-]+\z/ }
+
   validates :league_id, presence: true
 
   # scopeで検索できないか模索中…

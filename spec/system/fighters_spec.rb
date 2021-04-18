@@ -126,7 +126,7 @@ RSpec.describe 'Fighters', type: :system do
       end
 
       it '検索でヒットしない' do
-        check 'character_35'
+        check 'character_34'
         click_button '検索'
         expect(page).not_to have_content('tokido77')
         expect(page).to have_current_path fighters_path, ignore_query: true
