@@ -20,10 +20,11 @@
             th= 'Malicious'
             - @fighter.categories.each do |category|
               td= category.name
-              td= button_to 'いいね', fighter_votes_path(@fighter)
-              td= @fighter.votes.count
+              /td= button_to 'いいね', fighter_votes_path(@fighter)
+              /td= @fighter.votes.count
           /どう表示するか悩み中なので暫定
-          /tr
+          tr
             th= 'やった？'
-            td= button_to 'いいね', fighter_votes_path(@fighter)
-            td= @fighter.votes_count /counter_cultureで設定したカラム
+            td= button_to 'やってきた', fighter_votes_path(@fighter)
+            td= @fighter.votes_count
+            /votes_count -> counter_cultureで使えるようになったメソッド

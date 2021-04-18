@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Fighter < ApplicationRecord
+  Max_Characters_Count = 2
+
   belongs_to :league
   has_many :fighter_characters, dependent: :destroy
   has_many :characters, through: :fighter_characters
@@ -15,6 +17,8 @@ class Fighter < ApplicationRecord
 
   validates :league_id, presence: true
 
+  validates :fighter_characters, length: { maximum: Max_Characters_Count }
+  
   # scopeで検索できないか模索中…
   # scope :search_fighter, ->(name) { where('name like?', "#{name}%") }
 end
