@@ -11,4 +11,7 @@ class Fighter < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: { case_sensitive: true }
   validates :league_id, presence: true
+
+  # scopeで検索できないか模索中…
+  # scope :search_fighter, ->(name) { where('name like?', "#{name}%") }
 end
