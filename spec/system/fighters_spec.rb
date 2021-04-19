@@ -119,14 +119,14 @@ RSpec.describe 'Fighters', type: :system do
 
     context 'キャラクター検索を使う' do
       it '検索でヒットする' do
-        check 'character_31'
+        check 'character_11'
         click_button '検索'
         expect(page).to have_content('umehara')
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
 
       it '検索でヒットしない' do
-        check 'character_34'
+        check 'character_12'
         click_button '検索'
         expect(page).not_to have_content('tokido77')
         expect(page).to have_current_path fighters_path, ignore_query: true

@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :fighter_category do
-    fighter { nil }
-    category { nil }
+    fighter
+    category
   end
 end

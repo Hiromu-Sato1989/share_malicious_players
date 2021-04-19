@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :fighter_character do
-    fighter { nil }
-    character { nil }
+    fighter
+    character
   end
 end

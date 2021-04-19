@@ -15,8 +15,6 @@ FactoryBot.define do
     trait :gold do
       name { 'ゴールド' }
     end
-    after(:create) do |league|
-      create_list(:fighter, 3, league: league)
-    end
+    
   end
 end
