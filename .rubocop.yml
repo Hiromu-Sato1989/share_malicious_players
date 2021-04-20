@@ -48,6 +48,10 @@ RSpec/ExampleLength:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+    - 'config/**/*'
 
 RSpec/ContextWording:
   Enabled: false
+
+Metrics/AbcSize:
+  Max: 25

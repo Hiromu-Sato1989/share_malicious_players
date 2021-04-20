@@ -6,17 +6,13 @@ FactoryBot.define do
     league_id { 1 }
     association :league
 
-    trait :daigo do
-      name { 'umehara' }
-
-      after(:create) do |fighter|
-        create_list(:character, 3, fighters: [fighter])
-      end
+    after(:create) do |fighter|
+      create(:fighter_category, fighter: fighter, category: create(:category, :kusshin))
+      create(:fighter_character, fighter: fighter, character: create(:character, :ryu))
     end
 
-    # after(:create) do |fighter|
-    #   create_list(:character, 3, fighters: [fighter])
-    #   create_list(:category, 3, fighters: [fighter])
-    # end
+    trait :daigo do
+      name { 'umehara' }
+    end
   end
 end

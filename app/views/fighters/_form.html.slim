@@ -1,0 +1,7 @@
+.modal-dialog role="document"
+  .modal-content
+  <h2>悪質プレイヤー登録</h2>
+    = form_with model: @fighter, local: true do |f|
+      .form-group
+        = f.text_field :name, class: 'form-control'
+        = f.submit '登録', class: 'btn btn-primary'

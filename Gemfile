@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem 'counter_culture', '~> 2.0'
 gem 'html2slim'
 gem 'pry-rails'
 gem 'ransack'

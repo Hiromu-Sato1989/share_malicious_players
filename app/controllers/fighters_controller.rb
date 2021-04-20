@@ -3,7 +3,11 @@
 class FightersController < ApplicationController
   def index
     @q = Fighter.ransack(params[:q])
-    @fighters = @q.result(distinct: true)
+    @fighters = @q.result(distinct: true)\
+                  .includes([:league])\
+                  .includes([:characters])\
+                  .includes([:categories])\
+                  .order(name: :asc)
   end
 
   def new

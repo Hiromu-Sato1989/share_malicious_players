@@ -2,5 +2,7 @@
 
 Rails.application.routes.draw do
   root 'top#index'
-  resources :fighters, only: %i[index new create show]
+  resources :fighters, only: %i[index new create show] do
+    resources :votes, only: [:create]
+  end
 end
