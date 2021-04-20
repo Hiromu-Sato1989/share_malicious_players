@@ -15,6 +15,5 @@ FactoryBot.define do
     trait :gold do
       name { 'ゴールド' }
     end
-    
   end
 end

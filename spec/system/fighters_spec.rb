@@ -5,12 +5,9 @@ require 'rails_helper'
 RSpec.describe 'Fighters', type: :system do
   describe '悪質プレイヤーの新規登録' do
     before do
-      create(:fighter, :daigo)
       create(:league, :bronze)
       create(:league, :silver)
-      create(:league, :gold)
-      create(:category, :kusshin)
-      create(:character, :ryu)
+      create(:fighter, :daigo)
       visit root_path
       click_link '悪質プレイヤーを登録'
     end
@@ -63,10 +60,10 @@ RSpec.describe 'Fighters', type: :system do
   end
 
   describe '悪質プレイヤー検索' do
+    let!(:league_b) { create(:league, :bronze) }
+    let!(:fighter) { create(:fighter, :daigo, league: league_b) }
+
     before do
-      create(:league, :silver)
-      league_b = create(:league, :bronze)
-      create(:fighter, :daigo, league: league_b)
       visit root_path
       click_link '検索'
     end
@@ -74,29 +71,29 @@ RSpec.describe 'Fighters', type: :system do
     context '頭文字検索' do
       it '検索でヒットする' do
         click_link 'U'
-        expect(page).to have_content('umehara')
+        expect(page).to have_content(fighter.name)
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
 
       it '検索でヒットしない' do
         click_link 'A'
-        expect(page).not_to have_content('umehara')
+        expect(page).not_to have_content(fighter.name)
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
     end
 
     context "Fighter's ID検索を使う" do
       it '検索でヒットする' do
-        fill_in "Fighter's ID", with: 'ume'
+        fill_in "Fighter's ID", with: fighter.name
         click_button '検索'
-        expect(page).to have_content('umehara')
+        expect(page).to have_content(fighter.name)
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
 
       it '検索でヒットしない' do
-        fill_in "Fighter's ID", with: 'name_1'
+        fill_in "Fighter's ID", with: 'tokido77'
         click_button '検索'
-        expect(page).not_to have_content('name_1')
+        expect(page).not_to have_content(fighter.name)
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
     end
@@ -105,28 +102,29 @@ RSpec.describe 'Fighters', type: :system do
       it '検索でヒットする' do
         select 'ブロンズ', from: 'q_league_id_eq'
         click_button '検索'
-        expect(page).to have_content('umehara')
+        expect(page).to have_content(fighter.name)
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
 
       it '検索でヒットしない' do
+        create(:league, :silver)
         select 'シルバー', from: 'q_league_id_eq'
         click_button '検索'
-        expect(page).not_to have_content('umehara')
+        expect(page).not_to have_content(fighter.name)
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
     end
 
     context 'キャラクター検索を使う' do
       it '検索でヒットする' do
-        check 'character_11'
+        check 'リュウ'
         click_button '検索'
-        expect(page).to have_content('umehara')
+        expect(page).to have_content(fighter.name)
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
 
       it '検索でヒットしない' do
-        check 'character_12'
+        check 'リュウ'
         click_button '検索'
         expect(page).not_to have_content('tokido77')
         expect(page).to have_current_path fighters_path, ignore_query: true
