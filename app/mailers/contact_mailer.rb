@@ -3,9 +3,6 @@
 class ContactMailer < ApplicationMailer
   def send_mail(contact)
     @contact = contact
-    mail(
-      to: @contact.email,
-      subject: '【お問い合わせ・フィードバック】'
-    )
+    mail to: 'from@example.com', subject: '【ユーザーからのお問い合わせ】'
   end
 end

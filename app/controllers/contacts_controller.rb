@@ -8,8 +8,8 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      ContactMailer.contact_mail(@contact).deliver_now
-      flash[:success] = 'お問い合わせありがとうございます。'
+      ContactMailer.send_mail(@contact).deliver_now
+      flash[:success] = '送信完了しました。お問い合わせありがとうございます。'
       redirect_to root_path
     else
       render :new
