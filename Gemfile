@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem 'config'
 gem 'counter_culture', '~> 2.0'
 gem 'html2slim'
 gem 'pry-rails'
@@ -55,6 +56,7 @@ group :development do
 
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'letter_opener_web'
   gem 'rubocop', '= 1.12.1', require: false
   gem 'rubocop-rails', '= 2.9.1', require: false
   gem 'rubocop-rspec'

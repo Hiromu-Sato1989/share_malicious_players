@@ -6,7 +6,6 @@ class FightersController < ApplicationController
     @fighters = @q.result(distinct: true)\
                   .includes([:league])\
                   .includes([:characters])\
-                  .includes([:categories])\
                   .order(name: :asc)
   end
 

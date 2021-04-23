@@ -70,4 +70,19 @@ Rails.application.configure do
     Bullet.rails_logger = true # Railsのログに結果を出力
     Bullet.add_footer = true # ページの左下に結果を表示
   end
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = Settings.default_url_options.to_h
+  config.action_mailer.delivery_method = :letter_opener_web
+  # 実際にメールを来る場合、↓のコードをコメントアウトする。本番環境は別ファイルで設定済み
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   port:                 587,
+  #   address:              'smtp.gmail.com',
+  #   domain:               'gmail.com',
+  #   user_name:            ENV['EMAIL'],
+  #   password:             ENV['APP_PASSWORD'],
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true
+  # }
 end

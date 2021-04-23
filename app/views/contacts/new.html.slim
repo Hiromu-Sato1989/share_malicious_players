@@ -1,0 +1,9 @@
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1 お問い合わせ
+      = form_with model: @contact, local: true do |f|
+        .form-group
+          = f.label :message, 'お問い合わせ内容'
+          = f.text_area :message, size: '10x10', class: 'form-control'
+        = f.submit '送信する', class: 'btn btn-primary', data: { confirm: '送信しますか？' }
