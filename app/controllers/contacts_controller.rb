@@ -12,6 +12,7 @@ class ContactsController < ApplicationController
       flash[:success] = '送信完了しました。お問い合わせありがとうございます。'
       redirect_to root_path
     else
+      flash.now[:danger] = 'お問い合わせ内容を入力してください。'
       render :new
     end
   end
