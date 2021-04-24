@@ -10,7 +10,7 @@
             th= "投票数"
         tbody.text-center
           /render partialで書ける？
-          - fighters.each do |fighter|
+          - Fighter.number_of_votes.each do |fighter|
             tr
               td= link_to fighter.name, fighter_path(fighter)
               td= fighter.votes_count

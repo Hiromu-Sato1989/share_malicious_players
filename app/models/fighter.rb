@@ -19,6 +19,8 @@ class Fighter < ApplicationRecord
 
   validates :fighter_characters, length: { maximum: MAX_CHARACTERS_COUNT }
 
+  scope :number_of_votes, -> { order(votes_count: :desc).limit(5) }
+
   # scopeで検索できないか模索中…
   # scope :search_fighter, ->(name) { where('name like?', "#{name}%") }
 end
