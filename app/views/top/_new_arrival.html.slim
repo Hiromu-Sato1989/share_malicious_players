@@ -2,7 +2,7 @@
   .border.border-dark.
     #new_arrival
       .text-center
-        h2 新着プレイヤー
+        h4 新着プレイヤー
       table.table
         thead.thead-default.text-center
           tr
@@ -12,4 +12,4 @@
           - Fighter.new_arrival.each do |fighter|
             tr
               td= link_to fighter.name, fighter_path(fighter)
-              td= fighter.created_at
+              td= l fighter.created_at, format: :short
