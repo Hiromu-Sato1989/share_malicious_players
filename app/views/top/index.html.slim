@@ -9,12 +9,11 @@
   .row
     = render 'votes_top'
     = render 'new_arrival'
-  h2
-    =link_to 'Malicious Fightersとは？', '#'
   p
-    =link_to '使い方', '#'
+    =link_to '利用規約', page_path('terms')
   p
-    =link_to '利用規約', '#'
+    =link_to '使い方', page_path('howto')
+  p
     =link_to 'プライバシーポリシー', '#'
   p
     =link_to 'お問い合わせ', new_contact_path

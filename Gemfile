@@ -11,6 +11,7 @@ gem 'html2slim'
 gem 'pry-rails'
 gem 'ransack'
 gem 'slim-rails'
+gem 'high_voltage'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '= 6.0.3.5'

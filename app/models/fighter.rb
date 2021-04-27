@@ -16,7 +16,11 @@ class Fighter < ApplicationRecord
   validates :name, format: { with: /\A[a-zA-Z0-9_-]+\z/ }
 
   validates :league_id, presence: true
+  # キャラクター、カテゴリー未選択の場合登録できない処理
+  validates :character_ids, presence: true
+  validates :category_ids, presence: true
 
+  # 選べるキャラクターを2キャラまでに制限する。選べすぎても情報として意味がないため
   validates :fighter_characters, length: { maximum: MAX_CHARACTERS_COUNT }
 
   scope :number_of_votes, -> { order(votes_count: :desc).limit(5) }
