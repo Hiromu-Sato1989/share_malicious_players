@@ -1,0 +1,15 @@
+.col-sm-10.col-lg-6
+  .border.border-dark.
+    #new_arrival
+      .text-center
+        h4 新着プレイヤー
+      table.table
+        thead.thead-default.text-center
+          tr
+            th= "Fighter's ID"
+            th= "登録日"
+        tbody.text-center
+          - Fighter.new_arrival.each do |fighter|
+            tr
+              td= link_to fighter.name, fighter_path(fighter)
+              td= l fighter.created_at, format: :short

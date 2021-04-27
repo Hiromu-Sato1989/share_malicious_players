@@ -1,0 +1,16 @@
+.col-sm-10.col-lg-6
+  .border.border-dark.
+    #votes_top
+      .text-center
+        h4 投票数上位者
+      table.table
+        thead.thead-default.text-center
+          tr
+            th= "Fighter's ID"
+            th= "投票数"
+        tbody.text-center
+          /render partialで書ける？
+          - Fighter.number_of_votes.each do |fighter|
+            tr
+              td= link_to fighter.name, fighter_path(fighter)
+              td= fighter.votes_count
