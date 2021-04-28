@@ -5,7 +5,6 @@
       .nav.justify-content-end
         = link_to 'トップ', root_path, class: 'nav-link'
         = link_to '検索', fighters_path, remote: true, class: 'btn btn-primary'
-      #search-modal
       .mb-3
       table.table.table-hover
         thead.thead-default
@@ -16,3 +15,6 @@
             th= 'Votes'
         tbody
           = render @fighters
+
+#mask.hidden
+#modal.hidden

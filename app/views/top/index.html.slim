@@ -4,8 +4,6 @@
   = link_to '検索', fighters_path, remote: true, class: 'btn btn-primary'
   = link_to '悪質プレイヤー一覧', fighters_path, class: 'btn btn-primary'
 
-  #search-modal
-
   .row
     = render 'votes_top'
     = render 'new_arrival'
@@ -17,3 +15,6 @@
     =link_to 'プライバシーポリシー', '#'
   p
     =link_to 'お問い合わせ', new_contact_path
+    #mask.hidden
+    #modal.hidden
+

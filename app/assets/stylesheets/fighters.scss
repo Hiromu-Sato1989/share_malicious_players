@@ -2,6 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.start-link {
-  margin-right: 10px;
+.form-check-box {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .form-check-label {
+  background: #31A9EE;/* マウス選択時の背景色を指定する */
+  color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+
+.form-check-label:hover {
+  background-color: #E2EDF9; /* マウスオーバー時の背景色を指定する */
+}
+
+.form-check-label {
+  display: block; /* ブロックレベル要素化する */
+  float: left; /* 要素の左寄せ・回り込を指定する */
+  margin: 5px; /* ラベル外側の余白を指定する */
+  width: 100px; /* ラベルの横幅を指定する */
+  height: 100px; /* ラベルの高さを指定する */
+  text-align: center; /* テキストのセンタリングを指定する */
+  line-height: 100px; /* 行の高さを指定する */
+  padding-left: 5px; /* ラベル内左側の余白を指定する */
+  padding-right: 5px; /* ラベル内右側の余白を指定する */
+  color: #b20000; /* フォントの色を指定 */
+  border: 2px solid #006DD9;/* ラベルの境界線を実線で指定する */
+  border-radius: 50% /* 角丸を指定する */
+}
+
+li {
+  list-style: none;
 }
