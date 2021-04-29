@@ -1,5 +1,9 @@
 ja:
-  activerecors:
+  activerecord:
+    attributes:
+      fighter:
+        name: "Fighter's ID"
+        league_id: "League"
   time:
     formats:
       default: "%Y/%m/%d %H:%M"

@@ -30,6 +30,19 @@ input[type="checkbox"]:checked + .form-check-label {
   border-radius: 50% /* 角丸を指定する */
 }
 
-li {
+li.character {
   list-style: none;
+}
+
+.top-section {
+  height: 300px;
+  background-color: #FFFFFF;
+}
+
+.board-section {
+  background-color: #f8f9fa; 
+}
+
+.bottom-section {
+  background-color: #FFFFFF;
 }

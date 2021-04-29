@@ -4,13 +4,31 @@
       h1 悪質プレイヤー登録
       = form_with model: @fighter, local: true do |f|
         .form-group
+          = f.label :name, class: 'mr-2'
+          / フォームの入力必須赤ラベル
+          span.badge.badge-danger 必須
           = f.text_field :name, class: 'form-control', placeholder: "Fighter's ID"
         .form-group
+          = f.label :league_id, class: 'mr-2'
+          span.badge.badge-danger 必須
           = f.collection_select :league_id, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
         .form-group
-          = f.collection_check_boxes :character_ids, Character.all, :id, :name
+          = f.label 'キャラクター', class: 'mr-2'
+          span.badge.badge-danger 必須
+          = f.collection_check_boxes :character_ids, Character.all.order(name: :asc), :id, :name do |b|
+            li.character
+              = b.check_box do
+                = b.check_box + b.text
+              = b.label do
+                = b.label { b.text }
         .form-group
-          = f.collection_check_boxes :category_ids, Category.all, :id, :name
+          = f.label 'カテゴリー', class: 'mr-2'
+          span.badge.badge-danger 必須
+          = f.collection_check_boxes :category_ids, Category.all, :id, :name do |b|
+            = b.check_box class: 'form-check-box' do
+              = b.check_box + b.text
+            = b.label class: 'form-check-label' do
+              = b.label { b.text }
         = f.submit '登録', class: 'btn btn-primary'
       br
       br

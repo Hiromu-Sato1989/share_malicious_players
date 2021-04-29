@@ -48,7 +48,7 @@
         = f.collection_select :league_id_eq, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
         br
         = f.collection_check_boxes :characters_id_in, Character.all.order(name: :asc), :id, :name do |b|
-          li
+          li.character
             = b.check_box do
               = b.check_box + b.text
             = b.label do
