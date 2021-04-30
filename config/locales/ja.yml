@@ -3,7 +3,8 @@ ja:
     attributes:
       fighter:
         name: "Fighter's ID"
-        league_id: "League"
+        league: リーグ
+        league_id: "リーグ"
   time:
     formats:
       default: "%Y/%m/%d %H:%M"

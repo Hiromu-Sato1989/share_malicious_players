@@ -15,7 +15,6 @@ class FightersController < ApplicationController
 
   def create
     @fighter = Fighter.new(fighter_params)
-    binding.pry
     if @fighter.save
       redirect_to root_path, success: '悪質プレイヤーを登録しました'
     else
