@@ -1,20 +1,25 @@
-.container
-  h1 みんなで悪質プレイヤーを共有しよう！
-  = link_to '悪質プレイヤーを登録', new_fighter_path, class: 'btn btn-primary'
-  = link_to '検索', fighters_path, remote: true, class: 'btn btn-primary'
-  = link_to '悪質プレイヤー一覧', fighters_path, class: 'btn btn-primary'
+.top-section
+  .container.d-flex.align-items-center
+    h3.catch-copy.text-center みんなで悪質プレイヤーを共有しよう！
+    .text-center
+      = link_to '悪質プレイヤーを登録', new_fighter_path, class: 'btn btn-primary'
+      = link_to '検索', fighters_path, remote: true, class: 'btn btn-primary'
+      = link_to '悪質プレイヤー一覧', fighters_path, class: 'btn btn-primary'
 
-  .row
-    = render 'votes_top'
-    = render 'new_arrival'
-  p
-    =link_to '利用規約', page_path('terms')
-  p
-    =link_to '使い方', page_path('howto')
-  p
-    =link_to 'プライバシーポリシー', '#'
-  p
-    =link_to 'お問い合わせ', new_contact_path
-    #mask.hidden
-    #modal.hidden
+.board-section
+  .container
+    .row
+      = render 'votes_top'
+      = render 'new_arrival'
+
+.bottom-section
+  .container
+    h5
+      =link_to 'Malicious Fightersとは？', page_path('about')
+    p
+      =link_to '利用規約', page_path('terms')
+    p
+      =link_to '使い方', page_path('howto')
+#mask.hidden
+#modal.hidden
 
