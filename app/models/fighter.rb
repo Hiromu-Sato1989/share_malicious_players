@@ -13,12 +13,11 @@ class Fighter < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: { case_sensitive: false }
   validates :name, length: { in: 6..16 }
-  validates :name, format: { with: /\A[a-zA-Z0-9_-]+\z/ }
+  validates :name, format: { with: /\A[a-zA-Z0-9_-]+\z/, message: 'は英字、数字、「 - 」、「 _ 」で入力してください' }
 
-  validates :league_id, presence: true
   # キャラクター、カテゴリー未選択の場合登録できない処理
-  validates :character_ids, presence: true
-  validates :category_ids, presence: true
+  validates :character_ids, presence: { message: 'を選択してください' }
+  validates :category_ids, presence: { message: 'を選択してください' }
 
   # 選べるキャラクターを2キャラまでに制限する。選べすぎても情報として意味がないため
   validates :fighter_characters, length: { maximum: MAX_CHARACTERS_COUNT }

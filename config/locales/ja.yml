@@ -4,7 +4,8 @@ ja:
       fighter:
         name: "Fighter's ID"
         league: リーグ
-        league_id: "リーグ"
+        character_ids: キャラクター
+        category_ids: 悪質プレイ
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
