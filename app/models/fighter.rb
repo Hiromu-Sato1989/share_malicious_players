@@ -20,7 +20,7 @@ class Fighter < ApplicationRecord
   validates :category_ids, presence: { message: 'を選択してください' }
 
   # 選べるキャラクターを2キャラまでに制限する。選べすぎても情報として意味がないため
-  validates :fighter_characters, length: { maximum: MAX_CHARACTERS_COUNT }
+  validates :fighter_characters, length: { maximum: MAX_CHARACTERS_COUNT, message: 'は最大で2人選択してください' }
 
   scope :number_of_votes, -> { order(votes_count: :desc).limit(5) }
   scope :new_arrival, -> { order(created_at: :desc).limit(5) }
