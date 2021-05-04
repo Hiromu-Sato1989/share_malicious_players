@@ -6,6 +6,7 @@ ja:
         league: リーグ
         character_ids: キャラクター
         category_ids: 悪質プレイ
+        fighter_characters: キャラクター
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
