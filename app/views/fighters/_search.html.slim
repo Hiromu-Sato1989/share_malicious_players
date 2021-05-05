@@ -1,6 +1,7 @@
 .modal-dialog role="document"
   #modal-content.modal-content
     .modal-header
+      i.fas.fa-search.mt-2.mr-2
       h5.modal-title 検索
       button.close aria-label="Close" data-dismiss="modal" type="button" 
         span aria-hidden="true" ×
@@ -45,13 +46,18 @@
         = f.label :name
         = f.search_field :name_cont, class: 'form-control', placeholder: "Fighter's ID"
         br
+        = f.label :league_id
         = f.collection_select :league_id_eq, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
         br
-        = f.collection_check_boxes :characters_id_in, Character.all.order(name: :asc), :id, :name do |b|
-          li.character
-            = b.check_box do
-              = b.check_box + b.text
-            = b.label do
-              = b.label { b.text }
+        button.btn.btn-outline-primary.rounded-pill.mr-2 type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample"
+          = f.label '▼ キャラクター'
+        .collapse.multi-collapse#multiCollapseExample
+          .card.card-body
+            = f.collection_check_boxes :characters_id_in, Character.all.order(name: :asc), :id, :name do |b|
+              li.character
+                = b.check_box do
+                  = b.check_box + b.text
+                = b.label do
+                  = b.label { b.text }
         .modal-footer.actions
           = f.submit '検索', class: 'btn btn-primary'

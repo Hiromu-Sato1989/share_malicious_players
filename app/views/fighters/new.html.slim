@@ -1,42 +1,53 @@
-.container
-  .row
-    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-      h1 悪質プレイヤー登録
-      = form_with model: @fighter, local: true do |f|
-        = render 'shared/error_messages', object: f.object
-        .form-group
-          = f.label :name, class: 'mr-2'
-          / フォームの入力必須赤ラベル
-          span.badge.badge-danger 必須
-          = f.text_field :name, class: 'form-control', placeholder: "Fighter's ID"
-        .form-group
-          = f.label :league_id, class: 'mr-2'
-          span.badge.badge-danger 必須
-          = f.collection_select :league_id, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
-        .form-group
-          = f.label 'キャラクター', class: 'mr-2'
-          span.badge.badge-danger 必須
-          = f.collection_check_boxes :character_ids, Character.all.order(name: :asc), :id, :name do |b|
-            li.character
-              = b.check_box do
-                = b.check_box + b.text
-              = b.label do
-                = b.label { b.text }
-        .form-group
-          = f.label 'カテゴリー', class: 'mr-2'
-          span.badge.badge-danger 必須
-          = f.collection_check_boxes :category_ids, Category.all, :id, :name do |b|
-            = b.check_box class: 'form-check-box' do
-              = b.check_box + b.text
-            = b.label class: 'form-check-label' do
-              = b.label { b.text }
-        = f.submit '登録', class: 'btn btn-primary'
-      br
-      br
-      br
-      br
-      br
-      .text-center
-        h2
-          = link_to 'トップ', root_path
+#check
+  .container
+    .row
+      .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+        h1 悪質プレイヤー登録
+        = form_with model: @fighter, local: true do |f|
+          = render 'shared/error_messages', object: f.object
+          .form-group
+            = f.label :name, class: 'mr-2'
+            / フォームの入力必須赤ラベル
+            span.badge.badge-danger 必須
+            = f.text_field :name, class: 'form-control', placeholder: "Fighter's ID", "v-model": "fighter"
+            p.error v-if="isInValidFighter"
+              | Fighter's IDは6文字以上で入力してください
+          .form-group
+            = f.label :league_id, class: 'mr-2'
+            span.badge.badge-danger 必須
+            = f.collection_select :league_id, League.all, :id, :name, { "v-model": "league", prompt: 'リーグ' }, { class: 'form-control' }
+            p.error v-if="isInValidLeague"
+              | Leagueを1つ選んでください
+          .form-group
+            button.btn.btn-outline-primary.rounded-pill.mr-2 type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample"
+              = f.label '▼ キャラクター'
+            span.badge.badge-secondary 任意
+            .row
+              .col
+                .collapse.multi-collapse#multiCollapseExample
+                  .card.card-body
+                    = f.collection_check_boxes :character_ids, Character.all.order(name: :asc), :id, :name do |b|
+                      li.character
+                        = b.check_box do
+                          = b.check_box + b.text
+                        = b.label do
+                          = b.label { b.text }
+          .form-group
+            = f.label 'カテゴリー', class: 'mr-2'
+            span.badge.badge-danger 必須
+            .col-md-12.col-sm-4.offset-sm-4.col-4.offset-4
+              = f.collection_check_boxes :category_ids, Category.all, :id, :name do |b|
+                = b.check_box class: 'form-check-box' do
+                  = b.check_box + b.text
+                = b.label class: 'form-check-label' do
+                  = b.label { b.text }
+          = f.submit '登録', class: 'btn btn-primary'
+        br
+        br
+        br
+        br
+        br
+        .text-center
+          h2
+            = link_to 'トップ', root_path
 
