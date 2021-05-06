@@ -1,10 +1,44 @@
 .container
+  h1.text-center プレイヤーデータ
+  .nav.justify-content-end
+    = link_to '戻る', :back
   .row
-    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+    .col-md-10.offset-md-1
       .text-center
-        h1 詳細情報
+        .col-lg-8.offset-lg-2.pt-4.pb-4
+          h2.under-line-l = @fighter.name
+        .col-lg-8.offset-lg-2.pt-4.pb-4
+          h3.under-line-m = @fighter.league.name
+        .col-lg-8.offset-lg-2.pt-4.pb-4
+          h3.under-line-m
+            - if @fighter.characters.present?
+              - @fighter.characters.each do |character|
+                - if character.present?
+                  = "【#{character.name}】"
+            - else
+              | 使用キャラ不明
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2.col-sm-4.offset-sm-4.col-4.offset-4.pt-4.pb-4
+      p
+        - @fighter.categories.each do |category|
+          .form-select-label
+            = category.name
+  .row.justify-content-center.d-flex.align-items-center
+    / 閲覧者のIPアドレスとfighterが持つIPアドレスで投票済みかどうかを判別
+    /ぼっち演算子でnilガード
+    - if request.remote_ip == @fighter.votes.find_by(ip: request.remote_ip)&.ip
+      p.btn.btn-dark.btn-lg.disabled.m-5
+        | Guilty!
+        /ボタンとしての機能を残すなら下のコード使用
+        /= button_to 'Guilty!', fighter_votes_path(@fighter), class: 'btn btn-danger btn-lg disabled m-5'
+    - else
+      = button_to 'Guilty?', fighter_votes_path(@fighter), class: 'btn btn-outline-info btn-lg m-5'
+    span = @fighter.votes_count
 
-      table.table.table-hover
+
+
+
+
+      /table.table.table-hover
         tbody
           tr
             th= "Fighter's ID"
