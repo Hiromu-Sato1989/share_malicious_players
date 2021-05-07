@@ -15,8 +15,7 @@ class Fighter < ApplicationRecord
   validates :name, length: { in: 6..16 }
   validates :name, format: { with: /\A[a-zA-Z0-9_-]+\z/, message: 'は英字、数字、「 - 」、「 _ 」で入力してください' }
 
-  # キャラクター、カテゴリー未選択の場合登録できない処理
-  validates :character_ids, presence: { message: 'を選択してください' }
+  # カテゴリー未選択の場合登録できない処理
   validates :category_ids, presence: { message: 'を選択してください' }
 
   # 選べるキャラクターを2キャラまでに制限する。選べすぎても情報として意味がないため

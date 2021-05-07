@@ -25,6 +25,7 @@ class FightersController < ApplicationController
 
   def show
     @fighter = Fighter.find(params[:id])
+    @voted_ip = @fighter.votes.find_by(ip: request.remote_ip)&.ip
   end
 
   private

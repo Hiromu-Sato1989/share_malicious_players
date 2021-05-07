@@ -25,8 +25,9 @@
   .row.justify-content-center.d-flex.align-items-center
     / 閲覧者のIPアドレスとfighterが持つIPアドレスで投票済みかどうかを判別
     /ぼっち演算子でnilガード
-    - if request.remote_ip == @fighter.votes.find_by(ip: request.remote_ip)&.ip
-      p.btn.btn-dark.btn-lg.disabled.m-5
+    /@voted_ipはcontrollerにある
+    - if request.remote_ip == @voted_ip
+      p.btn.btn-dark-moon.btn-lg.disabled.m-5
         | Guilty!
         /ボタンとしての機能を残すなら下のコード使用
         /= button_to 'Guilty!', fighter_votes_path(@fighter), class: 'btn btn-danger btn-lg disabled m-5'

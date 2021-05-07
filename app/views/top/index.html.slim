@@ -1,11 +1,20 @@
 .top-section
   .container
     .row
-      h3.catch-copy みんなで悪質プレイヤーを共有しよう！
-      .text-center
-        = link_to '悪質プレイヤーを登録', new_fighter_path, class: 'btn btn-primary'
-        = link_to '検索', fighters_path, remote: true, class: 'btn btn-primary'
-        = link_to '悪質プレイヤー一覧', fighters_path, class: 'btn btn-primary'
+      .col-lg-6
+        .text-center
+          = image_pack_tag 'logo_gray_red.png', size: '250x250', class: 'img-fluid'
+          /h3.catch-copy みんなで悪質プレイヤーを共有しよう！
+      .col-lg-6
+        h4.catch-copy
+          | StreetFighterVのオンラインにいる
+          br
+          | 悪質プレイヤーをみんなで共有しよう！
+        = link_to '検索', fighters_path, remote: true, class: 'btn btn-pink'
+        h5 悪質プレイヤーを検索する
+        = link_to '新規登録', new_fighter_path, class: 'btn btn-purple'
+        h5 悪質プレイヤーを新しく登録する
+        /= link_to '悪質プレイヤー一覧', fighters_path, class: 'btn btn-primary'
 
 .board-section
   .container
@@ -15,11 +24,49 @@
 
 .bottom-section
   .container
-    h5
-      =link_to 'Malicious Fightersとは？', page_path('about')
-    p
-      =link_to '利用規約', page_path('terms')
-    p
-      =link_to '使い方', page_path('howto')
+    .row.first-bottom.pt-3.pb-3.mt-2.mb-2.rounded-custom
+      .col-lg-4.offset-1
+        = image_pack_tag 'search.png', size: '300x346', class: 'img-fluid'
+      .col-lg-6.offset-1
+          h4.pt-3 悪質プレイヤーのデータベース
+          p
+            | 舐めプや屈伸をされるとムカつきますよね。
+            br
+            | このサイトでは煽りプレイしてくるプレイヤーをデータベース化しています。
+            br
+            | あなたが煽り行為を受けたら対戦相手のFighter’s IDを検索してみてください。
+          p
+            = link_to '検索', fighters_path, remote: true, class: 'btn btn-lg btn-pink'
+    .row.second-bottom.pt-3.pb-3.mt-2.mb-2.rounded-custom
+      .col-lg-4.offset-1
+        = image_pack_tag 'votes.png', size: '300x458', class: 'img-fluid'
+      .col-lg-6.offset-1
+        h4.pt-3 屈伸、絶許
+        p
+          | プレイヤーが検索でヒットしたら投票してみましょう。投票は1回だけできます。
+          br
+          | 投票数が煽りプレイの被害にあった人数です。投票数が多いプレイヤーには要注意。
+        p.btn.btn-outline-info.btn-lg
+          | Guilty?
+        p.btn.btn-dark-moon.btn-lg.disabled
+          | Guilty!
+    .row.third-bottom.pt-3.pb-3.mt-2.mb-2.rounded-custom
+      .col-lg-4.offset-1
+        = image_pack_tag 'entry.png', size: '300x334', class: 'img-fluid'
+      .col-lg-6.offset-1
+        h4.pt-3 プレイヤーは登録されてる？
+        p
+          | 検索してもプレイヤーが見つからなかったら、あなたが第一発見者かもしれません。
+          br
+          | 悪質プレイヤーを登録してみましょう！
+        p
+          = link_to '新規登録', new_fighter_path, class: 'btn btn-lg btn-purple'
+    = link_to '利用規約', page_path('terms'), class: 'nav-link'
+    p.d-flex.justify-content-start
+      | Copyright(c) MaliciousFighters
+
+
+
+
       
 #search-modal.modal.fade role="dialog" aria-hidden="true" tabindex="-1"
