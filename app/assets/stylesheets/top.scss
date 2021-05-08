@@ -8,8 +8,6 @@ h4.catch-copy {
 
 h4.pt-3{
   margin-left: 10px;
-  // font-family: bold;
-  font-family: 'Sawarabi Gothic';
 }
 
 .top-section {
@@ -24,6 +22,22 @@ h4.pt-3{
   background-color: #FFFFFF;
 }
 
+.sawarabi {
+  font-family: 'Sawarabi Gothic';
+}
+
+.induction-text {
+  margin-bottom: 0;
+}
+
+.induction-space {
+  margin-bottom: 8px;
+}
+
+.copyright {
+  margin-left: 0;
+}
+
 // ここからボタンの装飾
 .btn-pink{
   background-color: #ec008c !important;
@@ -32,6 +46,17 @@ h4.pt-3{
 
 .btn-pink:hover {
   background-color: #fc6767 !important;
+}
+
+.btn-modal-pink{
+  background-color: #ec008c !important;
+  color: #ffffff !important;
+}
+
+.btn-modal-pink:hover {
+  background-color: #fff !important;
+  border-color: #ec008c !important;
+  color: #ec008c !important;
 }
 
 .btn-purple {
@@ -47,3 +72,4 @@ h4.pt-3{
   background: linear-gradient(to right, #243B55, #141E30);
   color: #ffffff !important;
 }
+

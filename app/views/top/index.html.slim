@@ -10,10 +10,10 @@
           | StreetFighterVのオンラインにいる
           br
           | 悪質プレイヤーをみんなで共有しよう！
-        = link_to '検索', fighters_path, remote: true, class: 'btn btn-pink'
-        h5 悪質プレイヤーを検索する
-        = link_to '新規登録', new_fighter_path, class: 'btn btn-purple'
-        h5 悪質プレイヤーを新しく登録する
+        h5.induction-text 悪質プレイヤーを検索する
+        = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-pink induction-space'
+        h5.induction-text 悪質プレイヤーを新しく登録する
+        = link_to '新規登録', new_fighter_path, class: 'btn btn-purple induction-space'
         /= link_to '悪質プレイヤー一覧', fighters_path, class: 'btn btn-primary'
 
 .board-section
@@ -28,7 +28,7 @@
       .col-lg-4.offset-1
         = image_pack_tag 'search.png', size: '300x346', class: 'img-fluid'
       .col-lg-6.offset-1
-          h4.pt-3 悪質プレイヤーのデータベース
+          h4.pt-3.sawarabi 悪質プレイヤーのデータベース
           p
             | 舐めプや屈伸をされるとムカつきますよね。
             br
@@ -36,12 +36,12 @@
             br
             | あなたが煽り行為を受けたら対戦相手のFighter’s IDを検索してみてください。
           p
-            = link_to '検索', fighters_path, remote: true, class: 'btn btn-lg btn-pink'
+            = link_to '検索', fighters_path, remote: true, class: 'btn btn-lg btn-modal-pink'
     .row.second-bottom.pt-3.pb-3.mt-2.mb-2.rounded-custom
       .col-lg-4.offset-1
         = image_pack_tag 'votes.png', size: '300x458', class: 'img-fluid'
       .col-lg-6.offset-1
-        h4.pt-3 屈伸、絶許
+        h4.pt-3.sawarabi 屈伸、絶許
         p
           | プレイヤーが検索でヒットしたら投票してみましょう。投票は1回だけできます。
           br
@@ -54,15 +54,15 @@
       .col-lg-4.offset-1
         = image_pack_tag 'entry.png', size: '300x334', class: 'img-fluid'
       .col-lg-6.offset-1
-        h4.pt-3 プレイヤーは登録されてる？
+        h4.pt-3.sawarabi プレイヤーは登録されてる？
         p
           | 検索してもプレイヤーが見つからなかったら、あなたが第一発見者かもしれません。
           br
           | 悪質プレイヤーを登録してみましょう！
         p
           = link_to '新規登録', new_fighter_path, class: 'btn btn-lg btn-purple'
-    = link_to '利用規約', page_path('terms'), class: 'nav-link'
-    p.d-flex.justify-content-start
+    = link_to '利用規約', page_path('terms')
+    p.d-flex.justify-content-start.copyright
       | Copyright(c) MaliciousFighters
 
 
