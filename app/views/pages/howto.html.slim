@@ -1,4 +1,103 @@
 .page-section
-  .container
-    .howto
-      p 使い方
+  .container-fluid
+    .row
+      .col-lg-8.offset-lg-2
+        .pt-4.pt-sm-0.mb-4
+          h2.text-center 使い方
+        .card.mb-4
+          .card-body.p-4.p-sm-5
+            .accordion#accordionExample
+              h3.border-bottom.pb-3 data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample"
+                | 検索機能
+                i.fa.fa-chevron-down.float-right
+              .search-help.collapse#collapseExample1
+                p
+                  | 頭文字検索、ID検索、リーグ検索、キャラクター検索ができます。
+                  br
+                  | ID検索は部分一致、リーグ検索とキャラクター検索の複数条件を組み合わせた検索ができます。
+
+              h3.border-bottom.pb-3 data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample"
+                | 新規登録機能
+                i.fa.fa-chevron-down.float-right
+              .sign_up-help.collapse#collapseExample2
+                p
+                  | 悪質プレイヤーを新しく登録することができます。
+                  br
+                  | 下記項目は入力が必須となります。
+                ul
+                  li
+                    | Fighter's ID
+                  li
+                    | 所属リーグ (スパシル、ゴールドなど)
+                  li
+                    | 悪質行為 (最低1つ。複数選択可)
+                p 下記項目の入力は任意です。
+                ul
+                  li
+                    | キャラクター (2キャラクターまで選択可)
+                p キャラクターと悪質行為はファイター詳細画面から編集ができます。
+                p.font-weight-bold
+                  | なお、一度登録したプレイヤー名、所属リーグは運営者以外編集できません。
+                  br
+                  | 入力内容に間違いがないかご確認後の登録をお願いします。
+
+              h3.border-bottom.pb-3 data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample"
+                | 投票機能
+                i.fa.fa-chevron-down.float-right
+              .vote-help.collapse#collapseExample3
+                p
+                  | 登録されたファイターには投票機能が付いています。
+                  br
+                  | あなたが対戦相手から悪質行為を受けたら投票ボタンを押して投票しましょう。
+                  br
+                  | 投票は1回だけすることができます。
+                  br
+                p.btn.btn-outline-info
+                  | Guilty?
+                p.btn.btn-dark-moon.disabled
+                  | Guilty!
+                p
+                  | 投票前と後でボタンの見た目が変わります。
+                  br
+                  | 投票前は緑色で「Guilty?」
+                  br
+                  | 投票後は灰色で「Guilty!」と変化し、ボタンは押せないようになります。
+
+              h3.border-bottom.pb-3 data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample"
+                | そもそも悪質行為とは？
+                i.fa.fa-chevron-down.float-right
+              .malicious-help.collapse#collapseExample4
+                p
+                  | このサイトで定めている悪質行為は以下の5つです。
+                ul
+                  li
+                    h5 屈伸
+                    p.ml-0 立ち状態としゃがみ状態を高速で繰り返す挑発行為。
+                  li
+                    h5 舐めプ
+                    p.ml-0 勝ち確状態をわざと見過ごしたり、手を抜いたプレイで相手を見下す行為。
+                  li
+                    h5 ラグ
+                    p.ml-0 回線速度が安定せず対戦に支障をきたしている状態。無線。
+                  li
+                    h5 切断
+                    p.ml-0 戦況が悪い時や負け確状態の時にネット回線を切断し対戦を強制終了させる行為。
+                  li
+                    h5 ファンメ
+                    p.ml-0
+                      | ファンからのメッセージ。
+                      br
+                      | あなたのことが好きすぎて精神がおかしくなってしまい、メッセージには過激な言葉が綴られている。
+                p
+                  | 初狩りや複垢、ぶっぱなど、真偽を確かめることが難しい場合や戦略に該当し得る行為は悪質行為から除外しています。
+                  br
+                  | 「この行為は悪質なんじゃないか？」などありましたら、是非お問い合わせからご連絡ください！
+                
+              h3.border-bottom.pb-3 data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample"
+                | お問い合わせ
+                i.fa.fa-chevron-down.float-right
+              .contact-help.collapse#collapseExample5
+                p
+                  | どんな些細なことでもお気軽にご連絡いただけると幸いです。
+                  br
+                  | お問い合わせはサイト下部のバナーからお願い致します。
