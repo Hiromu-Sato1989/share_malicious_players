@@ -1,65 +1,40 @@
-.container
-  h1.text-center プレイヤーデータ
-  .nav.justify-content-end
-    = link_to '戻る', :back
-  .row
-    .col-md-10.offset-md-1
-      .text-center
-        .col-lg-8.offset-lg-2.pt-4.pb-4
-          h2.under-line-l = @fighter.name
-        .col-lg-8.offset-lg-2.pt-4.pb-4
-          h3.under-line-m = @fighter.league.name
-        .col-lg-8.offset-lg-2.pt-4.pb-4
-          h3.under-line-m
-            - if @fighter.characters.present?
-              - @fighter.characters.each do |character|
-                - if character.present?
-                  = "【#{character.name}】"
-            - else
-              | 使用キャラ不明
-    .col-md-10.offset-md-1.col-lg-8.offset-lg-2.col-sm-4.offset-sm-4.col-4.offset-4.pt-4.pb-4
-      p
-        - @fighter.categories.each do |category|
-          .form-select-label
-            = category.name
-  .row.justify-content-center.d-flex.align-items-center
-    / 閲覧者のIPアドレスとfighterが持つIPアドレスで投票済みかどうかを判別
-    /ぼっち演算子でnilガード
-    /@voted_ipはcontrollerにある
-    - if request.remote_ip == @voted_ip
-      p.btn.btn-dark-moon.btn-lg.disabled.m-5
-        | Guilty!
-        /ボタンとしての機能を残すなら下のコード使用
-        /= button_to 'Guilty!', fighter_votes_path(@fighter), class: 'btn btn-danger btn-lg disabled m-5'
-    - else
-      = button_to 'Guilty?', fighter_votes_path(@fighter), class: 'btn btn-outline-info btn-lg m-5'
-    span = @fighter.votes_count
-
-
-
-
-
-      /table.table.table-hover
-        tbody
-          tr
-            th= "Fighter's ID"
-            td= @fighter.name
-          tr
-            th= 'League'
-            td= @fighter.league.name
-          tr
-            th= 'Character'
-            - @fighter.characters.each do |character|
-              td= character.name
-          tr
-            th= 'Malicious'
+.fighter-detail
+  .container.fluid
+    .row
+      .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+        .nav.justify-content-end.mt-3
+          = link_to '戻る', :back, class: 'nav-link'
+          = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-dark-blue'
+    h2.font-weight-bold.text-center プレイヤーデータ
+    .row
+      .col-md-10.offset-md-1
+        .text-center
+          .col-lg-8.offset-lg-2.pt-4.pb-4
+            h4.under-line-l = @fighter.name
+          .col-lg-8.offset-lg-2.pt-4.pb-4
+            h5.under-line-m = @fighter.league.name
+          .col-lg-8.offset-lg-2.pt-4.pb-4
+            h5.under-line-m
+              - if @fighter.characters.present?
+                - @fighter.characters.each do |character|
+                  - if character.present?
+                    = "【#{character.name}】"
+              - else
+                | 使用キャラ不明
+      .col-md-8.offset-md-2.pt-4.pb-4.d-flex.justify-content-center.align-items-center
+        .col-xs-4
+          p
             - @fighter.categories.each do |category|
-              td= category.name
-              /td= button_to 'いいね', fighter_votes_path(@fighter)
-              /td= @fighter.votes.count
-          /どう表示するか悩み中なので暫定
-          tr
-            th= 'やった？'
-            td= button_to 'やってきた', fighter_votes_path(@fighter)
-            td= @fighter.votes_count
-            /votes_count -> counter_cultureで使えるようになったメソッド
+              .form-select-label
+                = category.name
+    .row.justify-content-center.d-flex.align-items-center
+      / 閲覧者のIPアドレスとfighterが持つIPアドレスで投票済みかどうかを判別
+      /ぼっち演算子でnilガード
+      /@voted_ipはfighters_controller.rbに記述
+      - if request.remote_ip == @voted_ip
+        = render 'alreadyvote', fighter: @fighter
+      - else
+        = render 'not_done_vote', fighter: @fighter
+      span.vote_balance.font-weight-bold = @fighter.votes_count
+
+#search-modal.modal.fade role="dialog" aria-hidden="true" tabindex="-1"
