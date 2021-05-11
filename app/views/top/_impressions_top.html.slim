@@ -1,0 +1,16 @@
+.col-md-4
+  .border.border-dark.rounded.mt-3.mb-3
+    #impressions_top
+      .text-center
+        h4.sawarabi 閲覧数上位者
+      table.table.table-striped 
+        thead.thead-default.text-center
+          tr
+            th= "Fighter's ID"
+            th= "閲覧数"
+        tbody.text-center
+          /render partialで書ける？
+          - Fighter.number_of_impression.each do |fighter|
+            tr
+              td= link_to fighter.name, fighter_path(fighter)
+              td= fighter.impressions_count
