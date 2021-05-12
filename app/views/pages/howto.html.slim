@@ -1,7 +1,10 @@
 .page-section
   .container-fluid
     .row
-      .col-lg-8.offset-lg-2
+      .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+        .nav.justify-content-start.mt-3.mb-3
+          - breadcrumb :howto
+          = breadcrumbs separator: " &rsaquo; "
         .pt-4.pt-sm-0.mb-4
           h2.text-center 使い方
         .card.mb-4
@@ -14,7 +17,9 @@
                 p
                   | 頭文字検索、ID検索、リーグ検索、キャラクター検索ができます。
                   br
-                  | ID検索は部分一致、リーグ検索とキャラクター検索の複数条件を組み合わせた検索ができます。
+                  | ID検索は部分一致での検索となります。
+                  br
+                  | リーグ検索やキャラクター検索の複数条件を組み合わせた検索ができます。
 
               h3.border-bottom.pb-3 data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample"
                 | 新規登録機能
@@ -48,11 +53,11 @@
                 p
                   | 登録されたファイターには投票機能が付いています。
                   br
-                  | あなたが対戦相手から悪質行為を受けたら投票ボタンを押して投票しましょう。
+                  | あなたが対戦相手から悪質行為を受けたら「Guilty?」ボタンを押して投票しましょう。
                   br
                   | 投票は1回だけすることができます。
                   br
-                p.btn.btn-outline-info
+                p.btn.btn-outline-info.shadow-button
                   | Guilty?
                 p.btn.btn-dark-moon.disabled
                   | Guilty!
@@ -99,5 +104,7 @@
               .contact-help.collapse#collapseExample5
                 p
                   | どんな些細なことでもお気軽にご連絡いただけると幸いです。
+                  br
+                  | ご提案していただいたことやデータの修正は可能な限り柔軟な対応をさせていただきます。
                   br
                   | お問い合わせはサイト下部のバナーからお願い致します。

@@ -11,7 +11,7 @@ h4.pt-3{
 }
 
 .top-section {
-  background-color: #e3e3e3;
+  background-color: #eeeeee;
 }
 
 .board-section {
@@ -19,6 +19,7 @@ h4.pt-3{
 }
 
 .bottom-section {
+  padding-top: 4px;
   background-color: #FFFFFF;
 }
 
@@ -34,42 +35,48 @@ h4.pt-3{
   margin-bottom: 8px;
 }
 
-.copyright {
-  margin-left: 0;
-}
-
 // ここからボタンの装飾
-.btn-pink{
-  background-color: #ec008c !important;
+.btn-dark-blue{
+  background-color: #3374b5 !important;
   color: #ffffff !important;
+  box-shadow: 2px 2px 4px gray !important;
 }
 
-.btn-pink:hover {
-  background-color: #fc6767 !important;
+.btn-dark-blue:hover {
+  background-color: #255483 !important;
+  box-shadow: 2px 2px 4px gray !important;
 }
 
-.btn-modal-pink{
-  background-color: #ec008c !important;
+.btn-modal-dark-blue{
+  background-color: #2d669f !important;
   color: #ffffff !important;
+  box-shadow: 2px 2px 4px gray !important;
 }
 
-.btn-modal-pink:hover {
+.btn-modal-dark-blue:hover {
   background-color: #fff !important;
-  border-color: #ec008c !important;
-  color: #ec008c !important;
+  border-color: #3374b5 !important;
+  color: #3374b5 !important;
+  box-shadow: 2px 2px 4px gray !important;
 }
 
 .btn-purple {
   background: #7474bf !important;
   color: #ffffff !important;
+  box-shadow: 2px 2px 4px gray !important;
 }
 
 .btn-purple:hover {
-  background-color: #348ac7 !important;
+  background-color: #6464a3 !important;
+  box-shadow: 2px 2px 4px gray !important;
 }
 
 .btn-dark-moon {
   background: linear-gradient(to right, #243B55, #141E30);
   color: #ffffff !important;
+  box-shadow: 2px 2px 4px gray !important;
 }
 
+.shadow-button {
+  box-shadow: 2px 2px 4px gray !important;
+}

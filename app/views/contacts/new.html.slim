@@ -1,6 +1,9 @@
 .container
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      .nav.justify-content-start.mt-3.mb-3
+        - breadcrumb :contact_new 
+        = breadcrumbs separator: " &rsaquo; "
       h1 お問い合わせ
       = form_with model: @contact, local: true do |f|
         .form-group

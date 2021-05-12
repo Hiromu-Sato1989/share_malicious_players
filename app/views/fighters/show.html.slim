@@ -2,8 +2,10 @@
   .container.fluid
     .row
       .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-        .nav.justify-content-end.mt-3
-          = link_to '戻る', :back, class: 'nav-link'
+        .nav.justify-content-start.mt-3.mb-3
+          - breadcrumb :fighter_show, @fighter
+          = breadcrumbs separator: " &rsaquo; "
+        .nav.justify-content-end.mt-2.mb-2
           = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-dark-blue'
     h2.font-weight-bold.text-center プレイヤーデータ
     .row
@@ -29,8 +31,8 @@
                 = category.name
     .row.justify-content-center.d-flex.align-items-center
       / 閲覧者のIPアドレスとfighterが持つIPアドレスで投票済みかどうかを判別
-      /ぼっち演算子でnilガード
-      /@voted_ipはfighters_controller.rbに記述
+      / ぼっち演算子でnilガード
+      / @voted_ipはfighters_controller.rbに記述
       - if request.remote_ip == @voted_ip
         = render 'alreadyvote', fighter: @fighter
       - else

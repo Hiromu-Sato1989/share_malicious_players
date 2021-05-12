@@ -3,7 +3,7 @@
     .row
       .col-lg-6
         .text-center
-          = image_pack_tag 'logo_gray_red.png', size: '250x250', class: 'img-fluid'
+          = image_pack_tag 'logo_gray_blue.png', size: '250x250', class: 'img-fluid'
           /h3.catch-copy みんなで悪質プレイヤーを共有しよう！
       .col-lg-6
         h4.catch-copy
@@ -11,7 +11,7 @@
           br
           | 悪質プレイヤーをみんなで共有しよう！
         h5.induction-text 悪質プレイヤーを検索する
-        = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-pink induction-space'
+        = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-dark-blue induction-space'
         h5.induction-text 悪質プレイヤーを新しく登録する
         = link_to '新規登録', new_fighter_path, class: 'btn btn-purple induction-space'
         /= link_to '悪質プレイヤー一覧', fighters_path, class: 'btn btn-primary'
@@ -19,14 +19,15 @@
 .board-section
   .container
     .row
-      = render 'votes_top'
       = render 'new_arrival'
+      = render 'votes_top'
+      = render 'impressions_top'
 
 .bottom-section
   .container
     .row.first-bottom.pt-3.pb-3.mt-2.mb-2.rounded-custom
       .col-lg-4.offset-1
-        = image_pack_tag 'search.png', size: '300x346', class: 'img-fluid'
+        = image_pack_tag 'search_2.png', size: '300x300', class: 'img-fluid'
       .col-lg-6.offset-1
           h4.pt-3.sawarabi 悪質プレイヤーのデータベース
           p
@@ -36,23 +37,23 @@
             br
             | あなたが煽り行為を受けたら対戦相手のFighter’s IDを検索してみてください。
           p
-            = link_to '検索', fighters_path, remote: true, class: 'btn btn-lg btn-modal-pink'
+            = link_to '検索', fighters_path, remote: true, class: 'btn btn-lg btn-modal-dark-blue'
     .row.second-bottom.pt-3.pb-3.mt-2.mb-2.rounded-custom
       .col-lg-4.offset-1
-        = image_pack_tag 'votes.png', size: '300x458', class: 'img-fluid'
+        = image_pack_tag 'votes_4.png', size: '300x212', class: 'img-fluid'
       .col-lg-6.offset-1
         h4.pt-3.sawarabi 屈伸、絶許
         p
           | プレイヤーが検索でヒットしたら投票してみましょう。投票は1回だけできます。
           br
           | 投票数が煽りプレイの被害にあった人数です。投票数が多いプレイヤーには要注意。
-        p.btn.btn-outline-info.btn-lg
+        p.btn.btn-outline-info.btn-lg.shadow-button
           | Guilty?
         p.btn.btn-dark-moon.btn-lg.disabled
           | Guilty!
     .row.third-bottom.pt-3.pb-3.mt-2.mb-2.rounded-custom
       .col-lg-4.offset-1
-        = image_pack_tag 'entry.png', size: '300x334', class: 'img-fluid'
+        = image_pack_tag 'sign_in.png', size: '300x346', class: 'img-fluid'
       .col-lg-6.offset-1
         h4.pt-3.sawarabi プレイヤーは登録されてる？
         p
@@ -62,11 +63,7 @@
         p
           = link_to '新規登録', new_fighter_path, class: 'btn btn-lg btn-purple'
     = link_to '利用規約', page_path('terms')
-    p.d-flex.justify-content-start.copyright
-      | Copyright(c) MaliciousFighters
+    p.d-flex.justify-content-start.ml-0
+      | ©️2021 MaliciousFighters
 
-
-
-
-      
 #search-modal.modal.fade role="dialog" aria-hidden="true" tabindex="-1"

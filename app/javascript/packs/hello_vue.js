@@ -33,23 +33,19 @@
 
 
 import Vue from 'vue/dist/vue.esm'
-import App from '../app.vue'
+// import App from '../app.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#check',
     data() {
       return {
-        title: '',
-        body: ''
+        fighter: '',
       }
     },
     computed: {
       isInValidFighter() {
-        return this.title.length < 6;
-      },
-      isInValidLeague() {
-        return this.body.length < 10;
+        return this.fighter.length < 6;
       }
     }
   })
