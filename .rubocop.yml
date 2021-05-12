@@ -55,3 +55,6 @@ RSpec/ContextWording:
 
 Metrics/AbcSize:
   Max: 25
+
+Metrics/MethodLength:
+  Enabled: false

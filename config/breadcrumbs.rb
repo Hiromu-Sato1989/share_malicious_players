@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 crumb :top do
   link 'トップページ', root_path
 end

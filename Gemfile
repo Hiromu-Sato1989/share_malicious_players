@@ -7,11 +7,11 @@ ruby '2.6.6'
 
 gem 'config'
 gem 'counter_culture', '~> 2.0'
+gem 'high_voltage'
 gem 'html2slim'
 gem 'pry-rails'
 gem 'ransack'
 gem 'slim-rails'
-gem 'high_voltage'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '= 6.0.3.5'
@@ -71,7 +71,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'rails-i18n'
-gem 'rails_admin'
 gem 'gretel'
 gem 'impressionist', '~>1.6.1'
+gem 'rails_admin'
+gem 'rails-i18n'

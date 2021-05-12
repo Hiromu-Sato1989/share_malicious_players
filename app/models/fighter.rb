@@ -12,7 +12,7 @@ class Fighter < ApplicationRecord
   has_many :votes, dependent: :destroy
 
   validates :name, presence: true
-  validates :name, uniqueness: { case_sensitive: false, message: "がすでに登録されています。検索してみてください" }
+  validates :name, uniqueness: { case_sensitive: false, message: 'がすでに登録されています。検索してみてください' }
   validates :name, length: { in: 6..16 }
   validates :name, format: { with: /\A[a-zA-Z0-9_-]+\z/, message: 'は英字、数字、「 - 」、「 _ 」で入力してください' }
 
