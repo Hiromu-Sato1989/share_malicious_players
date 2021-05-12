@@ -1,3 +1,82 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h4.catch-copy {
+  padding: 25px 0 10px;
+}
+
+h4.pt-3{
+  margin-left: 10px;
+}
+
+.top-section {
+  background-color: #eeeeee;
+}
+
+.board-section {
+  background-color: #f8f9fa; 
+}
+
+.bottom-section {
+  padding-top: 4px;
+  background-color: #FFFFFF;
+}
+
+.sawarabi {
+  font-family: 'Sawarabi Gothic';
+}
+
+.induction-text {
+  margin-bottom: 0;
+}
+
+.induction-space {
+  margin-bottom: 8px;
+}
+
+// ここからボタンの装飾
+.btn-dark-blue{
+  background-color: #3374b5 !important;
+  color: #ffffff !important;
+  box-shadow: 2px 2px 4px gray !important;
+}
+
+.btn-dark-blue:hover {
+  background-color: #255483 !important;
+  box-shadow: 2px 2px 4px gray !important;
+}
+
+.btn-modal-dark-blue{
+  background-color: #2d669f !important;
+  color: #ffffff !important;
+  box-shadow: 2px 2px 4px gray !important;
+}
+
+.btn-modal-dark-blue:hover {
+  background-color: #fff !important;
+  border-color: #3374b5 !important;
+  color: #3374b5 !important;
+  box-shadow: 2px 2px 4px gray !important;
+}
+
+.btn-purple {
+  background: #7474bf !important;
+  color: #ffffff !important;
+  box-shadow: 2px 2px 4px gray !important;
+}
+
+.btn-purple:hover {
+  background-color: #6464a3 !important;
+  box-shadow: 2px 2px 4px gray !important;
+}
+
+.btn-dark-moon {
+  background: linear-gradient(to right, #243B55, #141E30);
+  color: #ffffff !important;
+  box-shadow: 2px 2px 4px gray !important;
+}
+
+.shadow-button {
+  box-shadow: 2px 2px 4px gray !important;
+}

@@ -1,23 +1,51 @@
-.container
-  .row
-    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-      h1 悪質プレイヤー登録
-      = form_with model: @fighter, local: true do |f|
-        .form-group
-          = f.text_field :name, class: 'form-control', placeholder: "Fighter's ID"
-        .form-group
-          = f.collection_select :league_id, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
-        .form-group
-          = f.collection_check_boxes :character_ids, Character.all, :id, :name
-        .form-group
-          = f.collection_check_boxes :category_ids, Category.all, :id, :name
-        = f.submit '登録', class: 'btn btn-primary'
-      br
-      br
-      br
-      br
-      br
-      .text-center
-        h2
-          = link_to 'トップ', root_path
-
+#check
+  .container
+    .row
+      .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+        .nav.justify-content-start.mt-3.mb-3
+          - breadcrumb :fighter_new 
+          = breadcrumbs separator: " &rsaquo; "
+        /.nav.justify-content-end.mt-3
+          = link_to 'トップへ', root_path, class: 'nav-link'
+    h2.font-weight-bold.text-center 悪質プレイヤー登録
+    .row
+      .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+        = form_with model: @fighter, local: true do |f|
+          = render 'shared/error_messages', object: f.object
+          .form-group
+            = f.label :name, class: 'mr-2'
+            / フォームの入力必須赤ラベル
+            span.badge.badge-danger 必須
+            = f.text_field :name, class: 'form-control', placeholder: "Fighter's ID", "v-model": "fighter"
+            p.error.notice v-if="isInValidFighter"
+              | ※ Fighter's IDは半角6文字以上16文字以下です。
+          .form-group
+            = f.label :league_id, class: 'mr-2'
+            span.badge.badge-danger 必須
+            = f.collection_select :league_id, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
+          .form-group
+            button.btn.btn-outline-secondary.rounded-pill.mr-2 type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample"
+              i.fa.fa-chevron-circle-down.mr-1
+              = f.label 'キャラクター', class: 'mb-0'
+            span.badge.badge-secondary 任意
+            .row
+              .col
+                .collapse.multi-collapse#multiCollapseExample
+                  .card.card-body
+                    = f.collection_check_boxes :character_ids, Character.all.order(name: :asc), :id, :name do |b|
+                      li.character
+                        = b.check_box do
+                          = b.check_box + b.text
+                        = b.label do
+                          = b.label { b.text }
+          .form-group
+            = f.label 'カテゴリー', class: 'mr-2'
+            span.badge.badge-danger 必須
+            .col-md-12.ml-0.d-flex.justify-content-center.align-items-center
+              .col-12
+                = f.collection_check_boxes :category_ids, Category.all, :id, :name do |b|
+                  = b.check_box class: 'form-check-box' do
+                    = b.check_box + b.text
+                  = b.label class: 'form-check-label' do
+                    = b.label { b.text }
+          = f.submit '登録', class: 'btn btn-purple mb-4', data: { confirm: "登録後Fighter's IDとリーグの変更はできません。この内容で登録してよろしいですか？" }

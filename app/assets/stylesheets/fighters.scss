@@ -2,6 +2,144 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.start-link {
-  margin-right: 10px;
+
+body {
+  background-color: #f8f9fa !important;
+}
+
+.form-check-box {
+  display: none;
+}
+
+.notice {
+  color: red;
+}
+
+// 新規登録のカテゴリー選択表示
+// .form-check-label {
+//   display: block; /* ブロックレベル要素化する */
+//   float: left; /* 要素の左寄せ・回り込を指定する */
+//   margin: 5px; /* ラベル外側の余白を指定する */
+//   width: 100px; /* ラベルの横幅を指定する */
+//   height: 100px; /* ラベルの高さを指定する */
+//   text-align: center; /* テキストのセンタリングを指定する */
+//   line-height: 100px; /* 行の高さを指定する */
+//   padding-left: 5px; /* ラベル内左側の余白を指定する */
+//   padding-right: 5px; /* ラベル内右側の余白を指定する */
+//   color: #495057; /* フォントの色を指定 */
+//   border: 2px solid #495057;/* ラベルの境界線を実線で指定する */
+//   border-radius: 50% /* 角丸を指定する */
+// }
+
+// .form-check-label:hover {
+//   background-color: #E2EDF9; /* マウスオーバー時の背景色を指定する */
+// }
+
+// input[type="checkbox"]:checked + .form-check-label {
+//   background-image: radial-gradient(at 100px 50px, #ddd, #333);/* マウス選択時の背景色を指定する */
+//   color: #ffffff; /* マウス選択時のフォント色を指定する */
+// }
+
+
+.form-check-label {
+  display: block; /* ブロックレベル要素化する */
+  float: left; /* 要素の左寄せ・回り込を指定する */
+  margin: 5px; /* ラベル外側の余白を指定する */
+  width: 100px; /* ラベルの横幅を指定する */
+  height: 100px; /* ラベルの高さを指定する */
+  text-align: center; /* テキストのセンタリングを指定する */
+  line-height: 100px; /* 行の高さを指定する */
+  padding-left: 5px; /* ラベル内左側の余白を指定する */
+  padding-right: 5px; /* ラベル内右側の余白を指定する */
+  color: #495057; /* フォントの色を指定 */
+  border: 2px solid #495057;/* ラベルの境界線を実線で指定する */
+  border-radius: 50%; /* 角丸を指定する */
+  box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
+  cursor: pointer;
+}
+
+.form-check-label:hover {
+  background-color: #E2EDF9; /* マウスオーバー時の背景色を指定する */
+}
+
+input[type="checkbox"] + .form-check-label {
+  transition: color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+input[type="checkbox"]:checked + .form-check-label  {
+  color: #ffffff;
+  background-color: #495057;
+}
+
+// プレイヤーデータのカテゴリー表示
+.form-select-label {
+  display: block; /* ブロックレベル要素化する */
+  float: left; /* 要素の左寄せ・回り込を指定する */
+  margin: 5px; /* ラベル外側の余白を指定する */
+  width: 100px; /* ラベルの横幅を指定する */
+  height: 100px; /* ラベルの高さを指定する */
+  text-align: center; /* テキストのセンタリングを指定する */
+  line-height: 100px; /* 行の高さを指定する */
+  padding-left: 5px; /* ラベル内左側の余白を指定する */
+  padding-right: 5px; /* ラベル内右側の余白を指定する */
+  color: #3b2314; /* フォントの色を指定 */
+  background-image: radial-gradient(#ddd, #333);
+  // color: #ffffff;
+  // background-color: #495057;
+  border: 2px solid #495057;/* ラベルの境界線を実線で指定する */
+  border-radius: 50%; /* 角丸を指定する */
+  box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
+}
+
+li.character {
+  list-style: none;
+}
+
+.under-line-l {
+  text-decoration: none;
+  border-bottom: 6px solid gray;
+  padding-bottom: 10px;
+}
+
+.under-line-m {
+  text-decoration: none;
+  border-bottom: 4px solid gray;
+  padding-bottom: 8px;
+}
+
+.first-bottom {
+  background-color: #feeff7;
+}
+
+.second-bottom {
+  background-color: #feeff7;
+}
+
+.third-bottom {
+  background-color: #feeff7;
+}
+
+.rounded-custom {
+  border-radius: 1rem;
+}
+
+.fighter-detail {
+  background-color: #f8f9fa;
+}
+
+.table {
+  margin: 0 auto !important;
+}
+
+.breadcrumbs {
+  //  はみ出し部分をスクロールする
+  overflow-x: scroll;
+
+  // テキストを改行しないようにする
+  word-break: keep-all;
+  white-space: nowrap;
+
+  // スクロールの動きを滑らかにする
+  -webkit-overflow-scrolling: touch;
 }

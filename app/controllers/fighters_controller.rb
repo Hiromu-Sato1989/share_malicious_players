@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class FightersController < ApplicationController
+  # アクセスごとにPV数を増やしたい場合
+  # impressionist actions: [:show]
   def index
     @q = Fighter.ransack(params[:q])
     @fighters = @q.result(distinct: true)\
@@ -25,6 +27,9 @@ class FightersController < ApplicationController
 
   def show
     @fighter = Fighter.find(params[:id])
+    @voted_ip = @fighter.votes.find_by(ip: request.remote_ip)&.ip
+    # session_hashごとに計測する場合
+    impressionist(@fighter, nil, unique: [:session_hash])
   end
 
   private

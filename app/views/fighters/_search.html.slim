@@ -1,52 +1,64 @@
 .modal-dialog role="document"
-  .modal-content  style="z-index: 1500"
+  #modal-content.modal-content
     .modal-header
-      h5.modal-title データベース
+      i.fas.fa-search.mt-2.mr-2
+      h5.modal-title 検索
       button.close aria-label="Close" data-dismiss="modal" type="button" 
         span aria-hidden="true" ×
     .modal-body
       .border-bottom
         /= link_to '#', { controller: 'fighters', action: 'index', q: { name_start: '' }}
-        = link_to 'A', fighters_path(@q, 'q[name_start]': "a"), class: 'start-link'
-        = link_to 'B', fighters_path(@q, 'q[name_start]': "b"), class: 'start-link'
-        = link_to 'C', fighters_path(@q, 'q[name_start]': "c"), class: 'start-link'
-        = link_to 'D', fighters_path(@q, 'q[name_start]': "d"), class: 'start-link'
-        = link_to 'E', fighters_path(@q, 'q[name_start]': "e"), class: 'start-link'
-        = link_to 'F', fighters_path(@q, 'q[name_start]': "f"), class: 'start-link'
+        = link_to 'A', fighters_path(@q, 'q[name_start]': "a"), class: 'mr-2'
+        = link_to 'B', fighters_path(@q, 'q[name_start]': "b"), class: 'mr-2'
+        = link_to 'C', fighters_path(@q, 'q[name_start]': "c"), class: 'mr-2'
+        = link_to 'D', fighters_path(@q, 'q[name_start]': "d"), class: 'mr-2'
+        = link_to 'E', fighters_path(@q, 'q[name_start]': "e"), class: 'mr-2'
+        = link_to 'F', fighters_path(@q, 'q[name_start]': "f"), class: 'mr-2'
         br
-        = link_to 'G', fighters_path(@q, 'q[name_start]': "g"), class: 'start-link'
-        = link_to 'H', fighters_path(@q, 'q[name_start]': "h"), class: 'start-link'
-        = link_to 'I', fighters_path(@q, 'q[name_start]': "i"), class: 'start-link'
-        = link_to 'J', fighters_path(@q, 'q[name_start]': "j"), class: 'start-link'
-        = link_to 'K', fighters_path(@q, 'q[name_start]': "k"), class: 'start-link'
-        = link_to 'L', fighters_path(@q, 'q[name_start]': "l"), class: 'start-link'
+        = link_to 'G', fighters_path(@q, 'q[name_start]': "g"), class: 'mr-2'
+        = link_to 'H', fighters_path(@q, 'q[name_start]': "h"), class: 'mr-2'
+        = link_to 'I', fighters_path(@q, 'q[name_start]': "i"), class: 'mr-2'
+        = link_to 'J', fighters_path(@q, 'q[name_start]': "j"), class: 'mr-2'
+        = link_to 'K', fighters_path(@q, 'q[name_start]': "k"), class: 'mr-2'
+        = link_to 'L', fighters_path(@q, 'q[name_start]': "l"), class: 'mr-2'
         br
-        = link_to 'M', fighters_path(@q, 'q[name_start]': "m"), class: 'start-link'
-        = link_to 'N', fighters_path(@q, 'q[name_start]': "n"), class: 'start-link'
-        = link_to 'O', fighters_path(@q, 'q[name_start]': "o"), class: 'start-link'
-        = link_to 'P', fighters_path(@q, 'q[name_start]': "p"), class: 'start-link'
-        = link_to 'Q', fighters_path(@q, 'q[name_start]': "q"), class: 'start-link'
-        = link_to 'R', fighters_path(@q, 'q[name_start]': "r"), class: 'start-link'
+        = link_to 'M', fighters_path(@q, 'q[name_start]': "m"), class: 'mr-2'
+        = link_to 'N', fighters_path(@q, 'q[name_start]': "n"), class: 'mr-2'
+        = link_to 'O', fighters_path(@q, 'q[name_start]': "o"), class: 'mr-2'
+        = link_to 'P', fighters_path(@q, 'q[name_start]': "p"), class: 'mr-2'
+        = link_to 'Q', fighters_path(@q, 'q[name_start]': "q"), class: 'mr-2'
+        = link_to 'R', fighters_path(@q, 'q[name_start]': "r"), class: 'mr-2'
         br
-        = link_to 'S', fighters_path(@q, 'q[name_start]': "s"), class: 'start-link'
-        = link_to 'T', fighters_path(@q, 'q[name_start]': "t"), class: 'start-link'
-        = link_to 'U', fighters_path(@q, 'q[name_start]': "u"), class: 'start-link'
-        = link_to 'V', fighters_path(@q, 'q[name_start]': "v"), class: 'start-link'
-        = link_to 'W', fighters_path(@q, 'q[name_start]': "w"), class: 'start-link'
-        = link_to 'X', fighters_path(@q, 'q[name_start]': "x"), class: 'start-link'
+        = link_to 'S', fighters_path(@q, 'q[name_start]': "s"), class: 'mr-2'
+        = link_to 'T', fighters_path(@q, 'q[name_start]': "t"), class: 'mr-2'
+        = link_to 'U', fighters_path(@q, 'q[name_start]': "u"), class: 'mr-2'
+        = link_to 'V', fighters_path(@q, 'q[name_start]': "v"), class: 'mr-2'
+        = link_to 'W', fighters_path(@q, 'q[name_start]': "w"), class: 'mr-2'
+        = link_to 'X', fighters_path(@q, 'q[name_start]': "x"), class: 'mr-2'
         br
-        = link_to 'Y', fighters_path(@q, 'q[name_start]': "y"), class: 'start-link'
-        = link_to 'Z', fighters_path(@q, 'q[name_start]': "z"), class: 'start-link'
-        = link_to '記号', fighters_path(@q, 'q[name_start_any]': ["_", "-"]), class: 'start-link'
-        = link_to '数字', fighters_path(@q, 'q[name_start_any]': ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]), class: 'start-link'
-        = link_to 'ALL', fighters_path, class: 'start-link'
+        = link_to 'Y', fighters_path(@q, 'q[name_start]': "y"), class: 'mr-2'
+        = link_to 'Z', fighters_path(@q, 'q[name_start]': "z"), class: 'mr-2'
+        = link_to '記号', fighters_path(@q, 'q[name_start_any]': ["_", "-"]), class: 'mr-2'
+        = link_to '数字', fighters_path(@q, 'q[name_start_any]': ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]), class: 'mr-2'
+        = link_to 'ALL', fighters_path, class: 'mr-2'
     = search_form_for q do |f|
       .form-group.field
+        = f.label :name, class: 'ml-3'
         = f.search_field :name_cont, class: 'form-control', placeholder: "Fighter's ID"
         br
+        = f.label :league_id, class: 'ml-3'
         = f.collection_select :league_id_eq, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
         br
-        = f.collection_check_boxes :characters_id_in, Character.all, :id, :name
-
+        p.btn.btn-outline-secondary.rounded-pill type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample"
+          i.fa.fa-chevron-circle-down.mr-1
+          = f.label 'キャラクター', class: 'mb-0'
+        .collapse.multi-collapse#multiCollapseExample
+          .card.card-body
+            = f.collection_check_boxes :characters_id_in, Character.all.order(name: :asc), :id, :name do |b|
+              li.character
+                = b.check_box do
+                  = b.check_box + b.text
+                = b.label do
+                  = b.label { b.text }
         .modal-footer.actions
-          = f.submit '検索', class: 'btn btn-primary'
+          = f.submit '検索', class: 'btn btn-dark-blue'

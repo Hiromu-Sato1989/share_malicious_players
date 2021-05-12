@@ -5,11 +5,17 @@ html
       | ShareMaliciousPlayers
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all'
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_pack_tag 'application'
+    = javascript_pack_tag 'hello_vue'
+    /フォントの導入
+    link href="https://fonts.gstatic.com" rel="preconnect" /
+    link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet" /
+    meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /
   body
     = render 'shared/header'
     = render 'shared/flash_message'
-    = yield
+    #check
+      = yield
     = render 'shared/footer'
