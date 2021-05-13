@@ -7,15 +7,14 @@
             = breadcrumbs separator: " &rsaquo; "
         .nav.justify-content-end.mt-2.mb-2
           = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-dark-blue'
-        h3.font-weight-bold.text-center データベース
-        .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-          table.table.table-hover.table-responsive.text-center
+        h3.font-weight-bold.text-center.mb-3 データベース
+        .col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
+          table.table.table-hover.mx-auto.text-center
             thead.thead-default
               tr
                 th= "Fighter's ID"
                 th= 'League'
-                th= 'Character1'
-                th= 'Character2'
+                th= 'Favorite Character'
             tbody
               = render @fighters
 

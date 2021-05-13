@@ -1,0 +1,39 @@
+.container
+    .row
+      .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+        .nav.justify-content-start.mt-3.mb-3
+          - breadcrumb :fighter_edit, @fighter
+          = breadcrumbs separator: " &rsaquo; "
+        .nav.justify-content-end.mt-2.mb-2
+          = link_to '戻る', :back, class: 'btn btn-info shadow-button'
+    h2.font-weight-bold.text-center 悪質プレイヤー編集
+    .row
+      .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+        = form_with model: @fighter, local: true do |f|
+          = render 'shared/error_messages', object: f.object
+          .form-group
+            button.btn.btn-outline-secondary.rounded-pill.mr-2 type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample"
+              i.fa.fa-chevron-circle-down.mr-1
+              = f.label 'キャラクター', class: 'mb-0'
+            span.badge.badge-secondary 任意
+            .row
+              .col
+                .collapse.multi-collapse#multiCollapseExample
+                  .card.card-body
+                    = f.collection_radio_buttons :character_id, Character.all.order(name: :asc), :id, :name do |b|
+                      li.character
+                        = b.radio_button class: 'mr-2' do
+                          = b.radio_button + b.text
+                        = b.label do
+                          = b.label { b.text }
+          .form-group
+            = f.label '悪質プレイ', class: 'mr-2'
+            span.badge.badge-danger 必須
+            .col-md-12.ml-0.d-flex.justify-content-center.align-items-center
+              .col-12
+                = f.collection_check_boxes :category_ids, Category.all, :id, :name do |b|
+                  = b.check_box class: 'form-check-box' do
+                    = b.check_box + b.text
+                  = b.label class: 'form-check-label fighter_categories' do
+                    = b.label { b.text }
+          = f.submit class: 'btn btn-purple mb-4'

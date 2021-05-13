@@ -11,3 +11,7 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M"
       short: "%Y/%m/%d"
+  helpers:
+    submit:
+      create: 登録
+      update: 更新
