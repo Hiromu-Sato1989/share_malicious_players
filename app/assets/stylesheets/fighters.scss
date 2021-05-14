@@ -12,35 +12,10 @@ body {
 }
 
 .notice {
-  color: red;
+  color: #ff0000;
 }
 
-// 新規登録のカテゴリー選択表示
-// .form-check-label {
-//   display: block; /* ブロックレベル要素化する */
-//   float: left; /* 要素の左寄せ・回り込を指定する */
-//   margin: 5px; /* ラベル外側の余白を指定する */
-//   width: 100px; /* ラベルの横幅を指定する */
-//   height: 100px; /* ラベルの高さを指定する */
-//   text-align: center; /* テキストのセンタリングを指定する */
-//   line-height: 100px; /* 行の高さを指定する */
-//   padding-left: 5px; /* ラベル内左側の余白を指定する */
-//   padding-right: 5px; /* ラベル内右側の余白を指定する */
-//   color: #495057; /* フォントの色を指定 */
-//   border: 2px solid #495057;/* ラベルの境界線を実線で指定する */
-//   border-radius: 50% /* 角丸を指定する */
-// }
-
-// .form-check-label:hover {
-//   background-color: #E2EDF9; /* マウスオーバー時の背景色を指定する */
-// }
-
-// input[type="checkbox"]:checked + .form-check-label {
-//   background-image: radial-gradient(at 100px 50px, #ddd, #333);/* マウス選択時の背景色を指定する */
-//   color: #ffffff; /* マウス選択時のフォント色を指定する */
-// }
-
-
+// 新規登録のカテゴリー選択
 .form-check-label {
   display: block; /* ブロックレベル要素化する */
   float: left; /* 要素の左寄せ・回り込を指定する */
@@ -59,7 +34,7 @@ body {
 }
 
 .form-check-label:hover {
-  background-color: #E2EDF9; /* マウスオーバー時の背景色を指定する */
+  background-color: #E2EDF9;
 }
 
 input[type="checkbox"] + .form-check-label {
@@ -128,15 +103,11 @@ li.character {
   background-color: #f8f9fa;
 }
 
-.table {
-  margin: 0 auto !important;
-}
-
 .breadcrumbs {
-  //  はみ出し部分をスクロールする
+  // スクロールする
   overflow-x: scroll;
 
-  // テキストを改行しないようにする
+  // 改行しないようにする
   word-break: keep-all;
   white-space: nowrap;
 

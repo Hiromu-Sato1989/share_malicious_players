@@ -39,9 +39,9 @@ class FightersController < ApplicationController
     if @fighter.update(fighter_edit_params)
       # 更新日時を現在時刻にする
       @fighter.touch
-      redirect_to @fighter, success: '悪質プレイを更新しました'
+      redirect_to @fighter, success: 'プレイヤーデータを更新しました'
     else
-      flash.now[:danger] = '悪質プレイを選んでください'
+      flash.now[:danger] = '入力内容に誤りがあります'
       render :edit
     end
   end
