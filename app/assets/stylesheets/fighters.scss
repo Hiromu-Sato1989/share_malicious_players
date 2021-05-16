@@ -17,18 +17,18 @@ body {
 
 // 新規登録のカテゴリー選択
 .form-check-label {
-  display: block; /* ブロックレベル要素化する */
-  float: left; /* 要素の左寄せ・回り込を指定する */
-  margin: 5px; /* ラベル外側の余白を指定する */
-  width: 100px; /* ラベルの横幅を指定する */
-  height: 100px; /* ラベルの高さを指定する */
-  text-align: center; /* テキストのセンタリングを指定する */
-  line-height: 100px; /* 行の高さを指定する */
-  padding-left: 5px; /* ラベル内左側の余白を指定する */
-  padding-right: 5px; /* ラベル内右側の余白を指定する */
-  color: #495057; /* フォントの色を指定 */
-  border: 2px solid #495057;/* ラベルの境界線を実線で指定する */
-  border-radius: 50%; /* 角丸を指定する */
+  display: block; // ブロックレベル要素化する
+  float: left;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px; // 行の高さを指定する
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #495057;
+  border: 2px solid #495057;
+  border-radius: 50%; // 角丸を指定する
   box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
   cursor: pointer;
 }
@@ -49,21 +49,19 @@ input[type="checkbox"]:checked + .form-check-label  {
 
 // プレイヤーデータのカテゴリー表示
 .form-select-label {
-  display: block; /* ブロックレベル要素化する */
-  float: left; /* 要素の左寄せ・回り込を指定する */
-  margin: 5px; /* ラベル外側の余白を指定する */
-  width: 100px; /* ラベルの横幅を指定する */
-  height: 100px; /* ラベルの高さを指定する */
-  text-align: center; /* テキストのセンタリングを指定する */
-  line-height: 100px; /* 行の高さを指定する */
-  padding-left: 5px; /* ラベル内左側の余白を指定する */
-  padding-right: 5px; /* ラベル内右側の余白を指定する */
-  color: #3b2314; /* フォントの色を指定 */
+  display: block;
+  float: left;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #3b2314;
   background-image: radial-gradient(#ddd, #333);
-  // color: #ffffff;
-  // background-color: #495057;
-  border: 2px solid #495057;/* ラベルの境界線を実線で指定する */
-  border-radius: 50%; /* 角丸を指定する */
+  border: 2px solid #495057;
+  border-radius: 50%;
   box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
 }
 
@@ -113,4 +111,27 @@ li.character {
 
   // スクロールの動きを滑らかにする
   -webkit-overflow-scrolling: touch;
+}
+
+.vertical-line {
+  padding: 0;
+  margin: 0;
+  line-height: 40px;
+  box-sizing: border-box;
+  position: relative;
+  padding-left: 10px;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 4px;
+    height: 30px;
+    background-color: #303030;
+  }
+}
+
+.brake-under-line {
+  border-bottom: dashed 2px #303030;
 }

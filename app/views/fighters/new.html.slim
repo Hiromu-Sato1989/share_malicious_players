@@ -17,7 +17,7 @@
           / フォームの入力必須赤ラベル
           span.badge.badge-danger 必須
           = f.text_field :name, class: 'form-control', placeholder: "Fighter's ID", "v-model": "fighter"
-          p.error.notice v-if="isInValidFighter"
+          p.error.notice v-if="isInValidFighterLength"
             | ※ Fighter's IDは半角6文字以上16文字以下です。
         .form-group
           = f.label :league_id, class: 'mr-2'

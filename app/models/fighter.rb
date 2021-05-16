@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class Fighter < ApplicationRecord
-  # MAX_CHARACTERS_COUNT = 2
   # ＊キャラを複数選択で多対多の場合に使用
+  # MAX_CHARACTERS_COUNT = 2
+
   is_impressionable counter_cache: true
 
   belongs_to :league
@@ -23,14 +24,14 @@ class Fighter < ApplicationRecord
   # カテゴリー未選択の場合登録できない処理
   validates :category_ids, presence: { message: 'を選択してください' }
 
+  # ＊キャラを複数選択で多対多の場合に使用
   # 選べるキャラクターを2キャラまでに制限する。選べすぎても情報として意味がないため
   # validates :fighter_characters, length: { maximum: MAX_CHARACTERS_COUNT, message: 'は最大で2人まで選択できます' }
-  # ＊キャラを複数選択で多対多の場合に使用
 
   scope :number_of_votes, -> { order(votes_count: :desc).limit(5) }
   scope :new_arrival, -> { order(created_at: :desc).limit(5) }
   scope :number_of_impression, -> { order(impressions_count: :desc).limit(5) }
 
-  # scopeで検索できないか模索中…
-  # scope :search_fighter, ->(name) { where('name like?', "#{name}%") }
+  # indexの表示に使用
+  scope :search_fighter, ->(name) { where('name like?', "#{name}%") }
 end

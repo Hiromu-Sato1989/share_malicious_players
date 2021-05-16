@@ -1,4 +1,4 @@
-- content_for(:title, '詳細')
+- content_for(:title, "#{@fighter.name}の詳細")
 .fighter-detail
   .container.fluid
     .row
@@ -39,7 +39,7 @@
         = render 'not_done_vote', fighter: @fighter
       span.vote_balance.font-weight-bold = @fighter.votes_count
     p.text-right
-      | UPDATE
+      b> UPDATE
       br
       = l @fighter.updated_at, format: :default
 

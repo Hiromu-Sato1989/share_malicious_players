@@ -6,11 +6,6 @@ FactoryBot.define do
 
     trait :kusshin do
       name { '屈伸' }
-      # after(:create) do |category|
-      #   character = create(:character, :ryu)
-      #   league = create(:league, :bronze)
-      #   fighter = create(:fighter, :daigo, categories: [category], character: character, league: league)
-      # end
     end
 
     trait :namepu do

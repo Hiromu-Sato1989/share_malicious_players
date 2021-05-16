@@ -20,7 +20,7 @@ class FightersController < ApplicationController
   def create
     @fighter = Fighter.new(fighter_params)
     if @fighter.save
-      redirect_to fighters_path, success: '悪質プレイヤーを登録しました'
+      redirect_to @fighter, success: '悪質プレイヤーを登録しました'
     else
       flash.now[:danger] = '登録できませんでした'
       render :new
@@ -28,6 +28,7 @@ class FightersController < ApplicationController
   end
 
   def show
+    # ファイターが閲覧者のIPアドレスに紐づく投票を持ってるか探す
     @voted_ip = @fighter.votes.find_by(ip: request.remote_ip)&.ip
     # session_hashごとに計測する場合
     impressionist(@fighter, nil, unique: [:session_hash])
@@ -37,7 +38,7 @@ class FightersController < ApplicationController
 
   def update
     if @fighter.update(fighter_edit_params)
-      # 更新日時を現在時刻にする
+      # updated_atを現在時刻に更新する
       @fighter.touch
       redirect_to @fighter, success: 'プレイヤーデータを更新しました'
     else
