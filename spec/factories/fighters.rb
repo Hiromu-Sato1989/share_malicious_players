@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-FactoryBot.define do  
+FactoryBot.define do
   factory :fighter do
     sequence(:name) { |n| "name_#{n}" }
     association :league

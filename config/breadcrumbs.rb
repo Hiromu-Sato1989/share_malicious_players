@@ -30,7 +30,7 @@ crumb :howto do
 end
 
 crumb :fighter_edit do |fighter|
-  link "編集ページ", edit_fighter_path
+  link '編集ページ', edit_fighter_path
   parent :fighter_show, fighter
 end
 

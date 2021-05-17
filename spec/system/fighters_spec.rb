@@ -143,6 +143,7 @@ RSpec.describe 'Fighters', type: :system do
     context 'キャラクター選択の編集' do
       it '編集に成功'
     end
+
     context '' do
       it '編集に成功'
       it '選択を0件にして編集に失敗'

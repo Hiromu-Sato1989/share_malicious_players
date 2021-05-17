@@ -39,7 +39,7 @@ class FightersController < ApplicationController
   def update
     if @fighter.update(fighter_edit_params)
       # updated_atを現在時刻に更新する
-      @fighter.touch
+      @fighter.touch(:updated_at) # rubocop:disable Rails/SkipsModelValidations
       redirect_to @fighter, success: 'プレイヤーデータを更新しました'
     else
       flash.now[:danger] = '入力内容に誤りがあります'

@@ -8,7 +8,6 @@ RSpec.describe Fighter, type: :model do
     let(:fighter) { create(:fighter, :daigo, categories: [category]) }
     let(:fighter_no_name) { build(:fighter, categories: [category], name: '') }
     let(:fighter_no_league) { build(:fighter, categories: [category], league_id: '') }
-    let(:fighter_equal_name) { build(:fighter, :daigo, categories: [category]) }
     let(:fighter_no_category) { build(:fighter) }
 
     it '名前、リーグ、カテゴリーがある場合、有効である' do
@@ -28,6 +27,8 @@ RSpec.describe Fighter, type: :model do
 
     it '名前が重複した場合、無効である' do
       fighter
+      # rubocopチェック回避のため
+      fighter_equal_name = build(:fighter, :daigo, categories: [category])
       expect(fighter_equal_name).to be_invalid
       expect(fighter_equal_name.valid?).to eq(false)
     end
