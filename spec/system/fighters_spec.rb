@@ -51,6 +51,18 @@ RSpec.describe 'Fighters', type: :system do
       end
     end
 
+    context 'カテゴリーが未入力' do
+      it '登録が失敗する' do
+        fill_in "Fighter's ID", with: 'tokido77'
+        select 'ブロンズ', from: 'fighter_league_id'
+        accept_confirm do
+          click_button '登録'
+        end
+        expect(page).to have_content('登録できませんでした')
+        expect(page).to have_current_path fighters_path, ignore_query: true
+      end
+    end
+
     context '登録済みの名前を再度登録' do
       it '登録が失敗する' do
         fighter_d
@@ -140,13 +152,37 @@ RSpec.describe 'Fighters', type: :system do
   end
 
   describe '悪質プレイヤーの編集' do
-    context 'キャラクター選択の編集' do
-      it '編集に成功'
+    before do
+      create(:character, :ken)
+      create(:category, :namepu)
+      visit fighter_path(fighter_d)
+      click_link '編集'
     end
 
-    context '' do
-      it '編集に成功'
-      it '選択を0件にして編集に失敗'
+    context 'キャラクター選択の編集' do
+      it '編集に成功' do
+        find('#accordion-character').click
+        choose 'ケン'
+        click_button '更新'
+        expect(page).to have_content('プレイヤーデータを更新しました')
+        expect(page).to have_current_path fighter_path(fighter_d), ignore_query: true
+      end
+    end
+
+    context 'カテゴリーの編集' do
+      it '編集に成功' do
+        page.all('.fighter_categories')[1].click
+        click_button '更新'
+        expect(page).to have_content('プレイヤーデータを更新しました')
+        expect(page).to have_current_path fighter_path(fighter_d), ignore_query: true
+      end
+
+      it '選択を0件にして編集に失敗' do
+        page.all('.fighter_categories')[0].click
+        click_button '更新'
+        expect(page).to have_content('入力内容に誤りがあります')
+        expect(page).to have_current_path fighter_path(fighter_d), ignore_query: true
+      end
     end
   end
 end

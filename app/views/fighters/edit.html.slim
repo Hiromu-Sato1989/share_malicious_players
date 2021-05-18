@@ -13,7 +13,7 @@
         = form_with model: @fighter, local: true do |f|
           = render 'shared/error_messages', object: f.object
           .form-group
-            button.btn.btn-outline-secondary.rounded-pill.mr-2 type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample"
+            button#accordion-character.btn.btn-outline-secondary.rounded-pill.mr-2 type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample"
               i.fa.fa-chevron-circle-down.mr-1
               = f.label 'キャラクター', class: 'mb-0'
             span.badge.badge-secondary 任意
