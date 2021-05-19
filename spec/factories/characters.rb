@@ -7,5 +7,8 @@ FactoryBot.define do
     trait :ryu do
       name { 'リュウ' }
     end
+    trait :ken do
+      name { 'ケン' }
+    end
   end
 end

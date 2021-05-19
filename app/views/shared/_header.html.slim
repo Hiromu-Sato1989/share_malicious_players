@@ -1,8 +1,9 @@
 header
   .navbar.navbar-expand-md.navbar-dark.bg-dark
-    .container
-      .navbar-text
+    ul.navbar-nav
+      li.navbar-text.ml-3
         = link_to 'Malicious Fighters', root_path
-      .navbar-nav
-        .navbar-text
+    ul.navbar-nav.ml-auto
+      li.navbar-text.mr-3
+        .justify-content-end
           = link_to '使い方', page_path('howto')

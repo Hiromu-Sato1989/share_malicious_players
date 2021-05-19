@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     computed: {
-      isInValidFighter() {
-        return this.fighter.length < 6;
+      isInValidFighterLength() {
+        return this.fighter.length < 6 || this.fighter.length > 16;
       }
     }
   })

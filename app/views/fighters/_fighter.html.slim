@@ -1,8 +1,7 @@
 tr
   td = link_to fighter.name, fighter_path(fighter)
   td = fighter.league.name
-  - if fighter.characters.present?
-    - fighter.characters.each do |character|
-      td = character.name
+  - if fighter.character.present?
+    td = fighter.character.name
   - else
     td = '-'
