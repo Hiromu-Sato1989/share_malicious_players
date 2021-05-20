@@ -3,6 +3,8 @@
 class FightersController < ApplicationController
   # アクセスごとにPV数を増やしたい場合
   # impressionist actions: [:show]
+  # 同IPアドレスで1回だけ計測する場合
+  impressionist actions: [:show], unique: %i[impressionable_id ip_address]
   before_action :set_fighter, only: %i[show edit update]
 
   def index
@@ -31,7 +33,7 @@ class FightersController < ApplicationController
     # ファイターが閲覧者のIPアドレスに紐づく投票を持ってるか探す
     @voted_ip = @fighter.votes.find_by(ip: request.remote_ip)&.ip
     # session_hashごとに計測する場合
-    impressionist(@fighter, nil, unique: [:session_hash])
+    # impressionist(@fighter, nil, unique: [:session_hash])
   end
 
   def edit; end

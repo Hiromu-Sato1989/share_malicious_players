@@ -1,0 +1,30 @@
+- content_for(:title, '会員登録')
+.container
+  .row
+    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+      .nav.justify-content-start.mt-3.mb-3
+        - breadcrumb :user_new 
+        = breadcrumbs separator: " &rsaquo; "
+  h2.font-weight-bold.text-center 会員登録
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      = form_with model: @user, local: true do |f|
+        = render 'shared/error_messages', object: f.object
+        .form-group
+          = f.label :name, class: 'mr-2'
+          / フォームの入力必須赤ラベル
+          span.badge.badge-danger 必須
+          = f.text_field :name, class: 'form-control', placeholder: "ニックネーム"
+        .form-group
+          = f.label :email, class: 'mr-2'
+          / フォームの入力必須赤ラベル
+          span.badge.badge-danger 必須
+          = f.email_field :email, class: 'form-control', placeholder: "メールアドレス"
+        .form-group
+          = f.label :password, class: 'mr-2'
+          / フォームの入力必須赤ラベル
+          span.badge.badge-danger 必須
+          = f.password_field :password, class: 'form-control', placeholder: "パスワード"
+        = f.submit class: 'btn btn-purple mb-4'
+      .text-center
+        = link_to 'ログインページへ', login_path

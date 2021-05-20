@@ -7,6 +7,10 @@ ja:
         character_ids: キャラクター
         category_ids: 悪質プレイ
         fighter_characters: キャラクター
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
   time:
     formats:
       default: "%Y/%m/%d %H:%M"

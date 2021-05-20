@@ -15,7 +15,10 @@ html
     link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet" /
     meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /
   body
-    = render 'shared/header'
+    - if logged_in?
+      = render 'shared/logged_in_header'
+    - else
+     = render 'shared/header'
     = render 'shared/flash_message'
     #check
       = yield

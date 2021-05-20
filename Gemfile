@@ -95,3 +95,5 @@ gem 'rails_admin'
 gem 'rails-i18n'
 # 環境変数設定
 gem 'dotenv-rails'
+# ログイン機能
+gem 'sorcery'
