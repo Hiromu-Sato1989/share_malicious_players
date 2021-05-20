@@ -1,0 +1,15 @@
+header
+  nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+    ul.navbar-nav
+      li.navbar-text.ml-3
+        = link_to 'Malicious Fighters', root_path
+    button.navbar-toggler data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        li.navbar-text.ml-3
+          = link_to '使い方', page_path('howto')
+        li.navbar-text.ml-3
+          = link_to 'プロフィール', '#'
+        li.navbar-text.ml-3
+          = link_to 'ログアウト', logout_path, method: :delete

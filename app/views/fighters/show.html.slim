@@ -43,4 +43,12 @@
       br
       = l @fighter.updated_at, format: :default
 
+    hr
+    - if logged_in?
+      p コメント機能
+      = link_to 'ログアウト', logout_path, method: :delete
+    - else
+      p ログインするとコメント機能が使えるようになります。
+      = link_to 'ログイン', login_path
+
 #search-modal.modal.fade role="dialog" aria-hidden="true" tabindex="-1"

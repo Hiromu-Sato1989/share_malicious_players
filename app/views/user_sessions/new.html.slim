@@ -1,0 +1,20 @@
+- content_for(:title, 'ログイン')
+.container
+  .row
+    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+      .nav.justify-content-start.mt-3.mb-3
+        - breadcrumb :login
+        = breadcrumbs separator: " &rsaquo; "
+  h2.font-weight-bold.text-center ログイン
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      = form_with url: login_path, local: true do |f|
+        .form-group
+          = f.label :email, User.human_attribute_name(:email), class: 'mr-2'
+          = f.text_field :email, class: 'form-control', placeholder: "メールアドレス"
+        .form-group
+          = f.label :password, User.human_attribute_name(:password), class: 'mr-2'
+          = f.password_field :password, class: 'form-control', placeholder: "パスワード"
+        = f.submit 'ログイン', class: 'btn btn-purple mb-4'
+      .text-center
+        = link_to '会員登録ページへ', new_user_path

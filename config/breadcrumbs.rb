@@ -34,6 +34,16 @@ crumb :fighter_edit do |fighter|
   parent :fighter_show, fighter
 end
 
+crumb :user_new do
+  link '会員登録ページ', new_user_path
+  parent :top
+end
+
+crumb :login do
+  link 'ログインページ', login_path
+  parent :top
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

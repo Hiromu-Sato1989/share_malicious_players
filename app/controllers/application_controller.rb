@@ -2,12 +2,12 @@
 
 class ApplicationController < ActionController::Base
   add_flash_types :success, :info, :warning, :danger
-  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  rescue_from ActiveRecord::RecordNotFound, with: :render404
 
   private
-  
-  def render_404(e = nil)
-    logger.info "Rendering 404 with exception: #{e.message}" if e
-    render file: Rails.root.join('public/404.html'), status: 404, layout: false, content_type: 'text/html'
+
+  def render404(error = nil)
+    logger.info "Rendering 404 with exception: #{error.message}" if error
+    render file: Rails.root.join('public/404.html'), status: :not_found, layout: false, content_type: 'text/html'
   end
 end
