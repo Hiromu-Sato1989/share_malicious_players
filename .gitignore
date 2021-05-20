@@ -36,6 +36,7 @@
 yarn-debug.log*
 .yarn-integrity
 .DS_Store
+/.env
 
 
 config/settings.local.yml

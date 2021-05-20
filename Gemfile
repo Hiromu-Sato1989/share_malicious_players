@@ -5,12 +5,19 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+# 定数管理
 gem 'config'
+# カウンターキャッシュ
 gem 'counter_culture', '~> 2.0'
+# 静的ページの簡易作成
 gem 'high_voltage'
+# slim形式へ変換
 gem 'html2slim'
+# デバッグ時にbinding.pryを使えるようにする
 gem 'pry-rails'
+# 検索機能
 gem 'ransack'
+# slimを使えるようにする
 gem 'slim-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -42,8 +49,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
+  # 1 + Nを検知
   gem 'bullet'
+  # rspecでfactorybotを使えるようにする
   gem 'factory_bot_rails'
+  # rspec導入
   gem 'rspec-rails'
 end
 
@@ -55,9 +65,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
+  # エラー画面詳細化
   gem 'better_errors'
+  # エラー画面でデバッグが可能になる
   gem 'binding_of_caller'
+  # メールのテストができる
   gem 'letter_opener_web'
+  # LINTチェック
   gem 'rubocop', '= 1.12.1', require: false
   gem 'rubocop-rails', '= 2.9.1', require: false
   gem 'rubocop-rspec'
@@ -71,7 +85,13 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
+# パンくずリスト
 gem 'gretel'
+# 閲覧数集計
 gem 'impressionist', '~>1.6.1'
+# 管理者画面
 gem 'rails_admin'
+# 国際化
 gem 'rails-i18n'
+# 環境変数設定
+gem 'dotenv-rails'
