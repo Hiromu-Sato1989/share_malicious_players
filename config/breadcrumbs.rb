@@ -44,6 +44,16 @@ crumb :login do
   parent :top
 end
 
+crumb :profile do
+  link 'プロフィールページ', profile_path
+  parent :top
+end
+
+crumb :profile_edit do |_profile|
+  link 'プロフィール編集ページ', edit_profile_path
+  parent :profile
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
