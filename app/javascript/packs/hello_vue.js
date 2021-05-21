@@ -41,11 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
     data() {
       return {
         fighter: '',
+        user: '',
+        password: ''
       }
     },
     computed: {
       isInValidFighterLength() {
         return this.fighter.length < 6 || this.fighter.length > 16;
+      },
+      isInValidUserLength() {
+        return this.user.length < 3;
+      },
+      isInValidPasswordLength() {
+        return this.password.length < 6;
       }
     }
   })

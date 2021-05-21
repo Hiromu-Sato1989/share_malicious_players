@@ -13,14 +13,14 @@
       table.table.text-center
         tr
           th scope="row" 名前
-          td = @user.name
+          td = current_user.name
         tr
           th scope="row" メールアドレス
-          td = @user.email
+          td = current_user.email
+        tr
+          th scope="row" アイコン
+          td = image_tag current_user.icon.url, class: 'rounded-circle border border-dark', size: '50x50'
         /tr
           th scope="row" 投稿コメント数
-          td = @user.comments.count
-        /tr
-          th scope="row" アイコン
-          td = image_pack_tag @user.icon.url, class: 'rounded-circle', size: '50x50'
+          td = current_user.comments.count
       hr

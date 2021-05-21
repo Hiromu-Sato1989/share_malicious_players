@@ -11,6 +11,7 @@ ja:
         name: 名前
         email: メールアドレス
         password: パスワード
+        icon: アイコン
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
