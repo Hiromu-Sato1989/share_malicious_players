@@ -2,8 +2,9 @@
 
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  mount_uploader :icon, IconUploader
 
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
 
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: /\A\S+@\S+\.\S+\z/, message: 'の形式で入力してください' }

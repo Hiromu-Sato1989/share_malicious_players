@@ -97,3 +97,5 @@ gem 'rails-i18n'
 gem 'dotenv-rails'
 # ログイン機能
 gem 'sorcery'
+# 画像アップロード機能
+gem 'carrierwave', '~> 2.0'

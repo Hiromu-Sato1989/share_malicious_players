@@ -14,17 +14,32 @@
           = f.label :name, class: 'mr-2'
           / フォームの入力必須赤ラベル
           span.badge.badge-danger 必須
-          = f.text_field :name, class: 'form-control', placeholder: "ニックネーム"
+          = f.text_field :name, class: 'form-control', placeholder: "ウメハラ", "v-model":"user"
+          p.error.notice v-if="isInValidUserLength"
+            | ※ 名前は3文字以上で入力してください。
         .form-group
           = f.label :email, class: 'mr-2'
           / フォームの入力必須赤ラベル
           span.badge.badge-danger 必須
-          = f.email_field :email, class: 'form-control', placeholder: "メールアドレス"
+          = f.email_field :email, class: 'form-control', placeholder: "tokido@akuma.com"
         .form-group
           = f.label :password, class: 'mr-2'
           / フォームの入力必須赤ラベル
           span.badge.badge-danger 必須
-          = f.password_field :password, class: 'form-control', placeholder: "パスワード"
+          = f.password_field :password, class: 'form-control', placeholder: "memememe", "v-model":"password"
+          p.error.notice v-if="isInValidPasswordLength"
+            | ※ パスワードは6文字以上で入力してください。
+        .form-group
+          = f.label :icon, class: 'mr-2'
+          span.badge.badge-secondary 任意
+          = f.file_field :icon, id: 'user_icon', class: 'form-control', accept: 'image/*'
+          = f.hidden_field :icon_cache
+        - if @user.icon.present?
+          .mt-3.mb-3
+            = image_tag @user.icon.url, class: 'rounded-circle border border-dark', size: '100x100', id: 'preview'
+        - else
+          .mt-3.mb-3
+            = image_tag @user.icon.url, class: 'rounded-circle border border-dark', size: '100x100', id: 'preview'
         = f.submit class: 'btn btn-purple mb-4'
       .text-center
         = link_to 'ログインページへ', login_path
