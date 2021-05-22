@@ -15,6 +15,6 @@
         .form-group
           = f.label :password, User.human_attribute_name(:password), class: 'mr-2'
           = f.password_field :password, class: 'form-control', placeholder: "パスワード"
-        = f.submit 'ログイン', class: 'btn btn-purple mb-4'
+        = f.submit 'ログイン', class: 'btn btn-dark-blue mb-4'
       .text-center
         = link_to '会員登録ページへ', new_user_path

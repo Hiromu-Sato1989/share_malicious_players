@@ -1,0 +1,10 @@
+li.comment-set
+  ul.comment-info
+    li.comment-icon = image_tag current_user.icon.url, class: 'rounded-circle border border-dark', size: '50x50'
+    li.comment-number = "#{comment.id}."
+    li.comment-author = comment.user.name
+    li.comment-partition |
+    li.comment-date = l comment.created_at, format: :default
+    br
+    li.comment-body
+      p = comment.body

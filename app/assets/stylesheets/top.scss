@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 h4.catch-copy {
-  padding: 25px 0 10px;
+  padding: 12px 0 8px;
 }
 
 h4.pt-3{
@@ -32,7 +32,7 @@ h4.pt-3{
 }
 
 .induction-space {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 // ここからボタンの装飾
@@ -87,4 +87,18 @@ header {
 
 footer .container .navbar.navbar-expand-md {
   height: 40px;
+}
+
+ul.top-pages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.top-pages li {
+  display: inline;
+}
+
+.partition {
+  margin: 0 6px;
 }

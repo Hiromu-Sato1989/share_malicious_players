@@ -4,8 +4,8 @@
     .row
       .col-lg-6
         .text-center
-          = image_pack_tag 'logo_gray_blue.png', size: '250x250', class: 'img-fluid'
-          /h3.catch-copy みんなで悪質プレイヤーを共有しよう！
+          = image_pack_tag 'top_icon.png', size: '250x250', class: 'img-fluid'
+          = image_pack_tag 'title_logo.png', class: 'img-fluid'
       .col-lg-6
         h4.catch-copy
           | StreetFighterVのオンラインにいる
@@ -63,7 +63,20 @@
           | 悪質プレイヤーを登録してみましょう！
         p
           = link_to '新規登録', new_fighter_path, class: 'btn btn-lg btn-purple'
-    = link_to '利用規約', page_path('terms')
+    - if logged_in?
+      ul.top-pages
+        li = link_to '利用規約', page_path('terms')
+        li.partition |
+        li = link_to 'プライバシーポリシー', '#'
+    - else
+      ul.top-pages
+        li = link_to '利用規約', page_path('terms')
+        li.partition |
+        li = link_to 'プライバシーポリシー', '#'
+        li.partition |
+        li = link_to 'ログイン', login_path
+        li.partition |
+        li = link_to '会員登録', new_user_path
     p.d-flex.justify-content-start.m-0
       | ©️2021 MaliciousFighters
 

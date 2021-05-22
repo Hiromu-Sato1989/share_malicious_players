@@ -34,6 +34,8 @@ class FightersController < ApplicationController
     @voted_ip = @fighter.votes.find_by(ip: request.remote_ip)&.ip
     # session_hashごとに計測する場合
     # impressionist(@fighter, nil, unique: [:session_hash])
+    @comment = Comment.new
+    @comments = @fighter.comments.includes(:user).order(created_at: :asc)
   end
 
   def edit; end

@@ -37,7 +37,6 @@ yarn-debug.log*
 .yarn-integrity
 .DS_Store
 /.env
-app/assets/images
 public/uploads
 
 config/settings.local.yml

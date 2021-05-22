@@ -1,0 +1,13 @@
+.row.mb-3
+  .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+    = form_with model: comment, url: [fighter, comment], local: true do |f|
+      = f.label :body
+      = f.text_area :body, class: 'form-control mb-3'
+      = f.submit '投稿する', class: 'btn btn-purple mb-4'
+    p.mb-0 下記に該当するコメントは削除させていただく場合があります。
+    ul
+     li.font-weight-bold 公序良俗に著しく反している
+     li.font-weight-bold 過度な誹謗中傷や煽り
+     li.font-weight-bold 宣伝やスパム
+    p.notice.mb-0 本サービス利用及びコメントの投稿は#{ link_to '利用規約', page_path('terms'), class: 'notice border-bottom' }に同意したものと見做されます。
+    p よろしくお願い致します。

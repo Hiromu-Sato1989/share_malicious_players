@@ -15,6 +15,7 @@ class Fighter < ApplicationRecord
   has_many :fighter_categories, dependent: :destroy
   has_many :categories, through: :fighter_categories
   has_many :votes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :name, presence: true
   validates :name, uniqueness: { case_sensitive: false, message: 'がすでに登録されています。検索してみてください' }
