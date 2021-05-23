@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_011940) do
+ActiveRecord::Schema.define(version: 2021_05_21_084000) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2021_05_21_011940) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_characters_on_name", unique: true
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "body", null: false
+    t.bigint "user_id", null: false
+    t.bigint "fighter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fighter_id"], name: "index_comments_on_fighter_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -106,6 +116,8 @@ ActiveRecord::Schema.define(version: 2021_05_21_011940) do
     t.index ["fighter_id"], name: "index_votes_on_fighter_id"
   end
 
+  add_foreign_key "comments", "fighters"
+  add_foreign_key "comments", "users"
   add_foreign_key "fighter_categories", "categories"
   add_foreign_key "fighter_categories", "fighters"
   add_foreign_key "fighters", "characters"

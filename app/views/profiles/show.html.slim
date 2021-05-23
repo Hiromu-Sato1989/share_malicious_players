@@ -10,17 +10,17 @@
   h2.font-weight-bold.mb-4.text-center プロフィール
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-      table.table.text-center
-        tr
-          th scope="row" 名前
-          td = current_user.name
-        tr
-          th scope="row" メールアドレス
-          td = current_user.email
-        tr
-          th scope="row" アイコン
-          td = image_tag current_user.icon.url, class: 'rounded-circle border border-dark', size: '50x50'
-        /tr
-          th scope="row" 投稿コメント数
-          td = current_user.comments.count
-      hr
+      .card.border.border-radius
+        table.table.text-center
+          tr
+            th scope="row" 名前
+            td = current_user.name
+          tr
+            th scope="row" メールアドレス
+            td = current_user.email
+          tr
+            th scope="row" アイコン
+            td = image_tag current_user.icon.url, class: 'rounded-circle border border-dark', size: '50x50'
+          tr
+            th scope="row" 投稿コメント数
+            td = current_user.comments.count

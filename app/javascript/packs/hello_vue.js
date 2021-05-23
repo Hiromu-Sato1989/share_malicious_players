@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     data() {
       return {
         fighter: '',
-        user: '',
+        user: '名無し',
         password: ''
       }
     },

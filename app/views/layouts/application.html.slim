@@ -5,6 +5,7 @@ html
       = page_title(yield(:title))
     = csrf_meta_tags
     = csp_meta_tag
+    = favicon_pack_tag 'favicon.png'
     = stylesheet_pack_tag 'application', media: 'all'
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
@@ -19,7 +20,7 @@ html
     - if logged_in?
       = render 'shared/logged_in_header'
     - else
-     = render 'shared/header'
+      = render 'shared/header'
     = render 'shared/flash_message'
     #check
       = yield

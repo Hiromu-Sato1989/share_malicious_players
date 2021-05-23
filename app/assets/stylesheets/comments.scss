@@ -1,0 +1,56 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+ol.list-number {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.comment-info {
+  list-style: none;
+  padding: 15px 18px;
+  margin: 0 0 15px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  // textarea内の改行を反映させる
+  white-space: pre-wrap;
+}
+
+ul.comment-info li {
+  display: inline;
+}
+
+.comment-number {
+  font-size: 12px;
+  margin: 0 4px 0 8px;
+}
+
+.comment-author {
+  font-size: 12px;
+  margin: 0 4px;
+  color: #008000;
+}
+
+.comment-partition {
+  font-size: 14px;
+}
+
+.comment-date {
+  font-size: 12px;
+  margin: 0 4px;
+}
+
+.comment-body p {
+  margin: 8px 0 0 8px;
+}
+
+.comment-delete {
+  font-size: 20px;
+}
+
+.comment-delete .cross {
+  color: #ff0000;
+}

@@ -1,0 +1,16 @@
+li.comment-set
+  ul.comment-info
+    li.comment-icon = image_tag comment.user.icon.url, class: 'rounded-circle border border-dark', size: '50x50'
+    / プレイヤーにつけられたコメントの配列(集合)のうち、何番目のインデックス番号なのか取得
+    / 配列は0番からスタートするので、1を足したあと文字列化してコメント番号として表示
+    li.comment-number = "#{@fighter.comments.ids.index(comment.id) + 1}".to_s + '.'
+    li.comment-author = comment.user.name
+    li.comment-partition |
+    li.comment-date = l comment.created_at, format: :default
+    br
+    li.comment-body
+      p = comment.body
+    - if current_user.own?(comment)
+      li.comment-delete.d-flex.justify-content-end
+        = link_to comment_path(comment), method: :delete, data: { confirm: 'コメントを削除しますか？' } do
+          i.fas.fa-times-circle.cross
