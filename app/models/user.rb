@@ -12,4 +12,8 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A\S+@\S+\.\S+\z/, message: 'の形式で入力してください' }
 
   validates :name, presence: true, length: { minimum: 3 }
+
+  def own?(object)
+    id == object.user_id
+  end
 end

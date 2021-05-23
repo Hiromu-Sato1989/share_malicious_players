@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :fighters, only: %i[index new create show edit update] do
     resources :votes, only: [:create]
-    resources :comments, only: %i[create destroy]
+    resources :comments, only: %i[create destroy], shallow: true
   end
   resources :contacts, only: %i[new create]
 
