@@ -2,9 +2,11 @@
 .container
   .row
     .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-      .nav.justify-content-start.mt-3.mb-3
+      hr.mb-1
+      .nav.justify-content-start
         - breadcrumb :fighter_new 
         = breadcrumbs separator: " &rsaquo; "
+      hr.mt-1
       /.nav.justify-content-end.mt-3
         = link_to 'トップへ', root_path, class: 'nav-link'
   h2.font-weight-bold.text-center 悪質プレイヤー登録

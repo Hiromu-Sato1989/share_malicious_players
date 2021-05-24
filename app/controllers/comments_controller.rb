@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     if comment.save
       redirect_to fighter_path(comment.fighter), success: 'コメントを投稿しました'
     else
-      redirect_to fighter_path(comment.fighter), danger: 'コメントを投稿できませんでした'
+      redirect_to fighter_path(comment.fighter), danger: 'コメントを入力してください'
     end
   end
 

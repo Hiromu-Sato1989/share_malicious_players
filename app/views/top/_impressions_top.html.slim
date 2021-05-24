@@ -12,5 +12,5 @@
           /render partialで書ける？
           - Fighter.number_of_impression.each do |fighter|
             tr
-              td= link_to fighter.name, fighter_path(fighter)
+              td= link_to fighter.name, fighter_path(fighter), class: 'default-link-color'
               td= fighter.impressions_count

@@ -2,10 +2,12 @@
 .index
   .container-fluid
     .row
-      .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-        .nav.justify-content-start.mt-3.mb-3
-            - breadcrumb :fighters
-            = breadcrumbs separator: " &rsaquo; "
+      .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+        hr.mb-1
+        .nav.justify-content-start
+          - breadcrumb :fighters
+          = breadcrumbs separator: " &rsaquo; "
+        hr.mt-1
         .nav.justify-content-end.mt-2.mb-2
           = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-dark-blue'
         h3.font-weight-bold.text-center.mb-3 データベース

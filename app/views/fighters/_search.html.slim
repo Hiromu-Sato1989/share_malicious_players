@@ -7,40 +7,65 @@
         span aria-hidden="true" ×
     .modal-body
       .border-bottom
-        /= link_to '#', { controller: 'fighters', action: 'index', q: { name_start: '' }}
-        = link_to 'A', fighters_path(@q, 'q[name_start]': "a"), class: 'mr-2'
-        = link_to 'B', fighters_path(@q, 'q[name_start]': "b"), class: 'mr-2'
-        = link_to 'C', fighters_path(@q, 'q[name_start]': "c"), class: 'mr-2'
-        = link_to 'D', fighters_path(@q, 'q[name_start]': "d"), class: 'mr-2'
-        = link_to 'E', fighters_path(@q, 'q[name_start]': "e"), class: 'mr-2'
-        = link_to 'F', fighters_path(@q, 'q[name_start]': "f"), class: 'mr-2'
-        br
-        = link_to 'G', fighters_path(@q, 'q[name_start]': "g"), class: 'mr-2'
-        = link_to 'H', fighters_path(@q, 'q[name_start]': "h"), class: 'mr-2'
-        = link_to 'I', fighters_path(@q, 'q[name_start]': "i"), class: 'mr-2'
-        = link_to 'J', fighters_path(@q, 'q[name_start]': "j"), class: 'mr-2'
-        = link_to 'K', fighters_path(@q, 'q[name_start]': "k"), class: 'mr-2'
-        = link_to 'L', fighters_path(@q, 'q[name_start]': "l"), class: 'mr-2'
-        br
-        = link_to 'M', fighters_path(@q, 'q[name_start]': "m"), class: 'mr-2'
-        = link_to 'N', fighters_path(@q, 'q[name_start]': "n"), class: 'mr-2'
-        = link_to 'O', fighters_path(@q, 'q[name_start]': "o"), class: 'mr-2'
-        = link_to 'P', fighters_path(@q, 'q[name_start]': "p"), class: 'mr-2'
-        = link_to 'Q', fighters_path(@q, 'q[name_start]': "q"), class: 'mr-2'
-        = link_to 'R', fighters_path(@q, 'q[name_start]': "r"), class: 'mr-2'
-        br
-        = link_to 'S', fighters_path(@q, 'q[name_start]': "s"), class: 'mr-2'
-        = link_to 'T', fighters_path(@q, 'q[name_start]': "t"), class: 'mr-2'
-        = link_to 'U', fighters_path(@q, 'q[name_start]': "u"), class: 'mr-2'
-        = link_to 'V', fighters_path(@q, 'q[name_start]': "v"), class: 'mr-2'
-        = link_to 'W', fighters_path(@q, 'q[name_start]': "w"), class: 'mr-2'
-        = link_to 'X', fighters_path(@q, 'q[name_start]': "x"), class: 'mr-2'
-        br
-        = link_to 'Y', fighters_path(@q, 'q[name_start]': "y"), class: 'mr-2'
-        = link_to 'Z', fighters_path(@q, 'q[name_start]': "z"), class: 'mr-2'
-        = link_to '記号', fighters_path(@q, 'q[name_start_any]': ["_", "-"]), class: 'mr-2'
-        = link_to '数字', fighters_path(@q, 'q[name_start_any]': ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]), class: 'mr-2'
-        = link_to 'ALL', fighters_path, class: 'mr-2'
+        ul.top-pages
+          /= link_to '#', { controller: 'fighters', action: 'index', q: { name_start: '' }}
+          li = link_to 'A', fighters_path(@q, 'q[name_start]': "a"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'B', fighters_path(@q, 'q[name_start]': "b"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'C', fighters_path(@q, 'q[name_start]': "c"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'D', fighters_path(@q, 'q[name_start]': "d"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'E', fighters_path(@q, 'q[name_start]': "e"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'F', fighters_path(@q, 'q[name_start]': "f"), class: 'default-link-color'
+          br
+          li = link_to 'G', fighters_path(@q, 'q[name_start]': "g"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'H', fighters_path(@q, 'q[name_start]': "h"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'I', fighters_path(@q, 'q[name_start]': "i"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'J', fighters_path(@q, 'q[name_start]': "j"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'K', fighters_path(@q, 'q[name_start]': "k"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'L', fighters_path(@q, 'q[name_start]': "l"), class: 'default-link-color'
+          br
+          li = link_to 'M', fighters_path(@q, 'q[name_start]': "m"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'N', fighters_path(@q, 'q[name_start]': "n"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'O', fighters_path(@q, 'q[name_start]': "o"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'P', fighters_path(@q, 'q[name_start]': "p"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'Q', fighters_path(@q, 'q[name_start]': "q"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'R', fighters_path(@q, 'q[name_start]': "r"), class: 'default-link-color'
+          br
+          li = link_to 'S', fighters_path(@q, 'q[name_start]': "s"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'T', fighters_path(@q, 'q[name_start]': "t"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'U', fighters_path(@q, 'q[name_start]': "u"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'V', fighters_path(@q, 'q[name_start]': "v"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'W', fighters_path(@q, 'q[name_start]': "w"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'X', fighters_path(@q, 'q[name_start]': "x"), class: 'default-link-color'
+          br
+          li = link_to 'Y', fighters_path(@q, 'q[name_start]': "y"), class: 'default-link-color'
+          li.partition |
+          li = link_to 'Z', fighters_path(@q, 'q[name_start]': "z"), class: 'default-link-color'
+          li.partition |
+          li = link_to '記号', fighters_path(@q, 'q[name_start_any]': ["_", "-"]), class: 'default-link-color'
+          li.partition |
+          li = link_to '数字', fighters_path(@q, 'q[name_start_any]': ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]), class: 'default-link-color'
+          li.partition |
+          li = link_to 'ALL', fighters_path, class: 'default-link-color'
     = search_form_for q do |f|
       .form-group.field
         = f.label :name, class: 'ml-3'

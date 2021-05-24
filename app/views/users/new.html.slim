@@ -2,9 +2,11 @@
 .container
   .row
     .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-      .nav.justify-content-start.mt-3.mb-3
+      hr.mb-1
+      .nav.justify-content-start
         - breadcrumb :user_new 
         = breadcrumbs separator: " &rsaquo; "
+      hr.mt-1
   h2.font-weight-bold.text-center 会員登録
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
@@ -14,19 +16,19 @@
           = f.label :name, class: 'mr-2'
           / フォームの入力必須赤ラベル
           span.badge.badge-danger 必須
-          = f.text_field :name, class: 'form-control', placeholder: "ウメハラ", "v-model":"user"
+          = f.text_field :name, class: 'form-control', "v-model":"user"
           p.error.notice v-if="isInValidUserLength"
             | ※ 名前は3文字以上で入力してください。
         .form-group
           = f.label :email, class: 'mr-2'
           / フォームの入力必須赤ラベル
           span.badge.badge-danger 必須
-          = f.email_field :email, class: 'form-control', placeholder: "tokido@akuma.com"
+          = f.email_field :email, class: 'form-control'
         .form-group
           = f.label :password, class: 'mr-2'
           / フォームの入力必須赤ラベル
           span.badge.badge-danger 必須
-          = f.password_field :password, class: 'form-control', placeholder: "memememe", "v-model":"password"
+          = f.password_field :password, class: 'form-control', "v-model":"password"
           p.error.notice v-if="isInValidPasswordLength"
             | ※ パスワードは6文字以上で入力してください。
         .form-group
@@ -42,4 +44,4 @@
             = image_tag @user.icon.url, class: 'rounded-circle border border-dark', size: '100x100', id: 'preview'
         = f.submit class: 'btn btn-purple mb-4'
       .text-center
-        = link_to 'ログインページへ', login_path
+        = link_to 'ログインページへ', login_path, class: 'default-link-color'

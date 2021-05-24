@@ -1,5 +1,5 @@
 tr
-  td = link_to fighter.name, fighter_path(fighter)
+  td = link_to fighter.name, fighter_path(fighter), class: 'default-link-color'
   td = fighter.league.name
   - if fighter.character.present?
     td = fighter.character.name

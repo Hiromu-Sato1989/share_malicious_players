@@ -65,18 +65,18 @@
           = link_to '新規登録', new_fighter_path, class: 'btn btn-lg btn-purple'
     - if logged_in?
       ul.top-pages
-        li = link_to '利用規約', page_path('terms')
+        li = link_to '利用規約', page_path('terms'), class: 'default-link-color'
         li.partition |
-        li = link_to 'プライバシーポリシー', '#'
+        li = link_to 'プライバシーポリシー', page_path('privacy'), class: 'default-link-color'
     - else
       ul.top-pages
-        li = link_to '利用規約', page_path('terms')
+        li = link_to '利用規約', page_path('terms'), class: 'default-link-color'
         li.partition |
-        li = link_to 'プライバシーポリシー', '#'
+        li = link_to 'プライバシーポリシー', page_path('privacy'), class: 'default-link-color'
         li.partition |
-        li = link_to 'ログイン', login_path
+        li = link_to 'ログイン', login_path, class: 'default-link-color'
         li.partition |
-        li = link_to '会員登録', new_user_path
+        li = link_to '会員登録', new_user_path, class: 'default-link-color'
     p.d-flex.justify-content-start.m-0
       | ©️2021 MaliciousFighters
 

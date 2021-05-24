@@ -3,9 +3,11 @@
   .container.fluid
     .row
       .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-        .nav.justify-content-start.mt-3.mb-3
+        hr.mb-1
+        .nav.justify-content-start
           - breadcrumb :fighter_show, @fighter
           = breadcrumbs separator: " &rsaquo; "
+        hr.mt-1
         .nav.justify-content-end.mt-2.mb-2
           = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-dark-blue'
           = link_to '編集', edit_fighter_path, class: 'btn btn-purple ml-4'
@@ -53,7 +55,7 @@
           p.ml-0.mr-3 ※ログインするとコメント機能が使えるようになります。
           h5.induction-text ログインする
           = link_to 'ログイン', login_path, class: 'btn btn-dark-blue induction-space'
-          h5.induction-text 新規会員登録する
+          h5.induction-text 無料会員登録する
           = link_to '会員登録', new_user_path, class: 'btn btn-purple induction-space'
 
 #search-modal.modal.fade role="dialog" aria-hidden="true" tabindex="-1"

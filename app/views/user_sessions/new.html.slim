@@ -2,9 +2,11 @@
 .container
   .row
     .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-      .nav.justify-content-start.mt-3.mb-3
+      hr.mb-1
+      .nav.justify-content-start
         - breadcrumb :login
         = breadcrumbs separator: " &rsaquo; "
+      hr.mt-1
   h2.font-weight-bold.text-center ログイン
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
@@ -17,4 +19,4 @@
           = f.password_field :password, class: 'form-control', placeholder: "パスワード"
         = f.submit 'ログイン', class: 'btn btn-dark-blue mb-4'
       .text-center
-        = link_to '会員登録ページへ', new_user_path
+        = link_to '会員登録ページへ', new_user_path, class: 'default-link-color'
