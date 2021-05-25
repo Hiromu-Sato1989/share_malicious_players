@@ -21,7 +21,10 @@
     .row
       = render 'new_arrival'
       = render 'votes_top'
-      = render 'impressions_top'
+      - if logged_in?
+        = render 'new_comments'
+      - else
+        = render 'impressions_top'
 
 .bottom-section
   .container

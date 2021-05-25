@@ -32,6 +32,7 @@ class Fighter < ApplicationRecord
   scope :number_of_votes, -> { order(votes_count: :desc).limit(5) }
   scope :new_arrival, -> { order(created_at: :desc).limit(5) }
   scope :number_of_impression, -> { order(impressions_count: :desc).limit(5) }
+  scope :new_comments, -> { joins(:comments).merge(Comment.comments_order) }
 
   # indexの表示に使用
   scope :search_fighter, ->(name) { where('name like?', "#{name}%") }
