@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Users", type: :system do
+RSpec.describe 'Users', type: :system do
   let(:user_equal_email) { create(:user, :equal_email) }
+
   describe 'ユーザー会員登録' do
     before do
       visit new_user_path
@@ -17,7 +20,7 @@ RSpec.describe "Users", type: :system do
         expect(page).to have_current_path login_path, ignore_query: true
       end
     end
-    
+
     context '名前が未入力' do
       it '会員登録が失敗する' do
         fill_in '名前', with: ''

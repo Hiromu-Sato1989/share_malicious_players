@@ -1,11 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "UserSessions", type: :system do
+RSpec.describe 'UserSessions', type: :system do
   let(:user) { create(:user) }
+
   describe 'ユーザーログイン' do
     before do
       visit login_path
     end
+
     context '入力値が正常' do
       it 'ログイン成功' do
         fill_in 'メールアドレス', with: user.email

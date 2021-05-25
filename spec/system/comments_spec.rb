@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Comments", type: :system do
+RSpec.describe 'Comments', type: :system do
   let!(:category) { create(:category, :kusshin) }
   let!(:league_b) { create(:league, :bronze) }
   let!(:character) { create(:character, :ryu) }
   let(:fighter_d) { create(:fighter, :daigo, categories: [category], character: character, league: league_b) }
   let(:user) { create(:user) }
+
   describe 'コメント機能' do
     before do
       visit login_path
