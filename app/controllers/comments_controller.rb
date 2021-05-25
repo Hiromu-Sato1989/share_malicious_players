@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def destroy
     comment = current_user.comments.find(params[:id])
     comment.destroy!
-    redirect_to fighter_path(comment.fighter)
+    redirect_to fighter_path(comment.fighter), success: 'コメントを削除しました'
   end
 
   private

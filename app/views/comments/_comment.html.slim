@@ -12,7 +12,7 @@ li.comment-set
       p = comment.body
     - if current_user.own?(comment)
       li.comment-delete.d-flex.justify-content-end
-        = link_to comment_path(comment), method: :delete, data: { confirm: 'コメントを削除しますか？',
+        = link_to comment_path(comment), method: :delete, data: { confirm: 'コメントを削除してもよろしいですか？',
                                                                   cancel: 'キャンセル',
-                                                                  commit: '削除する' }, title: '削除確認' do
+                                                                  commit: 'OK' }, title: '確認' do
           i.fas.fa-times-circle.cross

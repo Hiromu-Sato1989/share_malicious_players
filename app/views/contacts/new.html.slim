@@ -18,6 +18,6 @@
           = f.label :message, 'お問い合わせ内容'
           = f.text_area :message, size: '8x8', class: 'form-control'
         .text-center
-          = f.submit '送信する', class: 'btn btn-purple mb-4', data: { confirm: '送信しますか？',
+          = f.submit '送信する', class: 'btn btn-purple mb-4', data: { confirm: 'この内容で送信してもよろしいですか？',
                                                                   cancel: 'キャンセル',
-                                                                  commit: '送信する' }, title: '送信確認'
+                                                                  commit: 'OK' }, title: '確認'
