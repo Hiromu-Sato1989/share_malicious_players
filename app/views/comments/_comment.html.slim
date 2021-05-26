@@ -14,5 +14,5 @@ li.comment-set
       li.comment-delete.d-flex.justify-content-end
         = link_to comment_path(comment), method: :delete, data: { confirm: 'コメントを削除してもよろしいですか？',
                                                                   cancel: 'キャンセル',
-                                                                  commit: 'OK' }, title: '確認' do
+                                                                  commit: 'OK' }, title: 'コメントの削除' do
           i.fas.fa-times-circle.cross

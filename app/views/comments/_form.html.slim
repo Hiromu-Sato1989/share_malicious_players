@@ -4,7 +4,9 @@
       = f.label :body
       = f.text_area :body, class: 'form-control mb-3'
       .text-center
-        = f.submit '投稿する', class: 'btn btn-purple mb-4'
+        = f.submit '投稿する', class: 'btn btn-purple mb-4', data: { confirm: '投稿してよろしいですか？',
+                                                                  cancel: 'キャンセル',
+                                                                  commit: 'OK' }, title: 'コメントの投稿'
     p.mb-0 下記に該当するコメントは削除させていただく場合があります。
     ul
      li.font-weight-bold 公序良俗に著しく反している
