@@ -3,7 +3,8 @@
     = form_with model: comment, url: [fighter, comment], local: true do |f|
       = f.label :body
       = f.text_area :body, class: 'form-control mb-3'
-      = f.submit '投稿する', class: 'btn btn-purple mb-4'
+      .text-center
+        = f.submit '投稿する', class: 'btn btn-purple mb-4'
     p.mb-0 下記に該当するコメントは削除させていただく場合があります。
     ul
      li.font-weight-bold 公序良俗に著しく反している
