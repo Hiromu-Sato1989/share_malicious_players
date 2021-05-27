@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :redirect_root, only: :new
+
   def new
     @user = User.new
   end

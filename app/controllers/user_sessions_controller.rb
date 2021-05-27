@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UserSessionsController < ApplicationController
+  before_action :redirect_root, only: :new
+
   def new; end
 
   def create
