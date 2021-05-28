@@ -22,6 +22,7 @@ RSpec.describe 'Comments', type: :system do
       it 'コメントが成功する' do
         fill_in 'コメント', with: 'テスト'
         click_button '投稿する'
+        click_button 'OK'
         expect(page).to have_content('コメントを投稿しました')
         expect(page).to have_content('テスト')
         expect(page).to have_content(user.name)
@@ -33,6 +34,7 @@ RSpec.describe 'Comments', type: :system do
       it 'コメントが失敗する' do
         fill_in 'コメント', with: ''
         click_button '投稿する'
+        click_button 'OK'
         expect(page).to have_content('コメントを入力してください')
         expect(page).to have_current_path fighter_path(fighter_d), ignore_query: true
       end
@@ -42,6 +44,7 @@ RSpec.describe 'Comments', type: :system do
       it 'コメントを削除できる' do
         fill_in 'コメント', with: 'テスト'
         click_button '投稿する'
+        click_button 'OK'
         find('.cross').click
         click_button 'OK'
         expect(page).to have_content('コメントを削除しました')
