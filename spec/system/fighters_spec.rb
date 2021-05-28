@@ -18,9 +18,8 @@ RSpec.describe 'Fighters', type: :system do
         fill_in "Fighter's ID", with: 'tokido77'
         select 'ブロンズ', from: 'fighter_league_id'
         find('.fighter_categories').click
-        accept_confirm do
-          click_button '登録'
-        end
+        click_button '登録'
+        click_button 'OK'
         expect(page).to have_content('悪質プレイヤーを登録しました')
         fighter = Fighter.last
         expect(page).to have_current_path fighter_path(fighter), ignore_query: true
@@ -31,10 +30,12 @@ RSpec.describe 'Fighters', type: :system do
       it '登録が失敗する' do
         select 'ブロンズ', from: 'fighter_league_id'
         find('.fighter_categories').click
-        accept_confirm do
-          click_button '登録'
-        end
+        click_button '登録'
+        click_button 'OK'
         expect(page).to have_content('登録できませんでした')
+        expect(page).to have_content("Fighter's IDを入力してください")
+        expect(page).to have_content("Fighter's IDは6文字以上で入力してください")
+        expect(page).to have_content("Fighter's IDは英字、数字、「 - 」、「 _ 」で入力してください")
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
     end
@@ -43,10 +44,10 @@ RSpec.describe 'Fighters', type: :system do
       it '登録が失敗する' do
         fill_in "Fighter's ID", with: 'umehara'
         find('.fighter_categories').click
-        accept_confirm do
-          click_button '登録'
-        end
+        click_button '登録'
+        click_button 'OK'
         expect(page).to have_content('登録できませんでした')
+        expect(page).to have_content('リーグを入力してください')
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
     end
@@ -55,10 +56,10 @@ RSpec.describe 'Fighters', type: :system do
       it '登録が失敗する' do
         fill_in "Fighter's ID", with: 'tokido77'
         select 'ブロンズ', from: 'fighter_league_id'
-        accept_confirm do
-          click_button '登録'
-        end
+        click_button '登録'
+        click_button 'OK'
         expect(page).to have_content('登録できませんでした')
+        expect(page).to have_content('悪質プレイを選択してください')
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
     end
@@ -69,10 +70,10 @@ RSpec.describe 'Fighters', type: :system do
         fill_in "Fighter's ID", with: 'umehara'
         select 'ブロンズ', from: 'fighter_league_id'
         find('.fighter_categories').click
-        accept_confirm do
-          click_button '登録'
-        end
+        click_button '登録'
+        click_button 'OK'
         expect(page).to have_content('登録できませんでした')
+        expect(page).to have_content("Fighter's IDがすでに登録されています。検索してみてください")
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
     end

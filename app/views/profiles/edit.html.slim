@@ -2,9 +2,11 @@
 .container
   .row
     .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-      .nav.justify-content-start.mt-3.mb-3
+      hr.mb-1
+      .nav.justify-content-start
         - breadcrumb :profile_edit, @user
         = breadcrumbs separator: " &rsaquo; "
+      hr.mt-1
       .nav.justify-content-end.mt-2.mb-2
           = link_to '戻る', :back, class: 'btn btn-info shadow-button'
   h2.font-weight-bold.text-center プロフィール編集
@@ -28,4 +30,4 @@
         - else
           .mt-3.mb-3
             = image_tag @user.icon.url, class: 'rounded-circle border border-dark', size: '100x100', id: 'preview'
-        = f.submit class: 'btn btn-purple mb-4'
+        = f.submit class: 'btn btn-purple mt-2 mb-4'

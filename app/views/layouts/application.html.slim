@@ -11,11 +11,12 @@ html
     = javascript_pack_tag 'application'
     = javascript_pack_tag 'hello_vue'
     = javascript_pack_tag 'profiles'
-
     /フォントの導入
     link href="https://fonts.gstatic.com" rel="preconnect" /
     link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet" /
     meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /
+    - if Rails.env.production?
+      = render 'shared/google_analytics'
   body
     - if logged_in?
       = render 'shared/logged_in_header'

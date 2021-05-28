@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UserSessionsController < ApplicationController
+  before_action :redirect_root, only: :new
+
   def new; end
 
   def create
@@ -8,7 +10,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_back_or_to root_path, success: 'ログインしました'
     else
-      flash.now[:danger] = 'ログインに失敗しました'
+      flash.now[:danger] = 'メールアドレスまたはパスワードが間違っています'
       render :new
     end
   end

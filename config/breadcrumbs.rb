@@ -10,32 +10,32 @@ crumb :fighters do
 end
 
 crumb :fighter_new do
-  link '登録ページ', new_fighter_path
+  link '登録', new_fighter_path
   parent :top
 end
 
 crumb :fighter_show do |fighter|
-  link "#{fighter.name}の詳細ページ", fighter_path(fighter)
+  link "#{fighter.name}の詳細", fighter_path(fighter)
   parent :fighters
 end
 
 crumb :contact_new do
-  link 'お問い合わせページ', new_contact_path
+  link 'お問い合わせ', new_contact_path
   parent :top
 end
 
 crumb :howto do
-  link '使い方ページ', page_path('howto')
+  link '使い方', page_path('howto')
   parent :top
 end
 
 crumb :fighter_edit do |fighter|
-  link '編集ページ', edit_fighter_path
+  link '編集', edit_fighter_path
   parent :fighter_show, fighter
 end
 
 crumb :user_new do
-  link '会員登録ページ', new_user_path
+  link '会員登録', new_user_path
   parent :top
 end
 
@@ -45,12 +45,12 @@ crumb :login do
 end
 
 crumb :profile do
-  link 'プロフィールページ', profile_path
+  link 'プロフィール', profile_path
   parent :top
 end
 
 crumb :profile_edit do |_profile|
-  link 'プロフィール編集ページ', edit_profile_path
+  link 'プロフィール編集', edit_profile_path
   parent :profile
 end
 

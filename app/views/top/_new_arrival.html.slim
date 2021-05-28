@@ -11,5 +11,5 @@
         tbody.text-center
           - Fighter.new_arrival.each do |fighter|
             tr
-              td= link_to fighter.name, fighter_path(fighter)
+              td= link_to fighter.name, fighter_path(fighter), class: 'default-link-color'
               td= l fighter.created_at, format: :short

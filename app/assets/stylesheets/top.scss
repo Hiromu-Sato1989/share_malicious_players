@@ -12,6 +12,8 @@ h4.pt-3{
 
 .top-section {
   background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #F9F9F9), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #F9F9F9),color-stop(.75, #F9F9F9), color-stop(.75, transparent),to(transparent));
+  -webkit-background-size: 30px 30px;
 }
 
 .board-section {
@@ -100,5 +102,44 @@ ul.top-pages li {
 }
 
 .partition {
-  margin: 0 6px;
+  margin: 0 8px;
+}
+
+.default-link-color {
+  color: #346aa3;
+}
+
+.breadcrumbs a {
+  color: #346aa3;
+}
+
+.under-line-none:hover {
+  text-decoration: none;
+}
+
+.ml-default-p {
+  margin-left: 10px;
+}
+
+.alert {
+  padding: 4px 10px !important;
+}
+
+.alert-danger {
+  color: #ffffff !important;
+  background-color: #CC0033 !important;
+}
+
+.alert-success {
+  background-color: #33CC33 !important;
+}
+
+.content-title {
+  display: inline;
+  background: linear-gradient(transparent 75%, #ffff00 0%);
+}
+
+.content-list {
+  display: inline;
+  background: linear-gradient(transparent 60%, #ffff00 0%);
 }
