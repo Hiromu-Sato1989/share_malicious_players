@@ -101,3 +101,5 @@ gem 'dotenv-rails'
 gem 'sorcery'
 # 画像アップロード機能
 gem 'carrierwave', '~> 2.0'
+# S3アップロード
+gem 'fog-aws'
