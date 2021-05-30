@@ -15,7 +15,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
-  socket: /tmp/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
 
 development:
   <<: *default
@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: share_malicious_players_production
-  username: share_malicious_players
-  password: <%= ENV['SHARE_MALICIOUS_PLAYERS_DATABASE_PASSWORD'] %>
+  database: malicious_fighters
+  username: <%= ENV['RDS_USER_NAME'] %>
+  password: <%= ENV['RDS_USER_PASS'] %>
+  host: <%= ENV['RDS_HOST'] %>
