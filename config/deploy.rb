@@ -11,7 +11,7 @@ set :deploy_to, "/var/www/malicious_fighters"
 # デフォルトはmasterブランチ
 set :branch, "main"
 
-# set :user, 'hiromu'
+set :user, 'hiromu'
 
 # 使用するrubyのバージョン
 set :rbenv_ruby, '2.6.6'
