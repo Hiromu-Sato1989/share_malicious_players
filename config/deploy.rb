@@ -16,7 +16,7 @@ set :user, 'hiromu'
 # 使用するrubyのバージョン
 set :rbenv_ruby, '2.6.6'
 
-set :linked_files, %w(config/master.key config/database.yml)
+set :linked_files, %w(config/master.key config/database.yml config/.env)
 set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets public/system public/uploads)
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
