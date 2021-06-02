@@ -3,6 +3,6 @@
 class ContactMailer < ApplicationMailer
   def send_mail(contact)
     @contact = contact
-    mail to: ENV['ADMIN_MAIL_ADDRESS'], subject: '【ユーザーからのお問い合わせ】'
+    mail to: Rails.application.credentials.mailer[:mail_address], subject: '【ユーザーからのお問い合わせ】'
   end
 end
