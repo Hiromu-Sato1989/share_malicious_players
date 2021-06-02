@@ -76,15 +76,15 @@ group :development do
   gem 'rubocop-rails', '= 2.9.1', require: false
   gem 'rubocop-rspec'
 
-  # 以下capistrano関連
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-  gem 'capistrano3-unicorn'
-  # webpacker対応
-  gem 'ed25519'
-  gem 'bcrypt_pbkdf'
+  # # 以下capistrano関連
+  # gem 'capistrano'
+  # gem 'capistrano-bundler'
+  # gem 'capistrano-rails'
+  # gem 'capistrano-rbenv'
+  # gem 'capistrano3-unicorn'
+  # # webpacker対応
+  # gem 'ed25519'
+  # gem 'bcrypt_pbkdf'
 end
 
 group :production, :staging do
