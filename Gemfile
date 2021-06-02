@@ -109,8 +109,6 @@ gem 'impressionist',
 gem 'rails_admin'
 # 国際化
 gem 'rails-i18n'
-# 環境変数設定
-gem 'dotenv-rails'
 # ログイン機能
 gem 'sorcery'
 # 画像アップロード機能

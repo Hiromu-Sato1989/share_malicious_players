@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['ADMIN_MAIL_ADDRESS']
+  default from: Rails.application.credentials.mailer[:mail_address]
   layout 'mailer'
 end
