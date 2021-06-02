@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # # capistranoのバージョン固定
 # lock "~> 3.16.0"
 
@@ -24,7 +25,6 @@
 # set :keep_releases, 3
 
 # set :log_level, :debug
-
 
 # namespace :deploy do
 #   desc 'Restart application'

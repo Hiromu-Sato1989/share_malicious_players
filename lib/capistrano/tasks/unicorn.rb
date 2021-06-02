@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # #unicornのpidファイル、設定ファイルのディレクトリを指定
 # namespace :unicorn do
 #   task :environment do
@@ -55,7 +56,7 @@
 #     end
 #   end
 
-# #unicornを強制終了させるtask 
+# #unicornを強制終了させるtask
 #   desc "Stop unicorn server immediately"
 #   task force_stop: :environment do
 #     on roles(:app) do

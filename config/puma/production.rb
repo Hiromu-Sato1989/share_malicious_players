@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 # config/puma/production.rb
-environment "production"
+environment 'production'
 
 # UNIX Socketへのバインド
-tmp_path = "#{File.expand_path("../../..", __FILE__)}/tmp"
+tmp_path = "#{File.expand_path('../..', __dir__)}/tmp"
 bind "unix://#{tmp_path}/sockets/puma.sock"
 
 # スレッド数とWorker数の指定

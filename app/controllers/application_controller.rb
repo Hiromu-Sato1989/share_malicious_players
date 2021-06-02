@@ -12,9 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_root
-    if logged_in?
-      flash[:danger] = 'ログイン済みです'
-      redirect_to root_path
-    end
+    redirect_to root_path, danger: 'ログイン済みです' if logged_in?
   end
 end

@@ -103,8 +103,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'gretel'
 # 閲覧数集計
 gem 'impressionist',
-  git: 'git://github.com/charlotte-ruby/impressionist.git',
-  ref: '46a582ff8cd3496da64f174b30b91f9d97e86643'
+    git: 'git://github.com/charlotte-ruby/impressionist.git',
+    ref: '46a582ff8cd3496da64f174b30b91f9d97e86643'
 # 管理者画面
 gem 'rails_admin'
 # 国際化

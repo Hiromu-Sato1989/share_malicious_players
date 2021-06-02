@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # # set lets
 # $worker  = 2
 # $timeout = 30
