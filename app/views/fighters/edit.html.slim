@@ -5,7 +5,7 @@
       hr.mb-1
       .nav.justify-content-start
         - breadcrumb :fighter_edit, @fighter
-        = breadcrumbs separator: " &rsaquo; "
+        = breadcrumbs separator: " &rsaquo; ", class: 'breadcrumbs'
       hr.mt-1
       .nav.justify-content-end.mt-2.mb-2
         = link_to '戻る', :back, class: 'btn btn-info shadow-button'

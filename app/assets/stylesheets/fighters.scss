@@ -102,8 +102,8 @@ li.character {
 }
 
 .breadcrumbs {
-  // スクロールする
-  overflow-x: scroll;
+  // スマホサイズならパンくずリストをスクロールする
+  overflow-x: auto;
 
   // 改行しないようにする
   word-break: keep-all;

@@ -6,7 +6,7 @@
         hr.mb-1
         .nav.justify-content-start
           - breadcrumb :fighters
-          = breadcrumbs separator: " &rsaquo; "
+          = breadcrumbs separator: " &rsaquo; ", class: 'breadcrumbs'
         hr.mt-1
         .nav.justify-content-end.mt-2.mb-2
           = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-dark-blue'
