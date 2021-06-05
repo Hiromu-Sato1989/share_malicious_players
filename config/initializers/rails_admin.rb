@@ -25,7 +25,7 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
   config.authenticate_with do
     authenticate_or_request_with_http_basic('Site Message') do |username, password|
-      username == Rails.application.credentials.rails_admin[:user] && password == Rails.application.credentials.rails_admin[:pass]
+      username == Rails.application.credentials.admin[:user] && password == Rails.application.credentials.admin[:pass]
     end
   end
 
