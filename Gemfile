@@ -87,7 +87,7 @@ group :development do
   # gem 'bcrypt_pbkdf'
 end
 
-  # capistrano関連
+# capistrano関連
 # group :production, :staging do
 #   gem 'unicorn'
 # end
