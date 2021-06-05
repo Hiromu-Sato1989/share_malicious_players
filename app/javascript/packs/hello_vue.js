@@ -32,7 +32,7 @@
 // </div>
 
 
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue/dist/vue.min.js'
 // import App from '../app.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
