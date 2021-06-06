@@ -41,7 +41,11 @@
         = render 'not_done_vote', fighter: @fighter
       span.vote_balance.font-weight-bold = @fighter.votes_count
     p.text-right
-      b> UPDATE
+      b CREATE
+      br
+      = l @fighter.created_at, format: :default
+    p.text-right
+      b UPDATE
       br
       = l @fighter.updated_at, format: :default
 
