@@ -22,7 +22,7 @@
           .col-md-6.offset-md-3.pt-4.pb-4
             h5.under-line-m
               - if @fighter.character.present?
-                = "【#{@fighter.character.name}】"
+                = @fighter.character.name
               - else
                 | 使用キャラ不明
       .col-md-8.offset-md-2.pt-4.pb-4.d-flex.justify-content-center.align-items-center
