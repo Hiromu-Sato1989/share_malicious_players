@@ -48,6 +48,14 @@
       b UPDATE
       br
       = l @fighter.updated_at, format: :default
+    p.text-right
+      b VIEW COUNT
+      br
+      = @fighter.impressions_count
+    p.text-right
+      b COMMENTS COUNT
+      br
+      = @fighter.comments.count
 
     hr
     - if logged_in?
