@@ -17,6 +17,7 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /
     - if Rails.env.production?
       = render 'shared/google_analytics'
+      = render 'shared/ua_google_analytics'
   body
     - if logged_in?
       = render 'shared/logged_in_header'
