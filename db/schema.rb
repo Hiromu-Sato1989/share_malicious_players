@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_084000) do
+ActiveRecord::Schema.define(version: 2021_06_11_144134) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_05_21_084000) do
     t.integer "votes_count", default: 0, null: false
     t.integer "impressions_count", default: 0
     t.bigint "character_id"
+    t.string "youtube_url"
+    t.string "twitter_url"
     t.index ["character_id"], name: "index_fighters_on_character_id"
     t.index ["league_id"], name: "index_fighters_on_league_id"
     t.index ["name"], name: "index_fighters_on_name", unique: true
@@ -105,6 +107,7 @@ ActiveRecord::Schema.define(version: 2021_05_21_084000) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "icon"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

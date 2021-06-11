@@ -13,8 +13,13 @@
           | 悪質プレイヤーをみんなで共有しよう！
         h5.induction-text 悪質プレイヤーを検索する
         = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-dark-blue induction-space'
-        h5.induction-text 悪質プレイヤーを新しく登録する
-        = link_to '新規登録', new_fighter_path, class: 'btn btn-purple induction-space'
+        - unless current_user&.admin?
+          h5.induction-text 悪質プレイヤーの新規登録申請を行う
+          a href="https://docs.google.com/forms/d/e/1FAIpQLSftwKk2FfzdMwaMDQu4HwQ8J9bPYGyoW9AvPnaVUiJcMaK49g/viewform" target="blank" class="btn btn-purple induction-space" 新規登録申請
+        /adminユーザーの場合新規登録機能を表示させる
+        - if current_user&.admin?
+          h5.induction-text 悪質プレイヤーを新しく登録する
+          = link_to '新規登録', new_fighter_path, class: 'btn btn-purple induction-space'
 
 .board-section
   .container
