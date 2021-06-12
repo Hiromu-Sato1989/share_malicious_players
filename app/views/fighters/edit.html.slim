@@ -9,16 +9,21 @@
       hr.mt-1
       .nav.justify-content-end.mt-2.mb-2
         = link_to '戻る', :back, class: 'btn btn-info shadow-button'
+        = link_to '削除', fighter_path(@fighter), method: :destroy, class: 'btn btn-danger shadow-button ml-4', data: { confirm: '削除してよろしいですか？',
+                                                                                                    cancel: 'キャンセル',
+                                                                                                    commit: 'OK' }, title: 'Fighterの削除'
   h2.font-weight-bold.text-center 悪質プレイヤー編集
   .row
     .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       = form_with model: @fighter, local: true do |f|
         = render 'shared/error_messages', object: f.object
         .form-group
+          = f.label :league_id
+          = f.collection_select :league_id, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
+        .form-group
           button#accordion-character.btn.btn-outline-secondary.rounded-pill.mr-2 type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample"
             i.fa.fa-chevron-circle-down.mr-1
             = f.label 'キャラクター', class: 'mb-0'
-          span.badge.badge-secondary 任意
           .row
             .col
               .collapse.multi-collapse#multiCollapseExample
@@ -30,8 +35,7 @@
                       = b.label do
                         = b.label { b.text }
         .form-group
-          = f.label '悪質プレイ', class: 'mr-2'
-          span.badge.badge-danger 必須
+          = f.label '悪質プレイ'
           .col-md-12.ml-0.d-flex.justify-content-center.align-items-center
             .col-12
               = f.collection_check_boxes :category_ids, Category.all, :id, :name do |b|
@@ -39,4 +43,10 @@
                   = b.check_box + b.text
                 = b.label class: 'form-check-label fighter_categories' do
                   = b.label { b.text }
+        .form-group
+          = f.label :youtube_url, class: 'mr-2'
+          = f.text_field :youtube_url, class: 'form-control'
+        .form-group
+          = f.label :twitter_url, class: 'mr-2'
+          = f.text_field :twitter_url, class: 'form-control'
         = f.submit class: 'btn btn-purple mt-2 mb-4'

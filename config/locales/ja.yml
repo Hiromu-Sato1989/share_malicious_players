@@ -7,6 +7,8 @@ ja:
         character_ids: キャラクター
         category_ids: 悪質プレイ
         fighter_characters: キャラクター
+        youtube_url: YouTube
+        twitter_url: Twitter
       user:
         name: 名前
         email: メールアドレス

@@ -5,7 +5,8 @@ class FightersController < ApplicationController
   impressionist actions: [:show]
   # 同IPアドレスで1回だけ計測する場合
   # impressionist actions: [:show], unique: %i[impressionable_id ip_address]
-  before_action :set_fighter, only: %i[show edit update]
+  before_action :set_fighter, only: %i[show edit update destroy]
+  before_action :user_admin, only: %i[new create edit update destroy]
 
   def index
     @q = Fighter.ransack(params[:q])
@@ -49,19 +50,31 @@ class FightersController < ApplicationController
     end
   end
 
+  def destroy
+    @fighter.destroy!
+    redirect_to fighters_path, success: "#{@fighter.name}を削除しました"
+  end
+
   private
 
   def fighter_params
     # params.require(:fighter).permit(:name, :league_id, character_ids: [], category_ids: [])
     # 多対多の場合は上記
-    params.require(:fighter).permit(:name, :league_id, :character_id, category_ids: [])
+    params.require(:fighter).permit(:name, :league_id, :character_id, :youtube_url, :twitter_url, category_ids: [])
   end
 
   def fighter_edit_params
-    params.require(:fighter).permit(:character_id, category_ids: [])
+    params.require(:fighter).permit(:league_id, :character_id, :youtube_url, :twitter_url, category_ids: [])
   end
 
   def set_fighter
     @fighter = Fighter.find(params[:id])
+  end
+
+  def user_admin
+    return if current_user&.admin == true
+
+    redirect_to root_path
+    flash[:danger] = '管理者しか入れません'
   end
 end

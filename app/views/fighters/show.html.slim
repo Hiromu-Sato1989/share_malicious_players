@@ -10,7 +10,8 @@
         hr.mt-1
         .nav.justify-content-end.mt-2.mb-2
           = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-dark-blue'
-          = link_to '編集', edit_fighter_path, class: 'btn btn-purple ml-4'
+          - if current_user&.admin?
+            = link_to '編集', edit_fighter_path, class: 'btn btn-purple ml-4'
     h2.font-weight-bold.text-center プレイヤーデータ
     .row
       .col-md-10.offset-md-1
@@ -31,6 +32,13 @@
             - @fighter.categories.each do |category|
               .form-select-label
                 = category.name
+      .col-md-10.offset-md-1.text-center.d-flex.justify-content-center
+        - if @fighter.youtube_url.present?
+          iframe allow=("accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture") allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/#{@fighter.youtube_url[32..42]}" width="514" height="289"
+        - if @fighter.twitter_url.present?
+          blockquote.twitter-tweet
+            a href="#{@fighter.twitter_url}" 
+          script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js" 
     .row.justify-content-center.d-flex.align-items-center
       / 閲覧者のIPアドレスとfighterが持つIPアドレスで投票済みかどうかを判別
       / ぼっち演算子でnilガード

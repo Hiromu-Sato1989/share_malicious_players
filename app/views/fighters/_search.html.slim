@@ -74,10 +74,10 @@
         = f.label :league_id, class: 'ml-3'
         = f.collection_select :league_id_eq, League.all, :id, :name, { prompt: 'リーグ' }, { class: 'form-control' }
         br
-        p.btn.btn-outline-secondary.rounded-pill#accordion-character type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample"
+        /p.btn.btn-outline-secondary.rounded-pill#accordion-character type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample"
           i.fa.fa-chevron-circle-down.mr-1
           = f.label 'キャラクター', class: 'mb-0'
-        .collapse.multi-collapse#multiCollapseExample
+        /.collapse.multi-collapse#multiCollapseExample
           .card.card-body
             = f.collection_radio_buttons :character_id_eq, Character.all.order(name: :asc), :id, :name do |b|
               li.character
@@ -85,5 +85,11 @@
                   = b.radio_button + b.text
                 = b.label do
                   = b.label { b.text }
+        = f.label :category, class: 'ml-3'
+        = f.collection_check_boxes :category_ids_eq_any, Category.all, :id, :name do |b|
+          = b.check_box do
+            = b.check_box + b.text
+          = b.label do
+            = b.label { b.text }
         .modal-footer.actions
           = f.submit '検索', class: 'btn btn-dark-blue'

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   root 'top#index'
-  resources :fighters, only: %i[index new create show edit update] do
+  resources :fighters, only: %i[index new create show edit update destroy] do
     resources :votes, only: [:create]
     resources :comments, only: %i[create destroy], shallow: true
   end
