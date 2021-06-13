@@ -24,12 +24,18 @@
 .board-section
   .container
     .row
-      = render 'new_arrival'
-      = render 'votes_top'
-      - if logged_in?
-        = render 'new_comments'
+      -if logged_in?
+        .col-md-4
+          = render 'new_arrival'
+        .col-md-4
+          = render 'votes_top'
+        .col-md-4
+          = render 'new_comments'
       - else
-        = render 'impressions_top'
+        .col-md-6
+          = render 'new_arrival'
+        .col-md-6
+          = render 'votes_top'
 
 .bottom-section
   .container
@@ -39,9 +45,9 @@
       .col-lg-6.offset-1
           h4.pt-3.sawarabi.content-title 悪質プレイヤーのデータベース
           p
-            | このサイトでは悪質な行為をしてくるプレイヤーをデータベース化しています。
+            | このサイトでは悪質なプレイをしてくるプレイヤーをデータベース化しています。
             br
-            | プレイヤーの詳細ページで証拠の動画を確認することができます。
+            | プレイヤーの詳細ページではFighter's ID、悪質プレイの種類、証拠の動画などを確認することができます。
           p
             = link_to '検索', fighters_path, remote: true, class: 'btn btn-lg btn-modal-dark-blue'
     .row.second-bottom.pt-3.pb-3.mt-2.mb-2.rounded-custom
@@ -65,17 +71,23 @@
       .col-lg-6.offset-1
         h4.pt-3.sawarabi.content-title データベースに載っていない
         p
-          | 検索してもプレイヤーが見つからなかったら、あなたが第一発見者かもしれません。
+          | 悪質プレイをしてきた対戦相手を検索してもデータベースでヒットしなかったら、あなたが第一発見者かもしれません。
           br
           | 必要情報を入力して悪質プレイヤーを登録してみましょう！
         a href="https://docs.google.com/forms/d/e/1FAIpQLSftwKk2FfzdMwaMDQu4HwQ8J9bPYGyoW9AvPnaVUiJcMaK49g/viewform" target="blank" class="btn btn-lg btn-purple induction-space" 新規登録申請
     - if logged_in?
       ul.top-pages
+        li = link_to 'https://twitter.com/MF_SFV', target: '_blank' do
+          i.fab.fa-twitter
+        li.partition |
         li = link_to '利用規約', page_path('terms'), class: 'default-link-color'
         li.partition |
         li = link_to 'プライバシーポリシー', page_path('privacy'), class: 'default-link-color'
     - else
       ul.top-pages
+        li = link_to 'https://twitter.com/MF_SFV', target: '_blank' do
+          i.fab.fa-twitter
+        li.partition |
         li = link_to '利用規約', page_path('terms'), class: 'default-link-color'
         li.partition |
         li = link_to 'プライバシーポリシー', page_path('privacy'), class: 'default-link-color'

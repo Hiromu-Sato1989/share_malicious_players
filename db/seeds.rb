@@ -79,7 +79,6 @@ Character.create!([
 Category.create!([
                    { name: '屈伸' },
                    { name: '舐めプ' },
-                   { name: 'ラグ' },
                    { name: '切断' },
                    { name: 'ファンメ' }
                  ])

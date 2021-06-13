@@ -1,16 +1,15 @@
-.col-md-4
-  .border.border-dark.rounded.mt-3.mb-3
-    #votes_top
-      .text-center
-        h4.sawarabi 投票数トップ5
-      table.table.table-striped 
-        thead.thead-default.text-center
+.border.border-dark.rounded.mt-3.mb-3
+  #votes_top
+    .text-center
+      h4.sawarabi 投票数トップ5
+    table.table.table-striped 
+      thead.thead-default.text-center
+        tr
+          th= "Fighter's ID"
+          th= "投票数"
+      tbody.text-center
+        /render partialで書ける？
+        - Fighter.number_of_votes.each do |fighter|
           tr
-            th= "Fighter's ID"
-            th= "投票数"
-        tbody.text-center
-          /render partialで書ける？
-          - Fighter.number_of_votes.each do |fighter|
-            tr
-              td= link_to fighter.name, fighter_path(fighter), class: 'default-link-color'
-              td= fighter.votes_count
+            td= link_to fighter.name, fighter_path(fighter), class: 'default-link-color'
+            td= fighter.votes_count

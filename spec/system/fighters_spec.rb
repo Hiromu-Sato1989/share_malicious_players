@@ -7,9 +7,11 @@ RSpec.describe 'Fighters', type: :system do
   let!(:league_b) { create(:league, :bronze) }
   let!(:character) { create(:character, :ryu) }
   let(:fighter_d) { create(:fighter, :daigo, categories: [category], character: character, league: league_b) }
+  let(:admin) { create(:user, :admin) }
 
-  describe '悪質プレイヤーの新規登録' do
+  describe '管理者による悪質プレイヤーの新規登録' do
     before do
+      login_as(admin)
       visit new_fighter_path
     end
 
@@ -133,18 +135,16 @@ RSpec.describe 'Fighters', type: :system do
       end
     end
 
-    context 'キャラクター検索を使う' do
+    context 'Category検索を使う' do
       it '検索でヒットする' do
-        find('#accordion-character').click
-        choose 'リュウ'
+        check '屈伸'
         click_button '検索'
         expect(page).to have_content('umehara')
         expect(page).to have_current_path fighters_path, ignore_query: true
       end
 
       it '検索でヒットしない' do
-        find('#accordion-character').click
-        choose 'リュウ'
+        check '屈伸'
         click_button '検索'
         expect(page).not_to have_content('tokido77')
         expect(page).to have_current_path fighters_path, ignore_query: true
@@ -152,10 +152,11 @@ RSpec.describe 'Fighters', type: :system do
     end
   end
 
-  describe '悪質プレイヤーの編集' do
+  describe '管理者による悪質プレイヤーの編集' do
     before do
       create(:character, :ken)
       create(:category, :namepu)
+      login_as(admin)
       visit fighter_path(fighter_d)
       click_link '編集'
     end
@@ -183,6 +184,24 @@ RSpec.describe 'Fighters', type: :system do
         click_button '更新'
         expect(page).to have_content('入力内容に誤りがあります')
         expect(page).to have_current_path fighter_path(fighter_d), ignore_query: true
+      end
+    end
+  end
+
+  describe '非管理者による新規登録や編集機能の使用' do
+    context '悪質プレイヤーの新規登録' do
+      it 'アクセス後トップ画面へリダイレクトする' do
+        visit new_fighter_path
+        expect(page).to have_content('管理者しか入れません')
+        expect(page).to have_current_path root_path, ignore_query: true
+      end
+    end
+
+    context '悪質プレイヤーの編集' do
+      it 'アクセス後トップ画面へリダイレクトする' do
+        visit edit_fighter_path(fighter_d)
+        expect(page).to have_content('管理者しか入れません')
+        expect(page).to have_current_path root_path, ignore_query: true
       end
     end
   end

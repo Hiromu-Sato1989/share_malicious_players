@@ -9,5 +9,9 @@ FactoryBot.define do
     trait :equal_email do
       email { 'tokido@akuma.com' }
     end
+
+    trait :admin do
+      admin { :true }
+    end
   end
 end
