@@ -77,17 +77,14 @@
         a href="https://docs.google.com/forms/d/e/1FAIpQLSftwKk2FfzdMwaMDQu4HwQ8J9bPYGyoW9AvPnaVUiJcMaK49g/viewform" target="blank" class="btn btn-lg btn-purple induction-space" 新規登録申請
     - if logged_in?
       ul.top-pages
-        li = link_to 'https://twitter.com/MF_SFV', target: '_blank' do
-          i.fab.fa-twitter
-        li.partition |
         li = link_to '利用規約', page_path('terms'), class: 'default-link-color'
         li.partition |
         li = link_to 'プライバシーポリシー', page_path('privacy'), class: 'default-link-color'
-    - else
-      ul.top-pages
+        li.partition |
         li = link_to 'https://twitter.com/MF_SFV', target: '_blank' do
           i.fab.fa-twitter
-        li.partition |
+    - else
+      ul.top-pages
         li = link_to '利用規約', page_path('terms'), class: 'default-link-color'
         li.partition |
         li = link_to 'プライバシーポリシー', page_path('privacy'), class: 'default-link-color'
@@ -95,6 +92,9 @@
         li = link_to 'ログイン', login_path, class: 'default-link-color'
         li.partition |
         li = link_to '会員登録', new_user_path, class: 'default-link-color'
+        li.partition |
+        li = link_to 'https://twitter.com/MF_SFV', target: '_blank' do
+          i.fab.fa-twitter
     p.d-flex.justify-content-start.m-0
       | ©️2021 MaliciousFighters
 

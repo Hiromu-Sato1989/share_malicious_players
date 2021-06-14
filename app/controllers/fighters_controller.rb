@@ -2,9 +2,9 @@
 
 class FightersController < ApplicationController
   # アクセスごとにPV数を増やしたい場合
-  impressionist actions: [:show]
+  # impressionist actions: [:show]
   # 同IPアドレスで1回だけ計測する場合
-  # impressionist actions: [:show], unique: %i[impressionable_id ip_address]
+  impressionist actions: [:show], unique: %i[impressionable_id ip_address]
   before_action :set_fighter, only: %i[show edit update destroy]
   before_action :user_admin, only: %i[new create edit update destroy]
 
@@ -12,7 +12,6 @@ class FightersController < ApplicationController
     @q = Fighter.ransack(params[:q])
     @fighters = @q.result(distinct: true)\
                   .includes([:league])\
-                  .includes([:character])\
                   .order(name: :asc)
   end
 

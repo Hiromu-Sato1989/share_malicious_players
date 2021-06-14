@@ -79,7 +79,7 @@
         = f.collection_check_boxes :categories_id_in, Category.all, :id, :name do |b|
           = b.check_box class: 'ml-3' do
             = b.check_box + b.text
-          = b.label do
+          = b.label class: 'ml-1'  do
             = b.label { b.text }
         .modal-footer.actions
           = f.submit '検索', class: 'btn btn-dark-blue'
