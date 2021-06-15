@@ -1,15 +1,14 @@
-.col-md-4
-  .border.border-dark.rounded.mt-3.mb-3
-    #new_comments
-      .text-center.mb-2
-        h4.sawarabi.content-list 新着コメント
-      table.table.table-striped 
-        thead.thead-default.text-center
+.border.border-dark.rounded.mt-3.mb-3
+  #new_comments
+    .text-center.mb-2
+      h4.sawarabi.content-list 新着コメント
+    table.table.table-striped 
+      thead.thead-default.text-center
+        tr
+          th= "Fighter's ID"
+          th= "投稿日時"
+      tbody.text-center
+        - Fighter.new_comments.each_with_index do |fighter, i|
           tr
-            th= "Fighter's ID"
-            th= "投稿日時"
-        tbody.text-center
-          - Fighter.new_comments.each_with_index do |fighter, i|
-            tr
-              td= link_to fighter.name, fighter_path(fighter), class: 'default-link-color'
-              td= l Comment.find(Comment.ids.sort.reverse[i]).created_at, format: :default
+            td= link_to fighter.name, fighter_path(fighter), class: 'default-link-color'
+            td= l Comment.find(Comment.ids.sort.reverse[i]).created_at, format: :default

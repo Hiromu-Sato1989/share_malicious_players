@@ -1,15 +1,14 @@
-.col-md-4
-  .border.border-dark.rounded.mt-3.mb-3
-    #new_arrival
-      .text-center
-        h4.sawarabi 新着プレイヤー
-      table.table.table-striped 
-        thead.thead-default.text-center
+.border.border-dark.rounded.mt-3.mb-3
+  #new_arrival
+    .text-center
+      h4.sawarabi 新着プレイヤー
+    table.table.table-striped 
+      thead.thead-default.text-center
+        tr
+          th= "Fighter's ID"
+          th= "登録日"
+      tbody.text-center
+        - Fighter.new_arrival.each do |fighter|
           tr
-            th= "Fighter's ID"
-            th= "登録日"
-        tbody.text-center
-          - Fighter.new_arrival.each do |fighter|
-            tr
-              td= link_to fighter.name, fighter_path(fighter), class: 'default-link-color'
-              td= l fighter.created_at, format: :short
+            td= link_to fighter.name, fighter_path(fighter), class: 'default-link-color'
+            td= l fighter.created_at, format: :short

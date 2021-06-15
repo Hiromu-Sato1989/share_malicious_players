@@ -13,18 +13,29 @@
           | 悪質プレイヤーをみんなで共有しよう！
         h5.induction-text 悪質プレイヤーを検索する
         = link_to '検索', fighters_path, remote: true, class: 'btn btn-modal-dark-blue induction-space'
-        h5.induction-text 悪質プレイヤーを新しく登録する
-        = link_to '新規登録', new_fighter_path, class: 'btn btn-purple induction-space'
+        - unless current_user&.admin?
+          h5.induction-text 悪質プレイヤーの新規登録申請を行う
+          a href="https://docs.google.com/forms/d/e/1FAIpQLSftwKk2FfzdMwaMDQu4HwQ8J9bPYGyoW9AvPnaVUiJcMaK49g/viewform" target="blank" class="btn btn-purple induction-space" 新規登録申請
+        /adminユーザーの場合新規登録機能を表示させる
+        - if current_user&.admin?
+          h5.induction-text 悪質プレイヤーを新しく登録する
+          = link_to '新規登録', new_fighter_path, class: 'btn btn-purple induction-space'
 
 .board-section
   .container
     .row
-      = render 'new_arrival'
-      = render 'votes_top'
-      - if logged_in?
-        = render 'new_comments'
+      -if logged_in?
+        .col-md-4
+          = render 'new_arrival'
+        .col-md-4
+          = render 'votes_top'
+        .col-md-4
+          = render 'new_comments'
       - else
-        = render 'impressions_top'
+        .col-md-6
+          = render 'new_arrival'
+        .col-md-6
+          = render 'votes_top'
 
 .bottom-section
   .container
@@ -32,24 +43,24 @@
       .col-lg-4.offset-1
         = image_pack_tag 'search_2.png', size: '300x300', class: 'img-fluid'
       .col-lg-6.offset-1
-          h4.pt-3.sawarabi.content-title 悪質プレイヤーのデータベース
-          p
-            | 舐めプや屈伸をされるとムカつきますよね。
-            br
-            | このサイトでは悪質な行為をしてくるプレイヤーをデータベース化しています。
-            br
-            | あなたが煽り行為を受けたら対戦相手のFighter’s IDを検索してみてください。
-          p
-            = link_to '検索', fighters_path, remote: true, class: 'btn btn-lg btn-modal-dark-blue'
+        h4.pt-3.sawarabi.content-title 悪質プレイヤーのデータベース
+        p
+          | このサイトでは悪質なプレイをしてくるプレイヤーをデータベース化しています。
+          br
+          | プレイヤー詳細ページでFighter's ID、悪質プレイの種類、動画などを確認することができます。
+        p
+          = link_to '検索', fighters_path, remote: true, class: 'btn btn-lg btn-modal-dark-blue'
     .row.second-bottom.pt-3.pb-3.mt-2.mb-2.rounded-custom
       .col-lg-4.offset-1
         = image_pack_tag 'votes_4.png', size: '300x212', class: 'img-fluid'
       .col-lg-6.offset-1
-        h4.pt-3.sawarabi.content-title 被害を受けたら投票してみる
+        h4.pt-3.sawarabi.content-title あなたの目で確かめよう
         p
-          | プレイヤー詳細ページには投票機能があります。投票は1回だけ行うことができます。
+          | プレイヤー詳細ページには投票機能があります。
           br
-          | 投票数が煽りプレイの被害にあった人数です。投票数が多いプレイヤーには要注意。
+          | 動画で真偽を確認し、情報が正しいと思ったら投票してみましょう。
+          br
+          | 投票数が多いプレイヤーには要注意。
         p.btn.btn-outline-info.btn-lg.shadow-button
           | Guilty?
         p.btn.btn-dark-moon.btn-lg.disabled
@@ -58,18 +69,21 @@
       .col-lg-4.offset-1
         = image_pack_tag 'sign_in.png', size: '300x346', class: 'img-fluid'
       .col-lg-6.offset-1
-        h4.pt-3.sawarabi.content-title プレイヤーは登録されてる？
+        h4.pt-3.sawarabi.content-title データベースに載っていない
         p
-          | 検索してもプレイヤーが見つからなかったら、あなたが第一発見者かもしれません。
+          | 悪質プレイをしてきた対戦相手を検索してもデータベースでヒットしなかったら、あなたが第一発見者かもしれません。
           br
-          | 悪質プレイヤーを登録してみましょう！
+          | 必要情報を入力して悪質プレイヤーを登録してみましょう！
         p
-          = link_to '新規登録', new_fighter_path, class: 'btn btn-lg btn-purple'
+          a href="https://docs.google.com/forms/d/e/1FAIpQLSftwKk2FfzdMwaMDQu4HwQ8J9bPYGyoW9AvPnaVUiJcMaK49g/viewform" target="blank" class="btn btn-lg btn-purple induction-space" 新規登録申請
     - if logged_in?
       ul.top-pages
         li = link_to '利用規約', page_path('terms'), class: 'default-link-color'
         li.partition |
         li = link_to 'プライバシーポリシー', page_path('privacy'), class: 'default-link-color'
+        li.partition |
+        li = link_to 'https://twitter.com/MF_SFV', target: '_blank' do
+          i.fab.fa-twitter
     - else
       ul.top-pages
         li = link_to '利用規約', page_path('terms'), class: 'default-link-color'
@@ -79,6 +93,9 @@
         li = link_to 'ログイン', login_path, class: 'default-link-color'
         li.partition |
         li = link_to '会員登録', new_user_path, class: 'default-link-color'
+        li.partition |
+        li = link_to 'https://twitter.com/MF_SFV', target: '_blank' do
+          i.fab.fa-twitter
     p.d-flex.justify-content-start.m-0
       | ©️2021 MaliciousFighters
 

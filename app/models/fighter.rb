@@ -26,5 +26,6 @@ class Fighter < ApplicationRecord
   scope :new_comments, -> { joins(:comments).merge(Comment.comments_order) }
 
   # indexの表示に使用
-  scope :search_fighter, ->(name) { where('name like?', "#{name}%") }
+  # where('fighters.name'~ とすることで、どのモデルのnameカラムなのかを絞る
+  scope :search_fighter, ->(name) { where('fighters.name like?', "#{name}%") }
 end
