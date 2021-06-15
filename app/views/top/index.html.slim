@@ -43,13 +43,13 @@
       .col-lg-4.offset-1
         = image_pack_tag 'search_2.png', size: '300x300', class: 'img-fluid'
       .col-lg-6.offset-1
-          h4.pt-3.sawarabi.content-title 悪質プレイヤーのデータベース
-          p
-            | このサイトでは悪質なプレイをしてくるプレイヤーをデータベース化しています。
-            br
-            | プレイヤーの詳細ページではFighter's ID、悪質プレイの種類、証拠の動画などを確認することができます。
-          p
-            = link_to '検索', fighters_path, remote: true, class: 'btn btn-lg btn-modal-dark-blue'
+        h4.pt-3.sawarabi.content-title 悪質プレイヤーのデータベース
+        p
+          | このサイトでは悪質なプレイをしてくるプレイヤーをデータベース化しています。
+          br
+          | プレイヤー詳細ページでFighter's ID、悪質プレイの種類、動画などを確認することができます。
+        p
+          = link_to '検索', fighters_path, remote: true, class: 'btn btn-lg btn-modal-dark-blue'
     .row.second-bottom.pt-3.pb-3.mt-2.mb-2.rounded-custom
       .col-lg-4.offset-1
         = image_pack_tag 'votes_4.png', size: '300x212', class: 'img-fluid'
@@ -74,7 +74,8 @@
           | 悪質プレイをしてきた対戦相手を検索してもデータベースでヒットしなかったら、あなたが第一発見者かもしれません。
           br
           | 必要情報を入力して悪質プレイヤーを登録してみましょう！
-        a href="https://docs.google.com/forms/d/e/1FAIpQLSftwKk2FfzdMwaMDQu4HwQ8J9bPYGyoW9AvPnaVUiJcMaK49g/viewform" target="blank" class="btn btn-lg btn-purple induction-space" 新規登録申請
+        p
+          a href="https://docs.google.com/forms/d/e/1FAIpQLSftwKk2FfzdMwaMDQu4HwQ8J9bPYGyoW9AvPnaVUiJcMaK49g/viewform" target="blank" class="btn btn-lg btn-purple induction-space" 新規登録申請
     - if logged_in?
       ul.top-pages
         li = link_to '利用規約', page_path('terms'), class: 'default-link-color'
