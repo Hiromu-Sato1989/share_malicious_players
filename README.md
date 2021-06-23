@@ -1,7 +1,7 @@
 # Malicious Fighters
 StreetFighterV(以下スト5)のオンライン対戦に跋扈する悪質なプレイヤーを共有するサービスです。
 
-![top_icon](https://user-images.githubusercontent.com/74701217/122856347-9aed8080-d351-11eb-91a5-af3c7ad95133.png)
+<img src="https://user-images.githubusercontent.com/74701217/122856347-9aed8080-d351-11eb-91a5-af3c7ad95133.png" width="400">
 
 ## アプリURL
 https://www.malicious-fighters.com/
@@ -26,15 +26,32 @@ https://www.malicious-fighters.com/
   - 悪質プレイヤーをデータベース化し、悪質プレイヤーとマッチングしたくないプレイヤーに情報を共有する
 
 ## ユーザー数&PV数
-初動 1350人&15000PV(6/9)
-改修後 200人(UU50人)&1800PV(6/15~6/21)
+初動 1350人&15000PV(6/9)<br>
+改修後 200人(UU50人)&1800PV(6/15~6/21)<br>
 稼働2週間 1500人&17500PV(6/21)
 
-## 機能一覧
+## 主要な機能一覧
 - 検索機能(ransack)
 - コメント機能
 - プレイヤー登録機能(一般→admin権限)
 - 投票機能(ajax)
+
+## 主要な使用技術
+- Ruby 2.6.6
+- Rails 6.0.3.5
+- RSpec
+- MySQL
+- Nginx
+- Puma
+- AWS
+  - VPC
+  - EC2
+  - RDS
+  - ALB
+  - Route53
+  - ACM
+  - S3
+
 
 ## ER図
 ![malicious_fighters_er](https://user-images.githubusercontent.com/74701217/122856191-5a8e0280-d351-11eb-8885-9711049cbba1.png)
