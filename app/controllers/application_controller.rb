@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
   def redirect_root
     redirect_to root_path, danger: 'ログイン済みです' if logged_in?
   end
+
+  protected
+
+  def not_authenticated
+    redirect_to root_path, danger: 'ログインしてください'
+  end
 end
