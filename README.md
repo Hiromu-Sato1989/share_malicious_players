@@ -55,4 +55,4 @@ https://www.malicious-fighters.com/
 
 
 ## ER図
-![malicious_fighters_er](https://user-images.githubusercontent.com/74701217/122856191-5a8e0280-d351-11eb-8885-9711049cbba1.png)
+![malicious_fighters_er](https://user-images.githubusercontent.com/74701217/123888010-8cc0e500-d98d-11eb-8c17-ed224448c9c3.png)
