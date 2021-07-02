@@ -12,6 +12,10 @@ StreetFighterV(以下スト5)のオンライン対戦に跋扈する悪質なプ
 ## アプリURL
 https://www.malicious-fighters.com/
 
+### :footprints: ユーザー数&PV数
+:star: 初動 1350人&15000PV(6/9)<br>
+:star2: 稼働3週間 UU1600人&18500PV(~7/1)
+
 ## サービスを作った経緯
 私が愛してやまない格闘ゲーム(ビデオゲームのジャンルの一つ)をプレイしていると、オンライン対戦で稀に悪質なプレイヤーとマッチングすることがありました。<br>
 悪質なプレイヤーとは、屈伸や挑発行為、切断を行うプレイヤーを指します。純粋に腕前を競うゲームで今この瞬間にも対戦相手へ嫌がらせを行っているプレイヤーが存在しています。<br>
@@ -73,10 +77,6 @@ https://www.malicious-fighters.com/
 |<img src="https://user-images.githubusercontent.com/74701217/124131478-cf341000-daba-11eb-8a03-fe3546a6f2a9.png">|<img src="https://user-images.githubusercontent.com/74701217/124131630-f559b000-daba-11eb-87c9-a6f8c0b7558d.png">|
 |admin権限を与えられた管理者がプレイヤー詳細ページからプレイヤーの情報を編集できる。|管理者宛にメッセージを送ることができる。|
 <br>
-
-## ユーザー数&PV数
-初動 1350人&15000PV(6/9)<br>
-稼働3週間 UU1600人&18500PV(~7/1)
 
 ## 使用技術
 - Ruby 2.6.6
