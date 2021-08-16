@@ -73,7 +73,9 @@ Character.create!([
                     { name: 'ギル' },
                     { name: 'セス' },
                     { name: 'ダン' },
-                    { name: 'ローズ' }
+                    { name: 'ローズ' },
+                    { name: 'オロ' },
+                    { name: 'アキラ' }
                   ])
 
 Category.create!([
